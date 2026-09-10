@@ -1782,26 +1782,24 @@ ul.bullets li { margin-bottom: 8px; }
       margin: 0 !important;
       box-sizing: border-box !important;
     }
-    .savings-divider-wrapper {
-      margin-bottom: 24px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 12px !important;
+    .savings-header-block {
+      margin-bottom: 28px !important;
+      text-align: center !important;
     }
-    .savings-divider-wrapper span {
-      font-size: 13.5px !important;
+    .savings-eyebrow {
+      font-size: 13px !important;
       font-weight: 800 !important;
-      letter-spacing: 0.14em !important;
+      letter-spacing: 2px !important;
       color: #60a5fa !important;
       text-transform: uppercase !important;
+      margin-bottom: 6px !important;
     }
-    .savings-divider-wrapper div {
-      display: block !important;
-      height: 1px !important;
-      background: rgba(255, 255, 255, 0.18) !important;
-      flex: 1 !important;
-      max-width: 44px !important;
+    .savings-section-title {
+      font-size: 26px !important;
+      font-weight: 800 !important;
+      color: #ffffff !important;
+      line-height: 1.2 !important;
+      margin: 0 auto !important;
     }
     .cards-flex-grid {
       display: flex !important;
@@ -2186,13 +2184,14 @@ ul.bullets li { margin-bottom: 8px; }
 <section class="savings-cards-section" style="background: #232e38; padding: 64px 0 56px 0; color: #ffffff; border-top: 1px solid rgba(255, 255, 255, 0.08); border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
   <div class="wrap" style="max-width: 1040px; margin: 0 auto; padding: 0 24px;">
     
-    <!-- Divider Heading -->
-    <div class="savings-divider-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 24px;">
-      <div style="height: 1px; background: rgba(255, 255, 255, 0.2); flex: 1; max-width: 180px;"></div>
-      <span style="font-size: 15px; font-weight: 800; letter-spacing: 2px; color: #60a5fa; text-transform: uppercase;">
-        ESTIMATED SAVINGS — ON A $1.5M SALE*
-      </span>
-      <div style="height: 1px; background: rgba(255, 255, 255, 0.2); flex: 1; max-width: 180px;"></div>
+    <!-- Section Title & Eyebrow (Apple Eyebrow + Headline Pattern) -->
+    <div class="savings-header-block" style="text-align: center; margin-bottom: 36px;">
+      <div class="savings-eyebrow" style="font-size: 13.5px; font-weight: 800; letter-spacing: 2px; color: #60a5fa; text-transform: uppercase; margin-bottom: 8px;">
+        ESTIMATED SAVINGS
+      </div>
+      <h2 class="savings-section-title" style="font-size: 32px; font-weight: 800; color: #ffffff; line-height: 1.15; margin: 0; letter-spacing: -0.01em;">
+        On a $1.5M Sale*
+      </h2>
     </div>
 
     <!-- 3 Cards Layout -->
