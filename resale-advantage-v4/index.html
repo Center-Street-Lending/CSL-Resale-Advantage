@@ -89,7 +89,7 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:'Roboto','Segoe UI',-apple-system,BlinkMacSystemFont,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box;}
   h1,h2,h3,h4,h5,h6{font-family:'Roboto',sans-serif;font-weight:700;line-height:1.25;color:var(--navy)}
   h2{font-size:var(--text-h2);margin-bottom:.5rem}
   h3{font-size:var(--text-h3);margin-bottom:.5rem}
@@ -908,7 +908,7 @@
     border-bottom: 1px solid var(--line); 
     position: static;
   }
-  header .wrap { max-width: 1080px; display: flex; align-items: center; justify-content: space-between; margin: 0 auto; padding: 0 24px; }
+  header .wrap { max-width: 1120px; display: flex; align-items: center; justify-content: space-between; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
   header a.phone { color: var(--navy); font-size: .95rem; font-weight: 700; text-decoration: none; transition: font-size 0.3s ease; }
   header a.phone:hover { text-decoration: underline; }
   header img { height: 33px; width: auto; display: block; transition: height 0.3s ease; }
@@ -1006,13 +1006,14 @@
     padding: 80px 0;
   }
   .trust-inner {
-    max-width: 1200px;
+    max-width: 1120px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 24px;
     display: grid;
-    grid-template-columns: 1.35fr 1fr; /* Stretched column for images */
-    gap: 64px;
+    grid-template-columns: 500px 1fr;
+    gap: 48px;
     align-items: center;
+    box-sizing: border-box;
   }
   .trust-left-col {
     display: flex;
@@ -1159,9 +1160,9 @@
   }
 
   /* ===== who it's for v2 ===== */
-  .who-its-for-v2 { background: #fff; padding: 80px 0; display: flex; justify-content: center; }
-  .who-its-for-wrap { max-width: 1400px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 72px; padding: 0 40px; }
-  .who-left { flex: 1; max-width: 718px; display: flex; flex-direction: column; gap: 24px; }
+  .who-its-for-v2 { background: #fff; padding: 80px 0; width: 100%; }
+  .who-its-for-wrap { max-width: 1120px; width: 100%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 48px; padding: 0 24px; box-sizing: border-box; }
+  .who-left { flex: 1; max-width: 580px; display: flex; flex-direction: column; gap: 24px; }
   .who-left-top { display: flex; flex-direction: column; gap: 24px; }
   .who-eyebrow { color: var(--accent); font-size: var(--text-small); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 6px 0; line-height: 18px; }
   .who-left h2 { font-size: var(--text-h2); font-weight: 700; color: var(--navy-darkest, #2C3842); line-height: 40px; margin: 0; }
@@ -1172,13 +1173,14 @@
   .who-item h3 { font-size: var(--text-h3); font-weight: 700; color: var(--navy-darkest, #2C3842); line-height: 27.6px; margin: 0; }
   .who-item p { font-size: var(--text-body); font-weight: 400; color: #5D6871; line-height: 25px; margin: 0; }
 
-  .who-right { width: 544px; flex-shrink: 0; }
-  .who-right img { width: 100%; height: 460px; object-fit: cover; border-radius: 16px; display: block; }
+  .who-right { width: 440px; flex-shrink: 0; }
+  .who-right img { width: 100%; height: 440px; object-fit: cover; border-radius: 16px; display: block; }
   
   @media(max-width: 1100px) {
-    .who-its-for-v2 { padding: 60px 24px; }
-    .who-its-for-wrap { flex-direction: column; }
-    .who-right { width: 100%; max-width: 544px; }
+    .who-its-for-v2 { padding: 60px 0; }
+    .who-its-for-wrap { flex-direction: column; padding: 0 24px; gap: 40px; }
+    .who-left { max-width: 100%; width: 100%; }
+    .who-right { width: 100%; max-width: 500px; }
   }
   @media(max-width: 640px) {
     .who-item h3 { font-size: 20px; line-height: 24px; }
@@ -1623,6 +1625,23 @@ ul.bullets li { margin-bottom: 8px; }
 
   /* Master Mobile Responsive Overrides */
   @media (max-width: 768px) {
+    /* ===================================================
+       UNIVERSAL MOBILE ALIGNMENT & 20px GUTTER SYSTEM
+       All sections are flush edge-to-edge with identical 20px reading margin
+       =================================================== */
+    .wrap,
+    .hero-content-v4,
+    .who-its-for-wrap,
+    .trust-inner,
+    .timeline-section .wrap,
+    .savings-cards-section .wrap {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
     /* 0. Top Offer Bar Mobile */
     .offer-bar {
       padding: 10px 14px !important;
@@ -1656,11 +1675,13 @@ ul.bullets li { margin-bottom: 8px; }
     /* 1. Hero Mobile Layout - Apple-Inspired Typography & Clean Rhythm (ZERO content changes) */
     .hero {
       padding: 44px 0 52px !important;
+      width: 100% !important;
     }
     .hero-content-v4 {
       text-align: center !important;
       padding: 0 20px !important;
       max-width: 100% !important;
+      box-sizing: border-box !important;
     }
 
     /* Apple-style bold headline with tight tracking and balanced line-height */
@@ -1714,9 +1735,10 @@ ul.bullets li { margin-bottom: 8px; }
       color: #f1f5f9 !important;
       text-align: left !important;
       margin: 0 auto 24px auto !important;
-      max-width: 540px !important;
-      padding: 0 4px !important;
+      max-width: 100% !important;
+      padding: 0 !important;
       font-weight: 400 !important;
+      box-sizing: border-box !important;
     }
     .hero-lead-para strong {
       color: #ffffff !important;
@@ -1775,103 +1797,11 @@ ul.bullets li { margin-bottom: 8px; }
       transition: all 0.2s ease !important;
     }
 
-    /* Savings Cards Strip - Dedicated Slate-Grey Section (#232e38) */
-    .savings-cards-section {
-      background: #232e38 !important;
-      padding: 56px 16px 48px 16px !important;
-      width: 100% !important;
-      margin: 0 !important;
-      box-sizing: border-box !important;
-    }
-    .savings-header-block {
-      margin-bottom: 28px !important;
-      text-align: center !important;
-    }
-    .savings-eyebrow {
-      font-size: 13px !important;
-      font-weight: 800 !important;
-      letter-spacing: 2px !important;
-      color: #60a5fa !important;
-      text-transform: uppercase !important;
-      margin-bottom: 6px !important;
-    }
-    .savings-section-title {
-      font-size: 26px !important;
-      font-weight: 800 !important;
-      color: #ffffff !important;
-      line-height: 1.2 !important;
-      margin: 0 auto !important;
-    }
-    .cards-flex-grid {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: stretch !important;
-      gap: 16px !important;
-      margin-bottom: 24px !important;
-      width: 100% !important;
-    }
-    .cards-flex-grid > div {
-      width: 100% !important;
-      border-radius: 18px !important;
-      padding: 26px 20px !important;
-      backdrop-filter: blur(16px) !important;
-      -webkit-backdrop-filter: blur(16px) !important;
-      text-align: center !important;
-      box-sizing: border-box !important;
-    }
-    .cards-flex-grid > div:nth-child(1),
-    .cards-flex-grid > div:nth-child(3) {
-      background: rgba(255, 255, 255, 0.06) !important;
-      border: 1px solid rgba(255, 255, 255, 0.16) !important;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2) !important;
-    }
-    .cards-flex-grid > div:nth-child(5) {
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.28) 0%, rgba(30, 64, 175, 0.2) 100%) !important;
-      border: 2px solid #60a5fa !important;
-      box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3) !important;
-    }
-    .savings-operator {
-      display: none !important;
-    }
-
-    /* Card internal typography */
-    .card-eyebrow {
-      font-size: 14px !important;
-      font-weight: 800 !important;
-      letter-spacing: 1.5px !important;
-      margin-bottom: 8px !important;
-    }
-    .card-stat-number {
-      font-size: 46px !important;
-      font-weight: 800 !important;
-      line-height: 1.05 !important;
-      margin-bottom: 8px !important;
-    }
-    .card-stat-desc .desc-main {
-      font-size: 17px !important;
-      font-weight: 700 !important;
-      line-height: 1.35 !important;
-    }
-    .card-stat-desc .desc-sub {
-      font-size: 14.5px !important;
-      line-height: 1.4 !important;
-      margin-top: 3px !important;
-    }
-
-    /* Footnote */
-    .hero-disclaimer-footnote {
-      font-size: 12.5px !important;
-      line-height: 1.6 !important;
-      color: rgba(255, 255, 255, 0.65) !important;
-      text-align: center !important;
-      margin-top: 24px !important;
-      padding: 0 8px !important;
-    }
-
     /* 2. Section 2 Path Cards - Apple-Style Side-by-Side Swipe Carousel */
     .choose-path-section {
       padding: 48px 0 36px 0 !important;
       overflow: hidden !important;
+      width: 100% !important;
     }
     .choose-path-section .wrap {
       padding: 0 !important;
@@ -1881,6 +1811,8 @@ ul.bullets li { margin-bottom: 8px; }
     }
     .choose-path-section .text-center {
       padding: 0 20px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
     .path-cards-grid {
       display: flex !important;
@@ -1895,6 +1827,7 @@ ul.bullets li { margin-bottom: 8px; }
       padding: 24px 20px 24px 20px !important;
       margin: 16px 0 0 0 !important;
       scrollbar-width: none !important;
+      box-sizing: border-box !important;
     }
     .path-cards-grid::-webkit-scrollbar {
       display: none !important;
@@ -1958,6 +1891,10 @@ ul.bullets li { margin-bottom: 8px; }
       border: 1.5px solid #3B82F6 !important;
       color: #3B82F6 !important;
     }
+    .path-section-footnote {
+      padding: 0 20px !important;
+      box-sizing: border-box !important;
+    }
 
     /* Apple-style Carousel Dots indicator */
     .apple-carousel-dots-wrapper {
@@ -1991,35 +1928,41 @@ ul.bullets li { margin-bottom: 8px; }
       background: #2C3842 !important;
     }
 
-    /* 3. Section 3 Timeline Mobile Margins & Centering */
-    .timeline-section {
+    /* 3. Who It's For Section Mobile Alignment */
+    .who-its-for-v2 {
       padding: 48px 0 !important;
+      width: 100% !important;
     }
-    .tl {
+    .who-its-for-wrap {
+      flex-direction: column !important;
+      padding: 0 20px !important;
+      gap: 32px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .who-left {
       max-width: 100% !important;
       width: 100% !important;
-      padding: 0 !important;
     }
-    .tl .section-eyebrow, .tl h3.timeline-title {
-      text-align: center !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
-    .tl-card {
+    .who-right {
       width: 100% !important;
-      box-sizing: border-box !important;
-      padding: 18px !important;
+      max-width: 100% !important;
     }
 
     /* 4. Trust Section Mobile Stack & Center */
     .trust-section {
       padding: 48px 0 !important;
+      width: 100% !important;
     }
     .trust-inner {
       display: flex !important;
       flex-direction: column !important;
       gap: 32px !important;
-      padding: 0 16px !important;
+      padding: 0 20px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
     }
     .trust-right-content {
       order: 1 !important;
@@ -2027,6 +1970,7 @@ ul.bullets li { margin-bottom: 8px; }
       display: flex !important;
       flex-direction: column !important;
       align-items: center !important;
+      width: 100% !important;
     }
     .trust-right-content h2, .trust-right-content p {
       text-align: center !important;
@@ -2049,15 +1993,165 @@ ul.bullets li { margin-bottom: 8px; }
       justify-content: center !important;
       gap: 24px !important;
       margin-top: 16px !important;
+      width: 100% !important;
     }
 
-    /* Brand Cards Mobile Centering */
+    /* 5. Section 5 Timeline Mobile Margins & Centering */
+    .timeline-section {
+      padding: 48px 0 !important;
+      width: 100% !important;
+    }
+    .timeline-section .wrap {
+      padding: 0 20px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .tl {
+      max-width: 100% !important;
+      width: 100% !important;
+      padding: 0 !important;
+    }
+    .tl .section-eyebrow, .tl h3.timeline-title {
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .tl-card {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      padding: 18px !important;
+    }
+
+    /* 6. Savings Cards Strip - Dedicated Slate-Grey Section (#232e38) */
+    .savings-cards-section {
+      background: #232e38 !important;
+      padding: 48px 0 44px 0 !important;
+      width: 100% !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+    }
+    .savings-cards-section .wrap {
+      padding: 0 20px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .savings-header-block {
+      margin-bottom: 28px !important;
+      text-align: center !important;
+    }
+    .savings-eyebrow {
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      letter-spacing: 2px !important;
+      color: #60a5fa !important;
+      text-transform: uppercase !important;
+      margin-bottom: 6px !important;
+    }
+    .savings-section-title {
+      font-size: 26px !important;
+      font-weight: 800 !important;
+      color: #ffffff !important;
+      line-height: 1.2 !important;
+      margin: 0 auto !important;
+    }
+    .cards-flex-grid {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 16px !important;
+      margin-bottom: 24px !important;
+      width: 100% !important;
+    }
+    .cards-flex-grid > div {
+      width: 100% !important;
+      border-radius: 18px !important;
+      padding: 26px 20px !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      text-align: center !important;
+      box-sizing: border-box !important;
+    }
+    .cards-flex-grid > div:nth-child(1),
+    .cards-flex-grid > div:nth-child(3) {
+      background: rgba(255, 255, 255, 0.06) !important;
+      border: 1px solid rgba(255, 255, 255, 0.16) !important;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2) !important;
+    }
+    .cards-flex-grid > div:nth-child(5) {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.28) 0%, rgba(30, 64, 175, 0.2) 100%) !important;
+      border: 2px solid #60a5fa !important;
+      box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3) !important;
+    }
+    .savings-operator {
+      display: none !important;
+    }
+    .card-eyebrow {
+      font-size: 14px !important;
+      font-weight: 800 !important;
+      letter-spacing: 1.5px !important;
+      margin-bottom: 8px !important;
+    }
+    .card-stat-number {
+      font-size: 46px !important;
+      font-weight: 800 !important;
+      line-height: 1.05 !important;
+      margin-bottom: 8px !important;
+    }
+    .card-stat-desc .desc-main {
+      font-size: 17px !important;
+      font-weight: 700 !important;
+      line-height: 1.35 !important;
+    }
+    .card-stat-desc .desc-sub {
+      font-size: 14.5px !important;
+      line-height: 1.4 !important;
+      margin-top: 3px !important;
+    }
+    .hero-disclaimer-footnote {
+      font-size: 12.5px !important;
+      line-height: 1.6 !important;
+      color: rgba(255, 255, 255, 0.65) !important;
+      text-align: center !important;
+      margin-top: 24px !important;
+      padding: 0 !important;
+    }
+
+    /* 7. Benefits Section Mobile */
+    #benefits {
+      padding: 48px 0 !important;
+      width: 100% !important;
+    }
+    #benefits .wrap {
+      padding: 0 20px !important;
+    }
+    #benefits .grid-2 {
+      grid-template-columns: 1fr !important;
+      width: 100% !important;
+    }
+
+    /* 8. InnoLaunch & Honest Escrow Mobile */
+    #innolaunch {
+      padding: 48px 0 !important;
+      width: 100% !important;
+    }
+    #innolaunch .wrap {
+      padding: 0 20px !important;
+      gap: 36px !important;
+    }
+    #innolaunch .wrap > div {
+      min-width: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
     .inno-brand-right {
       text-align: center !important;
       align-items: center !important;
       display: flex !important;
       flex-direction: column !important;
       max-width: 100% !important;
+      width: 100% !important;
     }
     .inno-eyebrow, .inno-brand-right h2, .inno-brand-right p, .inno-brand-right ul {
       text-align: center !important;
@@ -2075,17 +2169,24 @@ ul.bullets li { margin-bottom: 8px; }
       text-align: center !important;
       margin: 0 auto !important;
     }
-
-    /* Honest Escrow Mobile Centering */
+    .honest {
+      padding: 48px 0 !important;
+      width: 100% !important;
+    }
+    .honest .wrap {
+      padding: 0 20px !important;
+    }
     .honest-brand-inner {
       flex-direction: column-reverse !important;
       text-align: center !important;
+      width: 100% !important;
     }
     .honest-brand-left {
       text-align: center !important;
       align-items: center !important;
       display: flex !important;
       flex-direction: column !important;
+      width: 100% !important;
     }
     .he-brand-cta-group {
       justify-content: center !important;
@@ -2097,9 +2198,13 @@ ul.bullets li { margin-bottom: 8px; }
       text-align: center !important;
     }
 
-    /* 5. Section Comparison Mobile Cards Redesign */
+    /* 9. Section Comparison Mobile Cards Redesign */
     #compare {
       padding: 48px 0 !important;
+      width: 100% !important;
+    }
+    #compare .wrap {
+      padding: 0 20px !important;
     }
     #compare .cmp-wrap {
       overflow: visible !important;
@@ -2177,14 +2282,22 @@ ul.bullets li { margin-bottom: 8px; }
       text-transform: uppercase !important;
     }
 
-    /* 6. FAQ Section Spacing */
+    /* 10. FAQ Section Spacing */
     #faq {
       padding: 48px 0 24px !important;
+      width: 100% !important;
+    }
+    #faq .wrap {
+      padding: 0 20px !important;
     }
 
-    /* 7. Opt-in Form Mobile Optimization */
+    /* 11. Opt-in Form Mobile Optimization */
     #optin {
       padding: 48px 0 64px !important;
+      width: 100% !important;
+    }
+    #optin .wrap {
+      padding: 0 20px !important;
     }
     #optin .form-card {
       width: 100% !important;
@@ -2211,8 +2324,24 @@ ul.bullets li { margin-bottom: 8px; }
       box-sizing: border-box !important;
     }
 
+    /* 12. Disclosure & Footer Mobile */
+    .disclosure {
+      padding: 40px 0 !important;
+      width: 100% !important;
+    }
+    .disclosure .wrap {
+      padding: 0 20px !important;
+    }
+    footer {
+      padding: 40px 0 !important;
+      width: 100% !important;
+    }
+    footer .wrap {
+      padding: 0 20px !important;
+    }
+
     /* ===================================================
-       8. UNIFIED SECTION HEADINGS & EYEBROWS (28px standard)
+       13. UNIFIED SECTION HEADINGS & EYEBROWS (28px standard)
        =================================================== */
     .choose-path-section h2,
     .who-its-for-v2 h2,
@@ -2271,7 +2400,7 @@ ul.bullets li { margin-bottom: 8px; }
 
 <!-- HERO -->
 <div class="hero">
-  <div class="wrap hero-content-v4" style="max-width: 1000px; width: 100%;">
+  <div class="wrap hero-content-v4" style="max-width: 1120px; width: 100%;">
     
     <!-- Main Headline -->
     <h1 class="hero-v4-title">
@@ -2305,7 +2434,7 @@ ul.bullets li { margin-bottom: 8px; }
 
 <!-- CHOOSE YOUR PATH / THREE WAYS SECTION -->
 <section class="choose-path-section" id="choose-path" style="padding: 64px 0; background-color: #ffffff; border-bottom: 1px solid #DCE5EC;">
-  <div class="wrap" style="max-width: 1100px; margin: 0 auto; padding: 0 24px;">
+  <div class="wrap" style="max-width: 1120px; margin: 0 auto; padding: 0 24px;">
     
     <!-- Section Header -->
     <div class="text-center" style="text-align: center; margin-bottom: 28px;">
@@ -2421,7 +2550,7 @@ ul.bullets li { margin-bottom: 8px; }
     </div>
 
     <!-- Section Footnote -->
-    <div style="margin-top: 48px; text-align: center;">
+    <div class="path-section-footnote" style="margin-top: 48px; text-align: center;">
       <p style="font-size: 14.5px; color: #5D6871; max-width: 800px; margin: 0 auto 12px auto; line-height: 1.5;">
         Completely à la carte — pick one path today, add the other later, or bring your own team. Requesting information is free and has no effect on your CSL loan.
       </p>
@@ -2472,7 +2601,7 @@ ul.bullets li { margin-bottom: 8px; }
 
 <!-- TRUST / PARTNER NETWORK SECTION -->
 <section class="trust-section" style="background: #232e38; padding: 80px 0; color: #ffffff;">
-  <div class="wrap trust-inner" style="max-width: 1140px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 530px 1fr; gap: 64px; align-items: center;">
+  <div class="wrap trust-inner" style="max-width: 1120px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 500px 1fr; gap: 48px; align-items: center;">
     
     <!-- LEFT: 3 Slender Tall Property Image Cards (Aspect Ratio ~1:2) -->
     <div class="trust-images-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; height: 500px;">
@@ -2638,7 +2767,7 @@ ul.bullets li { margin-bottom: 8px; }
 
 <!-- ESTIMATED SAVINGS SECTION (Dedicated section with #232e38 background matching Trusted Network section) -->
 <section class="savings-cards-section" style="background: #232e38; padding: 64px 0 56px 0; color: #ffffff; border-top: 1px solid rgba(255, 255, 255, 0.08); border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
-  <div class="wrap" style="max-width: 1040px; margin: 0 auto; padding: 0 24px;">
+  <div class="wrap" style="max-width: 1120px; margin: 0 auto; padding: 0 24px;">
     
     <!-- Section Title & Eyebrow (Apple Eyebrow + Headline Pattern) -->
     <div class="savings-header-block" style="text-align: center; margin-bottom: 36px;">
@@ -3451,10 +3580,12 @@ ul.bullets li { margin-bottom: 8px; }
 
 <!-- DISCLOSURE — LOCKED COPY from readiness doc. Do not edit ad hoc. -->
 <section class="disclosure" style="padding: 48px 0; background: #1b252e; border-top: 1px solid rgba(255,255,255,0.08);">
-  <div class="wrap" style="max-width: 960px; margin: 0 auto; text-align: center;">
-    <h2 style="font-size: 20px; font-weight: 800; color: #ffffff; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">Important disclosure</h2>
-    <p style="font-size: 13.5px; line-height: 1.6; color: rgba(255,255,255,0.7); margin: 0;">CSL, Innovate Realty, Honest Escrow, and/or related ownership parties may have affiliated business relationships. If you request an introduction, additional disclosures, fee information, and service details may be provided. Use of any affiliated or introduced provider is optional. You are free to choose your own real estate broker, escrow company, title company, lender, and other service providers. Any escrow fees or program pricing are subject to eligibility, transaction details, party agreement, written disclosure, and escrow instructions. Use of any introduced provider is not required as a condition of obtaining, maintaining, or paying off a CSL loan.</p>
-    <p style="margin-top: 16px; font-size: 13.5px;"><a href="legal.html" style="color: #60a5fa; text-decoration: underline; font-weight: 600;">Read complete Affiliated Business Arrangement (AfBA) Disclosure, Program Terms, and Privacy Policy &rarr;</a></p>
+  <div class="wrap" style="max-width: 1120px; margin: 0 auto; text-align: center;">
+    <div style="max-width: 960px; margin: 0 auto;">
+      <h2 style="font-size: 20px; font-weight: 800; color: #ffffff; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">Important disclosure</h2>
+      <p style="font-size: 13.5px; line-height: 1.6; color: rgba(255,255,255,0.7); margin: 0;">CSL, Innovate Realty, Honest Escrow, and/or related ownership parties may have affiliated business relationships. If you request an introduction, additional disclosures, fee information, and service details may be provided. Use of any affiliated or introduced provider is optional. You are free to choose your own real estate broker, escrow company, title company, lender, and other service providers. Any escrow fees or program pricing are subject to eligibility, transaction details, party agreement, written disclosure, and escrow instructions. Use of any introduced provider is not required as a condition of obtaining, maintaining, or paying off a CSL loan.</p>
+      <p style="margin-top: 16px; font-size: 13.5px;"><a href="legal.html" style="color: #60a5fa; text-decoration: underline; font-weight: 600;">Read complete Affiliated Business Arrangement (AfBA) Disclosure, Program Terms, and Privacy Policy &rarr;</a></p>
+    </div>
   </div>
 </section>
 
