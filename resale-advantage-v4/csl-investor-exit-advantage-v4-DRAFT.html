@@ -1751,7 +1751,7 @@ ul.bullets li { margin-bottom: 8px; }
       justify-content: center !important;
       width: 100% !important;
       gap: 12px !important;
-      margin: 0 auto 40px auto !important;
+      margin: 0 auto 0 auto !important;
     }
     .btn-primary-blue {
       width: 100% !important;
@@ -1771,28 +1771,14 @@ ul.bullets li { margin-bottom: 8px; }
       box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4) !important;
       transition: all 0.2s ease !important;
     }
-    .btn-link-req {
-      width: 100% !important;
-      max-width: 320px !important;
-      min-height: 44px !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      padding: 12px 24px !important;
-      border-radius: 980px !important;
-      background: rgba(255, 255, 255, 0.08) !important;
-      border: 1px solid rgba(255, 255, 255, 0.2) !important;
-      color: #ffffff !important;
-      font-size: 14.5px !important;
-      font-weight: 600 !important;
-      text-decoration: none !important;
-      transition: all 0.2s ease !important;
-    }
 
-    /* Savings Cards Strip - Apple Frosted Glass Cards */
+    /* Savings Cards Strip - Dedicated Slate-Grey Section (#232e38) */
     .savings-cards-section {
+      background: #232e38 !important;
+      padding: 52px 16px 44px 16px !important;
       width: 100% !important;
-      margin-top: 8px !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
     }
     .savings-divider-wrapper {
       margin-bottom: 20px !important;
@@ -2160,88 +2146,91 @@ ul.bullets li { margin-bottom: 8px; }
     </p>
 
     <!-- Action Buttons -->
-    <div class="hero-actions-row" style="display: flex; align-items: center; gap: 24px; margin-bottom: 48px; flex-wrap: wrap;">
+    <div class="hero-actions-row" style="display: flex; align-items: center; gap: 24px; margin-bottom: 0; flex-wrap: wrap;">
       <a class="btn-primary-blue" href="#optin" style="background-color: #4985b8; color: #ffffff; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; letter-spacing: 0.05em; box-shadow: 0 4px 14px rgba(73, 133, 184, 0.35);">
         SEE MY OPTIONS &rarr;
       </a>
     </div>
 
-    <!-- Savings Cards Strip -->
-    <div class="savings-cards-section" style="width: 100%;">
+  </div>
+</div>
+
+
+<!-- ESTIMATED SAVINGS SECTION (Dedicated section with #232e38 background matching Trusted Network section) -->
+<section class="savings-cards-section" style="background: #232e38; padding: 64px 0 56px 0; color: #ffffff; border-top: 1px solid rgba(255, 255, 255, 0.08); border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+  <div class="wrap" style="max-width: 1040px; margin: 0 auto; padding: 0 24px;">
+    
+    <!-- Divider Heading -->
+    <div class="savings-divider-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 24px;">
+      <div style="height: 1px; background: rgba(255, 255, 255, 0.2); flex: 1; max-width: 180px;"></div>
+      <span style="font-size: 15px; font-weight: 800; letter-spacing: 2px; color: #60a5fa; text-transform: uppercase;">
+        ESTIMATED SAVINGS — ON A $1.5M SALE*
+      </span>
+      <div style="height: 1px; background: rgba(255, 255, 255, 0.2); flex: 1; max-width: 180px;"></div>
+    </div>
+
+    <!-- 3 Cards Layout -->
+    <div class="cards-flex-grid" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 28px; flex-wrap: wrap;">
       
-      <!-- Divider Heading -->
-      <div class="savings-divider-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 20px;">
-        <div style="height: 1px; background: rgba(255, 255, 255, 0.2); flex: 1; max-width: 180px;"></div>
-        <span style="font-size: 15px; font-weight: 800; letter-spacing: 2px; color: #4985b8; text-transform: uppercase;">
-          ESTIMATED SAVINGS — ON A $1.5M SALE*
-        </span>
-        <div style="height: 1px; background: rgba(255, 255, 255, 0.2); flex: 1; max-width: 180px;"></div>
-      </div>
-
-      <!-- 3 Cards Layout -->
-      <div class="cards-flex-grid" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; flex-wrap: wrap;">
-        
-        <!-- Card 1 -->
-        <div style="flex: 1; min-width: 220px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 20px 24px;">
-          <div style="font-size: 13.5px; font-weight: 800; letter-spacing: 1.2px; color: #4985b8; text-transform: uppercase; margin-bottom: 6px;">
-            INNOVATE REALTY
-          </div>
-          <div style="font-size: 40px; font-weight: 800; color: #ffffff; line-height: 1.1; margin-bottom: 6px;">
-            $22–30K
-          </div>
-          <div style="font-size: 15px; color: rgba(255, 255, 255, 0.9); line-height: 1.45; font-weight: 500;">
-            saved on the listing<br>1% vs. typical 2.5–3%
-          </div>
+      <!-- Card 1 -->
+      <div style="flex: 1; min-width: 220px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 22px 24px;">
+        <div style="font-size: 13.5px; font-weight: 800; letter-spacing: 1.2px; color: #60a5fa; text-transform: uppercase; margin-bottom: 6px;">
+          INNOVATE REALTY
         </div>
-
-        <div class="savings-operator" style="font-size: 26px; font-weight: 300; color: rgba(255, 255, 255, 0.5); padding: 0 4px;">+</div>
-
-        <!-- Card 2 -->
-        <div style="flex: 1; min-width: 220px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 20px 24px;">
-          <div style="font-size: 13.5px; font-weight: 800; letter-spacing: 1.2px; color: #4985b8; text-transform: uppercase; margin-bottom: 6px;">
-            HONEST ESCROW
-          </div>
-          <div style="font-size: 40px; font-weight: 800; color: #ffffff; line-height: 1.1; margin-bottom: 6px;">
-            ~$7K
-          </div>
-          <div style="font-size: 15px; color: rgba(255, 255, 255, 0.9); line-height: 1.45; font-weight: 500;">
-            saved on escrow<br>flat $500 vs. ~$7,500 typical
-          </div>
+        <div style="font-size: 40px; font-weight: 800; color: #ffffff; line-height: 1.1; margin-bottom: 6px;">
+          $22–30K
         </div>
-
-        <div class="savings-operator" style="font-size: 26px; font-weight: 300; color: rgba(255, 255, 255, 0.5); padding: 0 4px;">=</div>
-
-        <!-- Card 3 (Highlighted) -->
-        <div style="flex: 1.1; min-width: 240px; background: rgba(73, 133, 184, 0.2); border: 1.5px solid #4985b8; border-radius: 12px; padding: 20px 24px; box-shadow: 0 8px 24px rgba(73, 133, 184, 0.3);">
-          <div style="font-size: 13.5px; font-weight: 800; letter-spacing: 1.2px; color: #ffffff; text-transform: uppercase; margin-bottom: 6px;">
-            USE BOTH
-          </div>
-          <div style="font-size: 42px; font-weight: 800; color: #ffffff; line-height: 1.1; margin-bottom: 6px;">
-            Up to $37K
-          </div>
-          <div style="font-size: 15px; color: rgba(255, 255, 255, 0.95); line-height: 1.45; font-weight: 500;">
-            plus ~1 month less carrying cost
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Bottom Pill Badge -->
-      <div style="display: flex; justify-content: center;">
-        <div style="display: inline-flex; align-items: center; gap: 8px; background: #0f172a; border: 1.5px solid #4985b8; border-radius: 30px; padding: 10px 24px; font-size: 14px; font-weight: 800; letter-spacing: 1.2px; color: #ffffff; text-transform: uppercase; box-shadow: 0 4px 14px rgba(0,0,0,0.3);">
-          <span style="color: #60a5fa;">✓</span> USE ONE OR BOTH
+        <div style="font-size: 15px; color: rgba(255, 255, 255, 0.9); line-height: 1.45; font-weight: 500;">
+          saved on the listing<br>1% vs. typical 2.5–3%
         </div>
       </div>
 
-      <!-- Asterisk Disclaimer Footnote -->
-      <div class="hero-disclaimer-footnote" style="margin-top: 28px; max-width: 920px; margin-left: auto; margin-right: auto; font-size: 13.5px; line-height: 1.55; color: rgba(255, 255, 255, 0.75); text-align: center;">
-        * Estimated savings are illustrative, based on a $1.5M sale example (2.5–3% vs. 1% listing commission; typical seller-side escrow of ~$5 per $1,000 vs. flat $500; carrying costs of ~$8–10K/month). The $40K+ figure combines estimated fee savings with roughly one month of reduced carrying cost under this example. The ~1-month estimate reflects marketing that begins before construction is complete — an expectation, not a guarantee. Actual amounts vary by transaction and are disclosed in writing. This pre-negotiated program is entirely optional and à la carte — using one service never requires the other. You are always free to choose your own broker, escrow company, and other providers.
+      <div class="savings-operator" style="font-size: 26px; font-weight: 300; color: rgba(255, 255, 255, 0.5); padding: 0 4px;">+</div>
+
+      <!-- Card 2 -->
+      <div style="flex: 1; min-width: 220px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 22px 24px;">
+        <div style="font-size: 13.5px; font-weight: 800; letter-spacing: 1.2px; color: #60a5fa; text-transform: uppercase; margin-bottom: 6px;">
+          HONEST ESCROW
+        </div>
+        <div style="font-size: 40px; font-weight: 800; color: #ffffff; line-height: 1.1; margin-bottom: 6px;">
+          ~$7K
+        </div>
+        <div style="font-size: 15px; color: rgba(255, 255, 255, 0.9); line-height: 1.45; font-weight: 500;">
+          saved on escrow<br>flat $500 vs. ~$7,500 typical
+        </div>
+      </div>
+
+      <div class="savings-operator" style="font-size: 26px; font-weight: 300; color: rgba(255, 255, 255, 0.5); padding: 0 4px;">=</div>
+
+      <!-- Card 3 (Highlighted) -->
+      <div style="flex: 1.1; min-width: 240px; background: rgba(73, 133, 184, 0.2); border: 1.5px solid #4985b8; border-radius: 12px; padding: 22px 24px; box-shadow: 0 8px 24px rgba(73, 133, 184, 0.3);">
+        <div style="font-size: 13.5px; font-weight: 800; letter-spacing: 1.2px; color: #ffffff; text-transform: uppercase; margin-bottom: 6px;">
+          USE BOTH
+        </div>
+        <div style="font-size: 42px; font-weight: 800; color: #ffffff; line-height: 1.1; margin-bottom: 6px;">
+          Up to $37K
+        </div>
+        <div style="font-size: 15px; color: rgba(255, 255, 255, 0.95); line-height: 1.45; font-weight: 500;">
+          plus ~1 month less carrying cost
+        </div>
       </div>
 
     </div>
 
+    <!-- Bottom Pill Badge -->
+    <div style="display: flex; justify-content: center;">
+      <div style="display: inline-flex; align-items: center; gap: 8px; background: #0f172a; border: 1.5px solid #4985b8; border-radius: 30px; padding: 10px 24px; font-size: 14px; font-weight: 800; letter-spacing: 1.2px; color: #ffffff; text-transform: uppercase; box-shadow: 0 4px 14px rgba(0,0,0,0.3);">
+        <span style="color: #60a5fa;">✓</span> USE ONE OR BOTH
+      </div>
+    </div>
+
+    <!-- Asterisk Disclaimer Footnote -->
+    <div class="hero-disclaimer-footnote" style="margin-top: 28px; max-width: 920px; margin-left: auto; margin-right: auto; font-size: 13.5px; line-height: 1.55; color: rgba(255, 255, 255, 0.75); text-align: center;">
+      * Estimated savings are illustrative, based on a $1.5M sale example (2.5–3% vs. 1% listing commission; typical seller-side escrow of ~$5 per $1,000 vs. flat $500; carrying costs of ~$8–10K/month). The $40K+ figure combines estimated fee savings with roughly one month of reduced carrying cost under this example. The ~1-month estimate reflects marketing that begins before construction is complete — an expectation, not a guarantee. Actual amounts vary by transaction and are disclosed in writing. This pre-negotiated program is entirely optional and à la carte — using one service never requires the other. You are always free to choose your own broker, escrow company, and other providers.
+    </div>
+
   </div>
-</div>
+</section>
 
 
 <!-- CHOOSE YOUR PATH / THREE WAYS SECTION -->
