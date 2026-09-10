@@ -1867,27 +1867,66 @@ ul.bullets li { margin-bottom: 8px; }
       padding: 0 8px !important;
     }
 
-    /* 2. Section 2 Path Cards Centering & Full Width */
+    /* 2. Section 2 Path Cards - Apple-Style Side-by-Side Swipe Carousel */
     .choose-path-section {
-      padding: 48px 0 !important;
+      padding: 48px 0 36px 0 !important;
+      overflow: hidden !important;
     }
     .choose-path-section .wrap {
-      padding: 0 12px !important;
+      padding: 0 !important;
+      max-width: 100% !important;
       width: 100% !important;
       box-sizing: border-box !important;
+    }
+    .choose-path-section .text-center {
+      padding: 0 20px !important;
     }
     .path-cards-grid {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      overflow-x: auto !important;
+      overflow-y: hidden !important;
+      scroll-snap-type: x mandatory !important;
+      -webkit-overflow-scrolling: touch !important;
+      scroll-behavior: smooth !important;
       gap: 16px !important;
-      width: 100% !important;
+      padding: 24px 20px 24px 20px !important;
+      margin: 16px 0 0 0 !important;
+      scrollbar-width: none !important;
+    }
+    .path-cards-grid::-webkit-scrollbar {
+      display: none !important;
     }
     .path-card {
+      flex: 0 0 85vw !important;
+      max-width: 340px !important;
+      min-width: 280px !important;
+      scroll-snap-align: center !important;
+      scroll-snap-stop: always !important;
+      border-radius: 20px !important;
+      padding: 32px 22px 28px 22px !important;
+      box-sizing: border-box !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.07) !important;
+      margin: 0 !important;
       text-align: center !important;
       align-items: center !important;
-      padding: 24px 14px !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      border-radius: 16px !important;
+      border: 1px solid #DCE5EC !important;
+      background: #ffffff !important;
+    }
+    .path-card-highlighted {
+      border: 2px solid #3B82F6 !important;
+      box-shadow: 0 14px 40px rgba(59, 130, 246, 0.22) !important;
+    }
+    .max-savings-badge {
+      top: -13px !important;
+      font-size: 12px !important;
+      padding: 5px 14px !important;
+      background: #3B82F6 !important;
+      letter-spacing: 1.2px !important;
     }
     .path-card-tag, .path-card-headline, .path-card-subrate, .path-card-rate-container, .path-card-savebox {
       text-align: center !important;
@@ -1898,11 +1937,57 @@ ul.bullets li { margin-bottom: 8px; }
       text-align: left !important;
       margin: 0 auto 24px !important;
       display: inline-block !important;
+      width: 100% !important;
+      max-width: 290px !important;
     }
     .btn-path-outline, .btn-path-solid {
       width: 100% !important;
       justify-content: center !important;
       box-sizing: border-box !important;
+      border-radius: 980px !important;
+      padding: 14px 20px !important;
+      font-size: 15px !important;
+      font-weight: 700 !important;
+    }
+    .btn-path-solid {
+      background: #3B82F6 !important;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35) !important;
+    }
+    .btn-path-outline {
+      border: 1.5px solid #3B82F6 !important;
+      color: #3B82F6 !important;
+    }
+
+    /* Apple-style Carousel Dots indicator */
+    .apple-carousel-dots-wrapper {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      width: 100% !important;
+      margin-top: 10px !important;
+      margin-bottom: 24px !important;
+    }
+    .apple-carousel-dots {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      background: rgba(0, 0, 0, 0.06) !important;
+      padding: 8px 16px !important;
+      border-radius: 980px !important;
+    }
+    .dot-pill {
+      width: 8px !important;
+      height: 8px !important;
+      border-radius: 980px !important;
+      background: rgba(0, 0, 0, 0.22) !important;
+      border: none !important;
+      padding: 0 !important;
+      cursor: pointer !important;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .dot-pill.active {
+      width: 24px !important;
+      background: #2C3842 !important;
     }
 
     /* 3. Section 3 Timeline Mobile Margins & Centering */
@@ -2366,6 +2451,15 @@ ul.bullets li { margin-bottom: 8px; }
         </div>
       </div>
 
+    </div>
+
+    <!-- Apple Carousel Navigation Dots (Mobile Only) -->
+    <div class="apple-carousel-dots-wrapper" style="display: none;">
+      <div class="apple-carousel-dots" id="path-dots">
+        <button class="dot-pill active" data-index="0" aria-label="Card 1: Escrow Only"></button>
+        <button class="dot-pill" data-index="1" aria-label="Card 2: Use Both"></button>
+        <button class="dot-pill" data-index="2" aria-label="Card 3: Listing Only"></button>
+      </div>
     </div>
 
     <!-- Section Footnote -->
@@ -3706,6 +3800,51 @@ ul.bullets li { margin-bottom: 8px; }
       closeModal();
     }
   });
+})();
+
+// Apple-Style Card Swipe Carousel Sync for "Choose Your Path"
+(function() {
+  var grid = document.querySelector('.path-cards-grid');
+  var dots = document.querySelectorAll('#path-dots .dot-pill');
+  if (!grid || !dots.length) return;
+
+  dots.forEach(function(dot, idx) {
+    dot.addEventListener('click', function(e) {
+      e.preventDefault();
+      var cards = grid.querySelectorAll('.path-card');
+      if (cards[idx]) {
+        cards[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    });
+  });
+
+  var scrollTimer;
+  grid.addEventListener('scroll', function() {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(function() {
+      var cards = grid.querySelectorAll('.path-card');
+      var gridCenter = grid.getBoundingClientRect().left + grid.offsetWidth / 2;
+      var closestIdx = 0;
+      var minDistance = Infinity;
+
+      cards.forEach(function(card, idx) {
+        var cardCenter = card.getBoundingClientRect().left + card.offsetWidth / 2;
+        var dist = Math.abs(gridCenter - cardCenter);
+        if (dist < minDistance) {
+          minDistance = dist;
+          closestIdx = idx;
+        }
+      });
+
+      dots.forEach(function(d, idx) {
+        if (idx === closestIdx) {
+          d.classList.add('active');
+        } else {
+          d.classList.remove('active');
+        }
+      });
+    }, 40);
+  }, { passive: true });
 })();
 </script>
 </body>
