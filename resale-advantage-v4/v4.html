@@ -1707,14 +1707,15 @@ ul.bullets li { margin-bottom: 8px; }
       line-height: 1.25 !important;
     }
 
-    /* Body paragraph - high readability, comfortable line-height */
+    /* Body paragraph - Approach A: Left-aligned with clean margins for fast scanning */
     .hero-lead-para {
       font-size: 17px !important;
       line-height: 1.68 !important;
       color: #f1f5f9 !important;
-      text-align: center !important;
+      text-align: left !important;
       margin: 0 auto 24px auto !important;
-      max-width: 580px !important;
+      max-width: 540px !important;
+      padding: 0 4px !important;
       font-weight: 400 !important;
     }
     .hero-lead-para strong {
@@ -2208,6 +2209,43 @@ ul.bullets li { margin-bottom: 8px; }
       min-width: 0 !important;
       justify-content: center !important;
       box-sizing: border-box !important;
+    }
+
+    /* ===================================================
+       8. UNIFIED SECTION HEADINGS & EYEBROWS (28px standard)
+       =================================================== */
+    .choose-path-section h2,
+    .who-its-for-v2 h2,
+    .trust-right-content h2,
+    .timeline-title,
+    .savings-section-title,
+    #benefits .section-title,
+    #compare .section-title,
+    #innolaunch h2,
+    .he-brand-heading,
+    #faq h2,
+    #optin h2 {
+      font-size: 28px !important;
+      font-weight: 800 !important;
+      line-height: 1.22 !important;
+      letter-spacing: -0.01em !important;
+      margin-bottom: 14px !important;
+    }
+
+    /* Unified Section Eyebrows (13px standard) */
+    .choose-path-section .text-center > span,
+    .who-its-for-v2 .section-eyebrow,
+    .trust-right-content > div:first-child,
+    .timeline-section .section-eyebrow,
+    .savings-eyebrow,
+    #benefits .section-eyebrow,
+    #compare .section-eyebrow,
+    #innolaunch .section-eyebrow,
+    .he-eyebrow {
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      letter-spacing: 2px !important;
+      text-transform: uppercase !important;
     }
   }
 </style>
