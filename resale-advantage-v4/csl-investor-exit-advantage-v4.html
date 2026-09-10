@@ -1653,87 +1653,208 @@ ul.bullets li { margin-bottom: 8px; }
       letter-spacing: 0.4px !important;
     }
 
-    /* 1. Hero Mobile Headline - Large, bold compressed font matching mobile site */
+    /* 1. Hero Mobile Layout - Apple-Inspired Typography & Clean Rhythm (ZERO content changes) */
+    .hero {
+      padding: 44px 0 52px !important;
+    }
+    .hero-content-v4 {
+      text-align: center !important;
+      padding: 0 20px !important;
+      max-width: 100% !important;
+    }
+
+    /* Apple-style bold headline with tight tracking and balanced line-height */
     .hero-v4-title {
       font-family: 'Arteria Std Compress', 'Bebas Neue', 'Roboto Condensed', sans-serif !important;
-      font-size: 40px !important;
-      line-height: 44px !important;
-      letter-spacing: 0.02em !important;
+      font-size: clamp(34px, 8.5vw, 42px) !important;
+      line-height: 1.08 !important;
+      letter-spacing: 0.01em !important;
       text-transform: uppercase !important;
       text-align: center !important;
       max-width: 100% !important;
-      margin-bottom: 16px !important;
+      margin: 0 auto 14px auto !important;
       color: #ffffff !important;
     }
     .hero-v4-title .hero-line-1 {
       white-space: normal !important;
       display: block !important;
-      font-size: 40px !important;
-      line-height: 44px !important;
-      letter-spacing: 0.02em !important;
+      font-size: clamp(34px, 8.5vw, 42px) !important;
+      line-height: 1.08 !important;
     }
     .hero-v4-title .hero-line-2 {
       white-space: normal !important;
       display: block !important;
-      font-size: 40px !important;
-      line-height: 44px !important;
-      letter-spacing: 0.02em !important;
+      font-size: clamp(34px, 8.5vw, 42px) !important;
+      line-height: 1.08 !important;
       margin-top: 4px !important;
     }
     .hero-v4-title .hl-underline {
-      color: #4985b8 !important;
+      color: #60a5fa !important;
       text-decoration: underline !important;
-      text-decoration-color: #4985b8 !important;
+      text-decoration-color: rgba(96, 165, 250, 0.6) !important;
       text-decoration-thickness: 3px !important;
-      text-underline-offset: 5px !important;
+      text-underline-offset: 4px !important;
       display: inline !important;
     }
-    .hero-content-v4 {
-      text-align: center !important;
-      padding: 0 16px !important;
+
+    /* Subheading - Apple-style elegant contrast */
+    .hero-content-v4 h2 {
+      font-size: 21px !important;
+      font-weight: 700 !important;
+      color: #f1f5f9 !important;
+      margin: 0 auto 18px auto !important;
+      letter-spacing: -0.01em !important;
+      line-height: 1.25 !important;
     }
+
+    /* Body paragraph - high readability, comfortable line-height */
     .hero-lead-para {
-      font-size: 15px !important;
+      font-size: 15.5px !important;
+      line-height: 1.62 !important;
+      color: rgba(255, 255, 255, 0.82) !important;
       text-align: center !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
+      margin: 0 auto 20px auto !important;
+      max-width: 580px !important;
     }
+    .hero-lead-para strong {
+      color: #ffffff !important;
+      font-weight: 700 !important;
+    }
+
+    /* Callout line - Apple-style clean pill badge */
     .hero-callout-line {
-      font-size: clamp(14px, 4vw, 17px) !important;
+      font-size: 14.5px !important;
+      font-weight: 600 !important;
+      color: #ffffff !important;
       line-height: 1.4 !important;
       text-align: center !important;
-      max-width: 100% !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-      padding: 0 4px !important;
-      box-sizing: border-box !important;
+      max-width: fit-content !important;
+      margin: 0 auto 28px auto !important;
+      padding: 8px 20px !important;
+      background: rgba(255, 255, 255, 0.07) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border-radius: 980px !important;
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+      display: inline-block !important;
     }
+    .hero-callout-line span {
+      color: #60a5fa !important;
+      font-weight: 800 !important;
+    }
+
+    /* Action Buttons - Apple-style sleek pill buttons */
     .hero-actions-row {
-      justify-content: center !important;
+      display: flex !important;
       flex-direction: column !important;
-      width: 100% !important;
-      gap: 14px !important;
-    }
-    .btn-primary-blue, .btn-link-req {
-      width: 100% !important;
+      align-items: center !important;
       justify-content: center !important;
-      box-sizing: border-box !important;
+      width: 100% !important;
+      gap: 12px !important;
+      margin: 0 auto 40px auto !important;
+    }
+    .btn-primary-blue {
+      width: 100% !important;
+      max-width: 320px !important;
+      min-height: 48px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 14px 28px !important;
+      border-radius: 980px !important;
+      background: #3B82F6 !important;
+      color: #ffffff !important;
+      font-size: 15px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.04em !important;
+      text-decoration: none !important;
+      box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4) !important;
+      transition: all 0.2s ease !important;
+    }
+    .btn-link-req {
+      width: 100% !important;
+      max-width: 320px !important;
+      min-height: 44px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 12px 24px !important;
+      border-radius: 980px !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      color: #ffffff !important;
+      font-size: 14.5px !important;
+      font-weight: 600 !important;
+      text-decoration: none !important;
+      transition: all 0.2s ease !important;
+    }
+
+    /* Savings Cards Strip - Apple Frosted Glass Cards */
+    .savings-cards-section {
+      width: 100% !important;
+      margin-top: 8px !important;
     }
     .savings-divider-wrapper {
-      margin-bottom: 16px !important;
-      text-align: center !important;
+      margin-bottom: 20px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 12px !important;
+    }
+    .savings-divider-wrapper span {
+      font-size: 12px !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.12em !important;
+      color: #60a5fa !important;
+      text-transform: uppercase !important;
+    }
+    .savings-divider-wrapper div {
+      display: block !important;
+      height: 1px !important;
+      background: rgba(255, 255, 255, 0.15) !important;
+      flex: 1 !important;
+      max-width: 48px !important;
     }
     .cards-flex-grid {
+      display: flex !important;
       flex-direction: column !important;
       align-items: stretch !important;
       gap: 14px !important;
-      margin-top: 16px !important;
+      margin-bottom: 20px !important;
+      width: 100% !important;
+    }
+    .cards-flex-grid > div {
+      width: 100% !important;
+      border-radius: 16px !important;
+      padding: 20px 22px !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      text-align: center !important;
+      box-sizing: border-box !important;
+    }
+    .cards-flex-grid > div:nth-child(1),
+    .cards-flex-grid > div:nth-child(3) {
+      background: rgba(255, 255, 255, 0.05) !important;
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+    }
+    .cards-flex-grid > div:nth-child(5) {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.22) 0%, rgba(30, 64, 175, 0.15) 100%) !important;
+      border: 1.5px solid #60a5fa !important;
+      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.25) !important;
     }
     .savings-operator {
       display: none !important;
     }
-    .savings-divider-wrapper div {
-      display: none !important;
+
+    /* Footnote */
+    .hero-disclaimer-footnote {
+      font-size: 12px !important;
+      line-height: 1.55 !important;
+      color: rgba(255, 255, 255, 0.6) !important;
+      text-align: center !important;
+      margin-top: 24px !important;
+      padding: 0 8px !important;
     }
 
     /* 2. Section 2 Path Cards Centering & Full Width */
