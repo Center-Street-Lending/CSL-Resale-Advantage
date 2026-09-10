@@ -1653,110 +1653,87 @@ ul.bullets li { margin-bottom: 8px; }
       letter-spacing: 0.4px !important;
     }
 
-    /* 1. Hero Mobile Layout - Matches Live Mobile Site */
-    .hero { padding: 36px 0 44px !important; }
-    .hero-main-row { flex-direction: column !important; align-items: flex-start !important; padding: 0 16px !important; }
-    .hero-left { width: 100% !important; max-width: 100% !important; text-align: left !important; }
-    .hero-left-top { width: 100% !important; text-align: left !important; }
-    .hero h1 { 
+    /* 1. Hero Mobile Headline - Large, bold compressed font matching mobile site */
+    .hero-v4-title {
       font-family: 'Arteria Std Compress', 'Bebas Neue', 'Roboto Condensed', sans-serif !important;
-      font-size: 42px !important; 
-      line-height: 44px !important; 
-      text-align: left !important; 
+      font-size: 40px !important;
+      line-height: 44px !important;
       letter-spacing: 0.02em !important;
-      margin-bottom: 12px !important;
-      color: #ffffff !important;
-    }
-    .hero h1 span { white-space: normal !important; display: inline !important; }
-    .hero h1 .hl { color: var(--accent, #4683B3) !important; text-decoration: none !important; }
-    
-    /* Hide Properties Sold on mobile */
-    .hero-right { display: none !important; }
-    
-    .hero-subheading { 
-      text-align: left !important; 
-      font-size: 26px !important; 
-      font-weight: 700 !important; 
-      color: #ffffff !important;
-      margin: 14px 0 12px 0 !important; 
-    }
-    .hero-lead-para { 
-      text-align: left !important; 
-      font-size: 16px !important; 
-      line-height: 1.55 !important; 
-      color: rgba(255, 255, 255, 0.9) !important;
-      margin: 0 0 20px 0 !important;
-      max-width: 100% !important;
-    }
-
-    /* Savings Boxes - Stacked Vertically, Full Width, Translucent with Border */
-    .hero-savings { 
-      display: flex !important;
-      flex-direction: column !important; 
-      gap: 14px !important; 
-      align-items: stretch !important; 
-      width: 100% !important; 
-      margin: 20px 0 28px 0 !important; 
-    }
-    .save { 
-      width: 100% !important; 
-      flex: none !important; 
-      text-align: left !important; 
-      box-sizing: border-box !important; 
-      padding: 16px 20px !important; 
-      border-radius: 8px !important; 
-      background: rgba(255, 255, 255, 0.04) !important; 
-      border: 1px solid rgba(255, 255, 255, 0.16) !important; 
-    }
-    .save strong { 
-      font-size: 2.2rem !important; 
-      color: var(--accent, #4683B3) !important; 
-      font-weight: 800 !important; 
-      display: block !important;
-      line-height: 1 !important;
-    }
-    .save span { 
-      font-size: 0.8rem !important; 
-      color: rgba(255, 255, 255, 0.85) !important; 
-      text-transform: uppercase !important; 
-      letter-spacing: 0.06em !important; 
-      margin-top: 8px !important; 
-      display: block !important;
-      line-height: 1.35 !important;
-    }
-    
-    /* CTA Button - Full Width, Uppercase */
-    .hero-cta { flex-direction: column !important; gap: 14px !important; align-items: stretch !important; width: 100% !important; }
-    .hero-cta-group { flex-direction: column !important; align-items: stretch !important; width: 100% !important; gap: 12px !important; }
-    .hero-cta-group .btn { 
-      display: flex !important;
-      justify-content: center !important; 
-      align-items: center !important;
-      width: 100% !important; 
-      text-transform: uppercase !important; 
-      font-weight: 700 !important; 
-      padding: 16px 24px !important; 
-      font-size: 16px !important; 
-      border-radius: 8px !important; 
-      background: var(--accent, #4683B3) !important;
-      color: #ffffff !important;
+      text-transform: uppercase !important;
       text-align: center !important;
-      box-sizing: border-box !important;
-      letter-spacing: 0.05em !important;
-      text-decoration: none !important;
+      max-width: 100% !important;
+      margin-bottom: 16px !important;
+      color: #ffffff !important;
     }
-    .hero-cta-group .btn-ghost { 
-      text-align: center !important; 
-      width: 100% !important; 
-      padding: 8px 0 !important; 
-      color: rgba(255, 255, 255, 0.85) !important;
+    .hero-v4-title .hero-line-1 {
+      white-space: normal !important;
+      display: block !important;
+      font-size: 40px !important;
+      line-height: 44px !important;
+      letter-spacing: 0.02em !important;
+    }
+    .hero-v4-title .hero-line-2 {
+      white-space: normal !important;
+      display: block !important;
+      font-size: 40px !important;
+      line-height: 44px !important;
+      letter-spacing: 0.02em !important;
+      margin-top: 4px !important;
+    }
+    .hero-v4-title .hl-underline {
+      color: #4985b8 !important;
       text-decoration: underline !important;
+      text-decoration-color: #4985b8 !important;
+      text-decoration-thickness: 3px !important;
+      text-underline-offset: 5px !important;
+      display: inline !important;
     }
-    .hero-optional {
-      text-align: left !important;
-      font-size: 13px !important;
-      color: rgba(255, 255, 255, 0.6) !important;
-      margin-top: 8px !important;
+    .hero-content-v4 {
+      text-align: center !important;
+      padding: 0 16px !important;
+    }
+    .hero-lead-para {
+      font-size: 15px !important;
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .hero-callout-line {
+      font-size: clamp(14px, 4vw, 17px) !important;
+      line-height: 1.4 !important;
+      text-align: center !important;
+      max-width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding: 0 4px !important;
+      box-sizing: border-box !important;
+    }
+    .hero-actions-row {
+      justify-content: center !important;
+      flex-direction: column !important;
+      width: 100% !important;
+      gap: 14px !important;
+    }
+    .btn-primary-blue, .btn-link-req {
+      width: 100% !important;
+      justify-content: center !important;
+      box-sizing: border-box !important;
+    }
+    .savings-divider-wrapper {
+      margin-bottom: 16px !important;
+      text-align: center !important;
+    }
+    .cards-flex-grid {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 14px !important;
+      margin-top: 16px !important;
+    }
+    .savings-operator {
+      display: none !important;
+    }
+    .savings-divider-wrapper div {
+      display: none !important;
     }
 
     /* 2. Section 2 Path Cards Centering & Full Width */
@@ -2023,49 +2000,128 @@ ul.bullets li { margin-bottom: 8px; }
 <body>
 
 
-<div class="offer-bar"><a href="#optin"><span style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;"><span class="offer-pulse"></span><b>EXCLUSIVE OFFER</b></span> &mdash; PRE-NEGOTIATED FOR CSL BORROWERS</a></div>
+<div class="offer-bar">
+  <a href="#optin">
+    <span class="offer-tag">EXCLUSIVE OFFER</span>
+    <span class="offer-sub">PRE-NEGOTIATED FOR CSL BORROWERS &middot; USE ONE OR BOTH</span>
+  </a>
+</div>
 
 <header id="sticky-header">
   <div class="wrap">
     <div class="nav-left">
-      <a class="wordmark" href="https://www.centerstreetlending.com/"><img src="logo1.svg" alt="Center Street Lending" style="height: 36px; width: auto; display: block;"></a>
+      <a class="wordmark" href="https://www.centerstreetlending.com/"><img src="logo1.svg" alt="Center Street Lending" style="height: 38px; width: auto; display: block;"></a>
     </div>
-    <a class="phone" href="tel:9492441090">(949) 244-1090</a>
   </div>
 </header>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="wrap hero-main-row">
-    <div class="hero-left">
-      <div class="hero-left-top">
-        <h1 style="font-family:'Arteria Std Compress', 'Bebas Neue', sans-serif;"><span style="display: inline-block; white-space: nowrap;">WE MADE IT <span class="hl">EASIER &amp; CHEAPER</span></span><br><span style="display: inline-block; white-space: nowrap;">TO EXIT YOUR INVESTMENT.</span></h1>
-        
-        <h2 class="hero-subheading">The CSL Resale Advantage</h2>
-        
-        <p class="hero-lead-para">You found it, improved it, and rehabbed it — now list it at 1% and close for less. We pre-negotiated an exclusive deal with Innovate Realty and Honest Escrow, just for CSL borrowers.</p>
-        
-        <div class="hero-savings">
-          <div class="save"><strong>1%</strong><span>Exclusive listing fee</span></div>
-          <div class="save"><strong>$500</strong><span>Seller escrow, as low as</span></div>
-          <div class="save"><strong>20K</strong><span>Buyer views in 21 days</span></div>
-        </div>
-        
-      </div>
-      <div class="hero-cta" style="display: flex; flex-direction: column; align-items: flex-start; gap: 16px;">
-        <div class="hero-cta-group" style="width: 100%;">
-          <a class="btn" href="#optin">Request Information <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z" fill="currentColor"/></svg></a>
-          <a class="btn-ghost" href="tel:9492441090">or call (949) 244-1090</a>
-        </div>
-        <div class="hero-optional"><strong>Note:</strong> This pre-negotiated program is entirely optional. You are always free to choose your own broker, escrow company, and other providers.</div>
-      </div>
-    </div>
+  <div class="wrap hero-content-v4" style="max-width: 1000px; width: 100%;">
     
-    <div class="hero-right">
-      <span class="tk-label">Properties Sold</span>
-      <span class="tk-num" id="deal-ticker" data-target="100">0+</span>
-      <span class="tk-sub">Homes successfully closed through CSL Resale Advantage</span>
+    <!-- Main Headline -->
+    <h1 class="hero-v4-title">
+      <span class="hero-line-1">WE MADE IT <span class="hl-underline" style="color: #4985b8; text-decoration: underline; text-decoration-color: #4985b8; text-decoration-thickness: 3px; text-underline-offset: 5px;">EASIER &amp; CHEAPER</span></span>
+      <span class="hero-line-2">TO EXIT YOUR INVESTMENT.</span>
+    </h1>
+    
+    <!-- Subheading -->
+    <h2 style="font-size: 26px; font-weight: 700; color: #ffffff; margin-bottom: 16px;">The CSL Resale Advantage</h2>
+    
+    <!-- Paragraph Body -->
+    <p class="hero-lead-para" style="font-size: 16px; line-height: 1.6; color: rgba(255, 255, 255, 0.9); max-width: 780px; margin-bottom: 20px;">
+      You did the hard work flipping or building your property—now keep more of your profit. We’ve pre-negotiated two exclusive deals for CSL’s California borrowers: a <strong>1% listing commission</strong> with <strong>Innovate Realty</strong>, and a <strong>flat $500 seller-side escrow fee</strong> with <strong>Honest Escrow</strong>. They’re separate deals — <strong>use one, or use both.</strong>
+    </p>
+
+    <!-- Callout line -->
+    <p class="hero-callout-line" style="font-size: 18px; font-weight: 600; color: #ffffff; margin-bottom: 28px;">
+      Don’t leave <span style="color: #4985b8; font-weight: 800;">$40K+</span> on the table on your next flip.*
+    </p>
+
+    <!-- Action Buttons -->
+    <div class="hero-actions-row" style="display: flex; align-items: center; gap: 24px; margin-bottom: 48px; flex-wrap: wrap;">
+      <a class="btn-primary-blue" href="#optin" style="background-color: #4985b8; color: #ffffff; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; letter-spacing: 0.05em; box-shadow: 0 4px 14px rgba(73, 133, 184, 0.35);">
+        SEE MY OPTIONS &rarr;
+      </a>
+      <a class="btn-link-req" href="#optin" style="color: #ffffff; font-size: 15px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; display: inline-flex; align-items: center; gap: 6px;">
+        Request information &rarr;
+      </a>
     </div>
+
+    <!-- Savings Cards Strip -->
+    <div class="savings-cards-section" style="width: 100%;">
+      
+      <!-- Divider Heading -->
+      <div class="savings-divider-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 20px;">
+        <div style="height: 1px; background: rgba(255, 255, 255, 0.2); flex: 1; max-width: 180px;"></div>
+        <span style="font-size: 15px; font-weight: 800; letter-spacing: 2px; color: #4985b8; text-transform: uppercase;">
+          ESTIMATED SAVINGS — ON A $1.5M SALE*
+        </span>
+        <div style="height: 1px; background: rgba(255, 255, 255, 0.2); flex: 1; max-width: 180px;"></div>
+      </div>
+
+      <!-- 3 Cards Layout -->
+      <div class="cards-flex-grid" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; flex-wrap: wrap;">
+        
+        <!-- Card 1 -->
+        <div style="flex: 1; min-width: 220px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 20px 24px;">
+          <div style="font-size: 13.5px; font-weight: 800; letter-spacing: 1.2px; color: #4985b8; text-transform: uppercase; margin-bottom: 6px;">
+            INNOVATE REALTY
+          </div>
+          <div style="font-size: 40px; font-weight: 800; color: #ffffff; line-height: 1.1; margin-bottom: 6px;">
+            $22–30K
+          </div>
+          <div style="font-size: 15px; color: rgba(255, 255, 255, 0.9); line-height: 1.45; font-weight: 500;">
+            saved on the listing<br>1% vs. typical 2.5–3%
+          </div>
+        </div>
+
+        <div class="savings-operator" style="font-size: 26px; font-weight: 300; color: rgba(255, 255, 255, 0.5); padding: 0 4px;">+</div>
+
+        <!-- Card 2 -->
+        <div style="flex: 1; min-width: 220px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 20px 24px;">
+          <div style="font-size: 13.5px; font-weight: 800; letter-spacing: 1.2px; color: #4985b8; text-transform: uppercase; margin-bottom: 6px;">
+            HONEST ESCROW
+          </div>
+          <div style="font-size: 40px; font-weight: 800; color: #ffffff; line-height: 1.1; margin-bottom: 6px;">
+            ~$7K
+          </div>
+          <div style="font-size: 15px; color: rgba(255, 255, 255, 0.9); line-height: 1.45; font-weight: 500;">
+            saved on escrow<br>flat $500 vs. ~$7,500 typical
+          </div>
+        </div>
+
+        <div class="savings-operator" style="font-size: 26px; font-weight: 300; color: rgba(255, 255, 255, 0.5); padding: 0 4px;">=</div>
+
+        <!-- Card 3 (Highlighted) -->
+        <div style="flex: 1.1; min-width: 240px; background: rgba(73, 133, 184, 0.2); border: 1.5px solid #4985b8; border-radius: 12px; padding: 20px 24px; box-shadow: 0 8px 24px rgba(73, 133, 184, 0.3);">
+          <div style="font-size: 13.5px; font-weight: 800; letter-spacing: 1.2px; color: #ffffff; text-transform: uppercase; margin-bottom: 6px;">
+            USE BOTH
+          </div>
+          <div style="font-size: 42px; font-weight: 800; color: #ffffff; line-height: 1.1; margin-bottom: 6px;">
+            Up to $37K
+          </div>
+          <div style="font-size: 15px; color: rgba(255, 255, 255, 0.95); line-height: 1.45; font-weight: 500;">
+            plus ~1 month less carrying cost
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Pill Badge -->
+      <div style="display: flex; justify-content: center;">
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: #0f172a; border: 1.5px solid #4985b8; border-radius: 30px; padding: 10px 24px; font-size: 14px; font-weight: 800; letter-spacing: 1.2px; color: #ffffff; text-transform: uppercase; box-shadow: 0 4px 14px rgba(0,0,0,0.3);">
+          <span style="color: #60a5fa;">✓</span> USE ONE OR BOTH
+        </div>
+      </div>
+
+      <!-- Asterisk Disclaimer Footnote -->
+      <div class="hero-disclaimer-footnote" style="margin-top: 28px; max-width: 920px; margin-left: auto; margin-right: auto; font-size: 13.5px; line-height: 1.55; color: rgba(255, 255, 255, 0.75); text-align: center;">
+        * Estimated savings are illustrative, based on a $1.5M sale example (2.5–3% vs. 1% listing commission; typical seller-side escrow of ~$5 per $1,000 vs. flat $500; carrying costs of ~$8–10K/month). The $40K+ figure combines estimated fee savings with roughly one month of reduced carrying cost under this example. The ~1-month estimate reflects marketing that begins before construction is complete — an expectation, not a guarantee. Actual amounts vary by transaction and are disclosed in writing. This pre-negotiated program is entirely optional and à la carte — using one service never requires the other. You are always free to choose your own broker, escrow company, and other providers.
+      </div>
+
+    </div>
+
   </div>
 </div>
 
