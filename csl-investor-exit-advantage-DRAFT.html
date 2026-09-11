@@ -4,11 +4,6 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9X5Z6EG299"></script>
 <script>
-  // Send height to parent window for iframe resizing
-  function sendHeight() {
-    var height = 8500;
-    window.parent.postMessage({ 'frameHeight': height }, '*');
-  }
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -93,14 +88,8 @@
     --pending-line:#F0C36D;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html, body {
-    min-height: 8500px !important;
-    height: 8500px !important;
-    width: 100% !important;
-    overflow-x: hidden !important;
-  }
   body{font-family:'Roboto','Segoe UI',-apple-system,BlinkMacSystemFont,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box;}
   h1,h2,h3,h4,h5,h6{font-family:'Roboto',sans-serif;font-weight:700;line-height:1.25;color:var(--navy)}
   h2{font-size:var(--text-h2);margin-bottom:.5rem}
   h3{font-size:var(--text-h3);margin-bottom:.5rem}
@@ -919,7 +908,7 @@
     border-bottom: 1px solid var(--line); 
     position: static;
   }
-  header .wrap { max-width: 1080px; display: flex; align-items: center; justify-content: space-between; margin: 0 auto; padding: 0 24px; }
+  header .wrap { max-width: 1120px; display: flex; align-items: center; justify-content: space-between; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
   header a.phone { color: var(--navy); font-size: .95rem; font-weight: 700; text-decoration: none; transition: font-size 0.3s ease; }
   header a.phone:hover { text-decoration: underline; }
   header img { height: 33px; width: auto; display: block; transition: height 0.3s ease; }
@@ -1017,13 +1006,14 @@
     padding: 80px 0;
   }
   .trust-inner {
-    max-width: 1200px;
+    max-width: 1120px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 24px;
     display: grid;
-    grid-template-columns: 1.35fr 1fr; /* Stretched column for images */
-    gap: 64px;
+    grid-template-columns: 500px 1fr;
+    gap: 48px;
     align-items: center;
+    box-sizing: border-box;
   }
   .trust-left-col {
     display: flex;
@@ -1170,9 +1160,9 @@
   }
 
   /* ===== who it's for v2 ===== */
-  .who-its-for-v2 { background: #fff; padding: 80px 0; display: flex; justify-content: center; }
-  .who-its-for-wrap { max-width: 1400px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 72px; padding: 0 40px; }
-  .who-left { flex: 1; max-width: 718px; display: flex; flex-direction: column; gap: 24px; }
+  .who-its-for-v2 { background: #fff; padding: 80px 0; width: 100%; }
+  .who-its-for-wrap { max-width: 1120px; width: 100%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 48px; padding: 0 24px; box-sizing: border-box; }
+  .who-left { flex: 1; max-width: 580px; display: flex; flex-direction: column; gap: 24px; }
   .who-left-top { display: flex; flex-direction: column; gap: 24px; }
   .who-eyebrow { color: var(--accent); font-size: var(--text-small); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 6px 0; line-height: 18px; }
   .who-left h2 { font-size: var(--text-h2); font-weight: 700; color: var(--navy-darkest, #2C3842); line-height: 40px; margin: 0; }
@@ -1183,13 +1173,14 @@
   .who-item h3 { font-size: var(--text-h3); font-weight: 700; color: var(--navy-darkest, #2C3842); line-height: 27.6px; margin: 0; }
   .who-item p { font-size: var(--text-body); font-weight: 400; color: #5D6871; line-height: 25px; margin: 0; }
 
-  .who-right { width: 544px; flex-shrink: 0; }
-  .who-right img { width: 100%; height: 460px; object-fit: cover; border-radius: 16px; display: block; }
+  .who-right { width: 440px; flex-shrink: 0; }
+  .who-right img { width: 100%; height: 440px; object-fit: cover; border-radius: 16px; display: block; }
   
   @media(max-width: 1100px) {
-    .who-its-for-v2 { padding: 60px 24px; }
-    .who-its-for-wrap { flex-direction: column; }
-    .who-right { width: 100%; max-width: 544px; }
+    .who-its-for-v2 { padding: 60px 0; }
+    .who-its-for-wrap { flex-direction: column; padding: 0 24px; gap: 40px; }
+    .who-left { max-width: 100%; width: 100%; }
+    .who-right { width: 100%; max-width: 500px; }
   }
   @media(max-width: 640px) {
     .who-item h3 { font-size: 20px; line-height: 24px; }
@@ -1393,7 +1384,9 @@ ul.bullets li { margin-bottom: 8px; }
     .save { width: 100%; flex: 1; text-align: left; }
     .hero-logos { justify-content: center; margin-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 16px; }
     .stat-card .num { font-size: 48px; line-height: 48px; }
-  }    header a.phone { font-size: var(--text-micro); }
+  }
+  @media(max-width:380px){
+    header a.phone { font-size: var(--text-micro); }
     .offer-bar { font-size: var(--text-micro); padding: 8px 10px; }
   }
 
@@ -1632,6 +1625,30 @@ ul.bullets li { margin-bottom: 8px; }
 
   /* Master Mobile Responsive Overrides */
   @media (max-width: 768px) {
+    /* ===================================================
+       UNIVERSAL MOBILE ALIGNMENT & 20px GUTTER SYSTEM
+       All sections are flush edge-to-edge with identical 20px reading margin
+       =================================================== */
+    .wrap,
+    .hero-content-v4,
+    .who-its-for-wrap,
+    .trust-inner,
+    .timeline-section .wrap,
+    .savings-cards-section .wrap {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Force all animated cards to be visible on mobile */
+    .reveal {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+
     /* 0. Top Offer Bar Mobile */
     .offer-bar {
       padding: 10px 14px !important;
@@ -1662,104 +1679,195 @@ ul.bullets li { margin-bottom: 8px; }
       letter-spacing: 0.4px !important;
     }
 
-    /* 1. Hero Mobile Headline */
-    .hero-v4-title {
-      font-size: clamp(14px, 4.2vw, 19px) !important;
-      line-height: 1.3 !important;
-      letter-spacing: -0.01em !important;
-      text-align: center !important;
-      max-width: 100% !important;
-      margin-bottom: 16px !important;
-    }
-    .hero-v4-title .hero-line-1 {
-      white-space: nowrap !important;
-      display: block !important;
-      font-size: clamp(14px, 4.2vw, 19px) !important;
-      letter-spacing: -0.01em !important;
-    }
-    .hero-v4-title .hero-line-2 {
-      white-space: nowrap !important;
-      display: block !important;
-      font-size: clamp(14px, 4.2vw, 19px) !important;
-      letter-spacing: -0.01em !important;
-      margin-top: 4px !important;
-    }
-    .hero-v4-title .hl-underline {
-      border-bottom: none !important;
-      text-decoration: none !important;
-      padding-bottom: 0 !important;
-      display: inline !important;
+    /* 1. Hero Mobile Layout - Apple-Inspired Typography & Clean Rhythm (ZERO content changes) */
+    .hero {
+      padding: 44px 0 52px !important;
+      width: 100% !important;
     }
     .hero-content-v4 {
       text-align: center !important;
-      padding: 0 16px !important;
-    }
-    .hero-lead-para {
-      font-size: 15px !important;
-      text-align: center !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
-    .hero-callout-line {
-      font-size: clamp(12px, 3.6vw, 14.5px) !important;
-      line-height: 1.4 !important;
-      text-align: center !important;
+      padding: 0 20px !important;
       max-width: 100% !important;
-      white-space: nowrap !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-      padding: 0 4px !important;
       box-sizing: border-box !important;
-    }
-    .hero-actions-row {
-      justify-content: center !important;
-      flex-direction: column !important;
-      width: 100% !important;
-      gap: 14px !important;
-    }
-    .btn-primary-blue, .btn-link-req {
-      width: 100% !important;
-      justify-content: center !important;
-      box-sizing: border-box !important;
-    }
-    .savings-divider-wrapper {
-      margin-bottom: 16px !important;
-      text-align: center !important;
-    }
-    .cards-flex-grid {
-      flex-direction: column !important;
-      align-items: stretch !important;
-      gap: 14px !important;
-      margin-top: 16px !important;
-    }
-    .savings-operator {
-      display: none !important;
-    }
-    .savings-divider-wrapper div {
-      display: none !important;
     }
 
-    /* 2. Section 2 Path Cards Centering & Full Width */
+    /* Apple-style bold headline with tight tracking and balanced line-height */
+    .hero-v4-title {
+      font-family: 'Arteria Std Compress', 'Bebas Neue', 'Roboto Condensed', sans-serif !important;
+      font-size: clamp(34px, 8.5vw, 42px) !important;
+      line-height: 1.08 !important;
+      letter-spacing: 0.01em !important;
+      text-transform: uppercase !important;
+      text-align: center !important;
+      max-width: 100% !important;
+      margin: 0 auto 14px auto !important;
+      color: #ffffff !important;
+    }
+    .hero-v4-title .hero-line-1 {
+      white-space: normal !important;
+      display: block !important;
+      font-size: clamp(34px, 8.5vw, 42px) !important;
+      line-height: 1.08 !important;
+    }
+    .hero-v4-title .hero-line-2 {
+      white-space: normal !important;
+      display: block !important;
+      font-size: clamp(34px, 8.5vw, 42px) !important;
+      line-height: 1.08 !important;
+      margin-top: 4px !important;
+    }
+    .hero-v4-title .hl-underline {
+      color: #60a5fa !important;
+      text-decoration: underline !important;
+      text-decoration-color: rgba(96, 165, 250, 0.6) !important;
+      text-decoration-thickness: 3px !important;
+      text-underline-offset: 4px !important;
+      display: inline !important;
+    }
+
+    /* Subheading - Apple-style elegant contrast */
+    .hero-content-v4 h2 {
+      font-size: 24px !important;
+      font-weight: 700 !important;
+      color: #ffffff !important;
+      margin: 0 auto 18px auto !important;
+      letter-spacing: -0.01em !important;
+      line-height: 1.25 !important;
+    }
+
+    /* Body paragraph - Approach A: Left-aligned with clean margins for fast scanning */
+    .hero-lead-para {
+      font-size: 17px !important;
+      line-height: 1.68 !important;
+      color: #f1f5f9 !important;
+      text-align: left !important;
+      margin: 0 auto 24px auto !important;
+      max-width: 100% !important;
+      padding: 0 !important;
+      font-weight: 400 !important;
+      box-sizing: border-box !important;
+    }
+    .hero-lead-para strong {
+      color: #ffffff !important;
+      font-weight: 700 !important;
+    }
+
+    /* Callout line - Apple-style clean pill badge */
+    .hero-callout-line {
+      font-size: 16px !important;
+      font-weight: 600 !important;
+      color: #ffffff !important;
+      line-height: 1.45 !important;
+      text-align: center !important;
+      max-width: fit-content !important;
+      margin: 0 auto 30px auto !important;
+      padding: 10px 24px !important;
+      background: rgba(255, 255, 255, 0.1) !important;
+      border: 1px solid rgba(255, 255, 255, 0.25) !important;
+      border-radius: 980px !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+      display: inline-block !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+    }
+    .hero-callout-line span {
+      color: #60a5fa !important;
+      font-weight: 800 !important;
+    }
+
+    /* Action Buttons - Apple-style sleek pill buttons */
+    .hero-actions-row {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+      gap: 12px !important;
+      margin: 0 auto 0 auto !important;
+    }
+    .btn-primary-blue {
+      width: 100% !important;
+      max-width: 320px !important;
+      min-height: 52px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 15px 30px !important;
+      border-radius: 980px !important;
+      background: #3B82F6 !important;
+      color: #ffffff !important;
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.04em !important;
+      text-decoration: none !important;
+      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.45) !important;
+      transition: all 0.2s ease !important;
+    }
+
+    /* 2. Section 2 Path Cards - Apple-Style Side-by-Side Swipe Carousel */
     .choose-path-section {
-      padding: 48px 0 !important;
+      padding: 48px 0 36px 0 !important;
+      overflow: hidden !important;
+      width: 100% !important;
     }
     .choose-path-section .wrap {
-      padding: 0 12px !important;
+      padding: 0 !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .choose-path-section .text-center {
+      padding: 0 20px !important;
       width: 100% !important;
       box-sizing: border-box !important;
     }
     .path-cards-grid {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      overflow-x: auto !important;
+      overflow-y: hidden !important;
+      scroll-snap-type: x mandatory !important;
+      -webkit-overflow-scrolling: touch !important;
+      scroll-behavior: smooth !important;
       gap: 16px !important;
-      width: 100% !important;
+      padding: 24px 20px 24px 20px !important;
+      margin: 16px 0 0 0 !important;
+      scrollbar-width: none !important;
+      box-sizing: border-box !important;
+    }
+    .path-cards-grid::-webkit-scrollbar {
+      display: none !important;
     }
     .path-card {
+      flex: 0 0 85vw !important;
+      max-width: 340px !important;
+      min-width: 280px !important;
+      scroll-snap-align: center !important;
+      scroll-snap-stop: always !important;
+      border-radius: 20px !important;
+      padding: 32px 22px 28px 22px !important;
+      box-sizing: border-box !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.07) !important;
+      margin: 0 !important;
       text-align: center !important;
       align-items: center !important;
-      padding: 24px 14px !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      border-radius: 16px !important;
+      border: 1px solid #DCE5EC !important;
+      background: #ffffff !important;
+    }
+    .path-card-highlighted {
+      border: 2px solid #3B82F6 !important;
+      box-shadow: 0 14px 40px rgba(59, 130, 246, 0.22) !important;
+    }
+    .max-savings-badge {
+      top: -13px !important;
+      font-size: 12px !important;
+      padding: 5px 14px !important;
+      background: #3B82F6 !important;
+      letter-spacing: 1.2px !important;
     }
     .path-card-tag, .path-card-headline, .path-card-subrate, .path-card-rate-container, .path-card-savebox {
       text-align: center !important;
@@ -1770,42 +1878,98 @@ ul.bullets li { margin-bottom: 8px; }
       text-align: left !important;
       margin: 0 auto 24px !important;
       display: inline-block !important;
+      width: 100% !important;
+      max-width: 290px !important;
     }
     .btn-path-outline, .btn-path-solid {
       width: 100% !important;
       justify-content: center !important;
       box-sizing: border-box !important;
+      border-radius: 980px !important;
+      padding: 14px 20px !important;
+      font-size: 15px !important;
+      font-weight: 700 !important;
+    }
+    .btn-path-solid {
+      background: #3B82F6 !important;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35) !important;
+    }
+    .btn-path-outline {
+      border: 1.5px solid #3B82F6 !important;
+      color: #3B82F6 !important;
+    }
+    .path-section-footnote {
+      padding: 0 20px !important;
+      box-sizing: border-box !important;
     }
 
-    /* 3. Section 3 Timeline Mobile Margins & Centering */
-    .timeline-section {
-      padding: 48px 0 !important;
+    /* Apple-style Carousel Dots indicator */
+    .apple-carousel-dots-wrapper {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      width: 100% !important;
+      margin-top: 10px !important;
+      margin-bottom: 24px !important;
     }
-    .tl {
+    .apple-carousel-dots {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      background: rgba(0, 0, 0, 0.06) !important;
+      padding: 8px 16px !important;
+      border-radius: 980px !important;
+    }
+    .dot-pill {
+      width: 8px !important;
+      height: 8px !important;
+      border-radius: 980px !important;
+      background: rgba(0, 0, 0, 0.22) !important;
+      border: none !important;
+      padding: 0 !important;
+      cursor: pointer !important;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .dot-pill.active {
+      width: 24px !important;
+      background: #2C3842 !important;
+    }
+
+    /* 3. Who It's For Section Mobile Alignment */
+    .who-its-for-v2 {
+      padding: 48px 0 !important;
+      width: 100% !important;
+    }
+    .who-its-for-wrap {
+      flex-direction: column !important;
+      padding: 0 20px !important;
+      gap: 32px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .who-left {
       max-width: 100% !important;
       width: 100% !important;
-      padding: 0 !important;
     }
-    .tl .section-eyebrow, .tl h3.timeline-title {
-      text-align: center !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
-    .tl-card {
+    .who-right {
       width: 100% !important;
-      box-sizing: border-box !important;
-      padding: 18px !important;
+      max-width: 100% !important;
     }
 
     /* 4. Trust Section Mobile Stack & Center */
     .trust-section {
       padding: 48px 0 !important;
+      width: 100% !important;
     }
     .trust-inner {
       display: flex !important;
       flex-direction: column !important;
       gap: 32px !important;
-      padding: 0 16px !important;
+      padding: 0 20px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
     }
     .trust-right-content {
       order: 1 !important;
@@ -1813,6 +1977,7 @@ ul.bullets li { margin-bottom: 8px; }
       display: flex !important;
       flex-direction: column !important;
       align-items: center !important;
+      width: 100% !important;
     }
     .trust-right-content h2, .trust-right-content p {
       text-align: center !important;
@@ -1835,15 +2000,165 @@ ul.bullets li { margin-bottom: 8px; }
       justify-content: center !important;
       gap: 24px !important;
       margin-top: 16px !important;
+      width: 100% !important;
     }
 
-    /* Brand Cards Mobile Centering */
+    /* 5. Section 5 Timeline Mobile Margins & Centering */
+    .timeline-section {
+      padding: 48px 0 !important;
+      width: 100% !important;
+    }
+    .timeline-section .wrap {
+      padding: 0 20px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .tl {
+      max-width: 100% !important;
+      width: 100% !important;
+      padding: 0 !important;
+    }
+    .tl .section-eyebrow, .tl h3.timeline-title {
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .tl-card {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      padding: 18px !important;
+    }
+
+    /* 6. Savings Cards Strip - Dedicated Slate-Grey Section (#232e38) */
+    .savings-cards-section {
+      background: #232e38 !important;
+      padding: 48px 0 44px 0 !important;
+      width: 100% !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+    }
+    .savings-cards-section .wrap {
+      padding: 0 20px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .savings-header-block {
+      margin-bottom: 28px !important;
+      text-align: center !important;
+    }
+    .savings-eyebrow {
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      letter-spacing: 2px !important;
+      color: #60a5fa !important;
+      text-transform: uppercase !important;
+      margin-bottom: 6px !important;
+    }
+    .savings-section-title {
+      font-size: 26px !important;
+      font-weight: 800 !important;
+      color: #ffffff !important;
+      line-height: 1.2 !important;
+      margin: 0 auto !important;
+    }
+    .cards-flex-grid {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 16px !important;
+      margin-bottom: 24px !important;
+      width: 100% !important;
+    }
+    .cards-flex-grid > div {
+      width: 100% !important;
+      border-radius: 18px !important;
+      padding: 26px 20px !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      text-align: center !important;
+      box-sizing: border-box !important;
+    }
+    .cards-flex-grid > div:nth-child(1),
+    .cards-flex-grid > div:nth-child(3) {
+      background: rgba(255, 255, 255, 0.06) !important;
+      border: 1px solid rgba(255, 255, 255, 0.16) !important;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2) !important;
+    }
+    .cards-flex-grid > div:nth-child(5) {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.28) 0%, rgba(30, 64, 175, 0.2) 100%) !important;
+      border: 2px solid #60a5fa !important;
+      box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3) !important;
+    }
+    .savings-operator {
+      display: none !important;
+    }
+    .card-eyebrow {
+      font-size: 14px !important;
+      font-weight: 800 !important;
+      letter-spacing: 1.5px !important;
+      margin-bottom: 8px !important;
+    }
+    .card-stat-number {
+      font-size: 46px !important;
+      font-weight: 800 !important;
+      line-height: 1.05 !important;
+      margin-bottom: 8px !important;
+    }
+    .card-stat-desc .desc-main {
+      font-size: 17px !important;
+      font-weight: 700 !important;
+      line-height: 1.35 !important;
+    }
+    .card-stat-desc .desc-sub {
+      font-size: 14.5px !important;
+      line-height: 1.4 !important;
+      margin-top: 3px !important;
+    }
+    .hero-disclaimer-footnote {
+      font-size: 12.5px !important;
+      line-height: 1.6 !important;
+      color: rgba(255, 255, 255, 0.65) !important;
+      text-align: center !important;
+      margin-top: 24px !important;
+      padding: 0 !important;
+    }
+
+    /* 7. Benefits Section Mobile */
+    #benefits {
+      padding: 48px 0 !important;
+      width: 100% !important;
+    }
+    #benefits .wrap {
+      padding: 0 20px !important;
+    }
+    #benefits .grid-2 {
+      grid-template-columns: 1fr !important;
+      width: 100% !important;
+    }
+
+    /* 8. InnoLaunch & Honest Escrow Mobile */
+    #innolaunch {
+      padding: 48px 0 !important;
+      width: 100% !important;
+    }
+    #innolaunch .wrap {
+      padding: 0 20px !important;
+      gap: 36px !important;
+    }
+    #innolaunch .wrap > div {
+      min-width: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
     .inno-brand-right {
       text-align: center !important;
       align-items: center !important;
       display: flex !important;
       flex-direction: column !important;
       max-width: 100% !important;
+      width: 100% !important;
     }
     .inno-eyebrow, .inno-brand-right h2, .inno-brand-right p, .inno-brand-right ul {
       text-align: center !important;
@@ -1861,17 +2176,24 @@ ul.bullets li { margin-bottom: 8px; }
       text-align: center !important;
       margin: 0 auto !important;
     }
-
-    /* Honest Escrow Mobile Centering */
+    .honest {
+      padding: 48px 0 !important;
+      width: 100% !important;
+    }
+    .honest .wrap {
+      padding: 0 20px !important;
+    }
     .honest-brand-inner {
       flex-direction: column-reverse !important;
       text-align: center !important;
+      width: 100% !important;
     }
     .honest-brand-left {
       text-align: center !important;
       align-items: center !important;
       display: flex !important;
       flex-direction: column !important;
+      width: 100% !important;
     }
     .he-brand-cta-group {
       justify-content: center !important;
@@ -1883,9 +2205,13 @@ ul.bullets li { margin-bottom: 8px; }
       text-align: center !important;
     }
 
-    /* 5. Section Comparison Mobile Cards Redesign */
+    /* 9. Section Comparison Mobile Cards Redesign */
     #compare {
       padding: 48px 0 !important;
+      width: 100% !important;
+    }
+    #compare .wrap {
+      padding: 0 20px !important;
     }
     #compare .cmp-wrap {
       overflow: visible !important;
@@ -1963,14 +2289,22 @@ ul.bullets li { margin-bottom: 8px; }
       text-transform: uppercase !important;
     }
 
-    /* 6. FAQ Section Spacing */
+    /* 10. FAQ Section Spacing */
     #faq {
       padding: 48px 0 24px !important;
+      width: 100% !important;
+    }
+    #faq .wrap {
+      padding: 0 20px !important;
     }
 
-    /* 7. Opt-in Form Mobile Optimization */
+    /* 11. Opt-in Form Mobile Optimization */
     #optin {
       padding: 48px 0 64px !important;
+      width: 100% !important;
+    }
+    #optin .wrap {
+      padding: 0 20px !important;
     }
     #optin .form-card {
       width: 100% !important;
@@ -1996,6 +2330,59 @@ ul.bullets li { margin-bottom: 8px; }
       justify-content: center !important;
       box-sizing: border-box !important;
     }
+
+    /* 12. Disclosure & Footer Mobile */
+    .disclosure {
+      padding: 40px 0 !important;
+      width: 100% !important;
+    }
+    .disclosure .wrap {
+      padding: 0 20px !important;
+    }
+    footer {
+      padding: 40px 0 !important;
+      width: 100% !important;
+    }
+    footer .wrap {
+      padding: 0 20px !important;
+    }
+
+    /* ===================================================
+       13. UNIFIED SECTION HEADINGS & EYEBROWS (28px standard)
+       =================================================== */
+    .choose-path-section h2,
+    .who-its-for-v2 h2,
+    .trust-right-content h2,
+    .timeline-title,
+    .savings-section-title,
+    #benefits .section-title,
+    #compare .section-title,
+    #innolaunch h2,
+    .he-brand-heading,
+    #faq h2,
+    #optin h2 {
+      font-size: 28px !important;
+      font-weight: 800 !important;
+      line-height: 1.22 !important;
+      letter-spacing: -0.01em !important;
+      margin-bottom: 14px !important;
+    }
+
+    /* Unified Section Eyebrows (13px standard) */
+    .choose-path-section .text-center > span,
+    .who-its-for-v2 .section-eyebrow,
+    .trust-right-content > div:first-child,
+    .timeline-section .section-eyebrow,
+    .savings-eyebrow,
+    #benefits .section-eyebrow,
+    #compare .section-eyebrow,
+    #innolaunch .section-eyebrow,
+    .he-eyebrow {
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      letter-spacing: 2px !important;
+      text-transform: uppercase !important;
+    }
   }
 </style>
 
@@ -2020,7 +2407,7 @@ ul.bullets li { margin-bottom: 8px; }
 
 <!-- HERO -->
 <div class="hero">
-  <div class="wrap hero-content-v4" style="max-width: 1000px; width: 100%;">
+  <div class="wrap hero-content-v4" style="max-width: 1120px; width: 100%;">
     
     <!-- Main Headline -->
     <h1 class="hero-v4-title">
@@ -2042,87 +2429,10 @@ ul.bullets li { margin-bottom: 8px; }
     </p>
 
     <!-- Action Buttons -->
-    <div class="hero-actions-row" style="display: flex; align-items: center; gap: 24px; margin-bottom: 48px; flex-wrap: wrap;">
+    <div class="hero-actions-row" style="display: flex; align-items: center; gap: 24px; margin-bottom: 0; flex-wrap: wrap;">
       <a class="btn-primary-blue" href="#optin" style="background-color: #4985b8; color: #ffffff; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; letter-spacing: 0.05em; box-shadow: 0 4px 14px rgba(73, 133, 184, 0.35);">
         SEE MY OPTIONS &rarr;
       </a>
-      <a class="btn-link-req" href="#optin" style="color: #ffffff; font-size: 15px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; display: inline-flex; align-items: center; gap: 6px;">
-        Request information &rarr;
-      </a>
-    </div>
-
-    <!-- Savings Cards Strip -->
-    <div class="savings-cards-section" style="width: 100%;">
-      
-      <!-- Divider Heading -->
-      <div class="savings-divider-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 20px;">
-        <div style="height: 1px; background: rgba(255, 255, 255, 0.2); flex: 1; max-width: 180px;"></div>
-        <span style="font-size: 15px; font-weight: 800; letter-spacing: 2px; color: #4985b8; text-transform: uppercase;">
-          ESTIMATED SAVINGS — ON A $1.5M SALE*
-        </span>
-        <div style="height: 1px; background: rgba(255, 255, 255, 0.2); flex: 1; max-width: 180px;"></div>
-      </div>
-
-      <!-- 3 Cards Layout -->
-      <div class="cards-flex-grid" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; flex-wrap: wrap;">
-        
-        <!-- Card 1 -->
-        <div style="flex: 1; min-width: 220px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 20px 24px;">
-          <div style="font-size: 13.5px; font-weight: 800; letter-spacing: 1.2px; color: #4985b8; text-transform: uppercase; margin-bottom: 6px;">
-            INNOVATE REALTY
-          </div>
-          <div style="font-size: 40px; font-weight: 800; color: #ffffff; line-height: 1.1; margin-bottom: 6px;">
-            $22–30K
-          </div>
-          <div style="font-size: 15px; color: rgba(255, 255, 255, 0.9); line-height: 1.45; font-weight: 500;">
-            saved on the listing<br>1% vs. typical 2.5–3%
-          </div>
-        </div>
-
-        <div class="savings-operator" style="font-size: 26px; font-weight: 300; color: rgba(255, 255, 255, 0.5); padding: 0 4px;">+</div>
-
-        <!-- Card 2 -->
-        <div style="flex: 1; min-width: 220px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 20px 24px;">
-          <div style="font-size: 13.5px; font-weight: 800; letter-spacing: 1.2px; color: #4985b8; text-transform: uppercase; margin-bottom: 6px;">
-            HONEST ESCROW
-          </div>
-          <div style="font-size: 40px; font-weight: 800; color: #ffffff; line-height: 1.1; margin-bottom: 6px;">
-            ~$7K
-          </div>
-          <div style="font-size: 15px; color: rgba(255, 255, 255, 0.9); line-height: 1.45; font-weight: 500;">
-            saved on escrow<br>flat $500 vs. ~$7,500 typical
-          </div>
-        </div>
-
-        <div class="savings-operator" style="font-size: 26px; font-weight: 300; color: rgba(255, 255, 255, 0.5); padding: 0 4px;">=</div>
-
-        <!-- Card 3 (Highlighted) -->
-        <div style="flex: 1.1; min-width: 240px; background: rgba(73, 133, 184, 0.2); border: 1.5px solid #4985b8; border-radius: 12px; padding: 20px 24px; box-shadow: 0 8px 24px rgba(73, 133, 184, 0.3);">
-          <div style="font-size: 13.5px; font-weight: 800; letter-spacing: 1.2px; color: #ffffff; text-transform: uppercase; margin-bottom: 6px;">
-            USE BOTH
-          </div>
-          <div style="font-size: 42px; font-weight: 800; color: #ffffff; line-height: 1.1; margin-bottom: 6px;">
-            Up to $37K
-          </div>
-          <div style="font-size: 15px; color: rgba(255, 255, 255, 0.95); line-height: 1.45; font-weight: 500;">
-            plus ~1 month less carrying cost
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Bottom Pill Badge -->
-      <div style="display: flex; justify-content: center;">
-        <div style="display: inline-flex; align-items: center; gap: 8px; background: #0f172a; border: 1.5px solid #4985b8; border-radius: 30px; padding: 10px 24px; font-size: 14px; font-weight: 800; letter-spacing: 1.2px; color: #ffffff; text-transform: uppercase; box-shadow: 0 4px 14px rgba(0,0,0,0.3);">
-          <span style="color: #60a5fa;">✓</span> USE ONE OR BOTH
-        </div>
-      </div>
-
-      <!-- Asterisk Disclaimer Footnote -->
-      <div class="hero-disclaimer-footnote" style="margin-top: 28px; max-width: 920px; margin-left: auto; margin-right: auto; font-size: 13.5px; line-height: 1.55; color: rgba(255, 255, 255, 0.75); text-align: center;">
-        * Estimated savings are illustrative, based on a $1.5M sale example (2.5–3% vs. 1% listing commission; typical seller-side escrow of ~$5 per $1,000 vs. flat $500; carrying costs of ~$8–10K/month). The $40K+ figure combines estimated fee savings with roughly one month of reduced carrying cost under this example. The ~1-month estimate reflects marketing that begins before construction is complete — an expectation, not a guarantee. Actual amounts vary by transaction and are disclosed in writing. This pre-negotiated program is entirely optional and à la carte — using one service never requires the other. You are always free to choose your own broker, escrow company, and other providers.
-      </div>
-
     </div>
 
   </div>
@@ -2131,7 +2441,7 @@ ul.bullets li { margin-bottom: 8px; }
 
 <!-- CHOOSE YOUR PATH / THREE WAYS SECTION -->
 <section class="choose-path-section" id="choose-path" style="padding: 64px 0; background-color: #ffffff; border-bottom: 1px solid #DCE5EC;">
-  <div class="wrap" style="max-width: 1100px; margin: 0 auto; padding: 0 24px;">
+  <div class="wrap" style="max-width: 1120px; margin: 0 auto; padding: 0 24px;">
     
     <!-- Section Header -->
     <div class="text-center" style="text-align: center; margin-bottom: 28px;">
@@ -2237,8 +2547,17 @@ ul.bullets li { margin-bottom: 8px; }
 
     </div>
 
+    <!-- Apple Carousel Navigation Dots (Mobile Only) -->
+    <div class="apple-carousel-dots-wrapper" style="display: none;">
+      <div class="apple-carousel-dots" id="path-dots">
+        <button class="dot-pill active" data-index="0" aria-label="Card 1: Escrow Only"></button>
+        <button class="dot-pill" data-index="1" aria-label="Card 2: Use Both"></button>
+        <button class="dot-pill" data-index="2" aria-label="Card 3: Listing Only"></button>
+      </div>
+    </div>
+
     <!-- Section Footnote -->
-    <div style="margin-top: 48px; text-align: center;">
+    <div class="path-section-footnote" style="margin-top: 48px; text-align: center;">
       <p style="font-size: 14.5px; color: #5D6871; max-width: 800px; margin: 0 auto 12px auto; line-height: 1.5;">
         Completely à la carte — pick one path today, add the other later, or bring your own team. Requesting information is free and has no effect on your CSL loan.
       </p>
@@ -2289,7 +2608,7 @@ ul.bullets li { margin-bottom: 8px; }
 
 <!-- TRUST / PARTNER NETWORK SECTION -->
 <section class="trust-section" style="background: #232e38; padding: 80px 0; color: #ffffff;">
-  <div class="wrap trust-inner" style="max-width: 1140px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 530px 1fr; gap: 64px; align-items: center;">
+  <div class="wrap trust-inner" style="max-width: 1120px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 500px 1fr; gap: 48px; align-items: center;">
     
     <!-- LEFT: 3 Slender Tall Property Image Cards (Aspect Ratio ~1:2) -->
     <div class="trust-images-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; height: 500px;">
@@ -2451,6 +2770,87 @@ ul.bullets li { margin-bottom: 8px; }
     </div>
   </div>
 </section>
+
+
+<!-- ESTIMATED SAVINGS SECTION (Dedicated section with #232e38 background matching Trusted Network section) -->
+<section class="savings-cards-section" style="background: #232e38; padding: 64px 0 56px 0; color: #ffffff; border-top: 1px solid rgba(255, 255, 255, 0.08); border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+  <div class="wrap" style="max-width: 1120px; margin: 0 auto; padding: 0 24px;">
+    
+    <!-- Section Title & Eyebrow (Apple Eyebrow + Headline Pattern) -->
+    <div class="savings-header-block" style="text-align: center; margin-bottom: 36px;">
+      <div class="savings-eyebrow" style="font-size: 13.5px; font-weight: 800; letter-spacing: 2px; color: #60a5fa; text-transform: uppercase; margin-bottom: 8px;">
+        ESTIMATED SAVINGS
+      </div>
+      <h2 class="savings-section-title" style="font-size: 32px; font-weight: 800; color: #ffffff; line-height: 1.15; margin: 0; letter-spacing: -0.01em;">
+        On a $1.5M Sale*
+      </h2>
+    </div>
+
+    <!-- 3 Cards Layout -->
+    <div class="cards-flex-grid" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 28px; flex-wrap: wrap;">
+      
+      <!-- Card 1 -->
+      <div class="savings-card-item" style="flex: 1; min-width: 220px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 22px 24px;">
+        <div class="card-eyebrow" style="font-size: 13.5px; font-weight: 800; letter-spacing: 1.2px; color: #60a5fa; text-transform: uppercase; margin-bottom: 6px;">
+          INNOVATE REALTY
+        </div>
+        <div class="card-stat-number" style="font-size: 40px; font-weight: 800; color: #ffffff; line-height: 1.1; margin-bottom: 6px;">
+          $22–30K
+        </div>
+        <div class="card-stat-desc" style="line-height: 1.45;">
+          <span class="desc-main" style="display: block; font-size: 16.5px; font-weight: 700; color: #ffffff; margin-bottom: 2px;">saved on the listing</span>
+          <span class="desc-sub" style="display: block; font-size: 14.5px; color: rgba(255, 255, 255, 0.78); font-weight: 500;">1% vs. typical 2.5–3%</span>
+        </div>
+      </div>
+
+      <div class="savings-operator" style="font-size: 26px; font-weight: 300; color: rgba(255, 255, 255, 0.5); padding: 0 4px;">+</div>
+
+      <!-- Card 2 -->
+      <div class="savings-card-item" style="flex: 1; min-width: 220px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 22px 24px;">
+        <div class="card-eyebrow" style="font-size: 13.5px; font-weight: 800; letter-spacing: 1.2px; color: #60a5fa; text-transform: uppercase; margin-bottom: 6px;">
+          HONEST ESCROW
+        </div>
+        <div class="card-stat-number" style="font-size: 40px; font-weight: 800; color: #ffffff; line-height: 1.1; margin-bottom: 6px;">
+          ~$7K
+        </div>
+        <div class="card-stat-desc" style="line-height: 1.45;">
+          <span class="desc-main" style="display: block; font-size: 16.5px; font-weight: 700; color: #ffffff; margin-bottom: 2px;">saved on escrow</span>
+          <span class="desc-sub" style="display: block; font-size: 14.5px; color: rgba(255, 255, 255, 0.78); font-weight: 500;">flat $500 vs. ~$7,500 typical</span>
+        </div>
+      </div>
+
+      <div class="savings-operator" style="font-size: 26px; font-weight: 300; color: rgba(255, 255, 255, 0.5); padding: 0 4px;">=</div>
+
+      <!-- Card 3 (Highlighted) -->
+      <div class="savings-card-item card-featured" style="flex: 1.1; min-width: 240px; background: rgba(73, 133, 184, 0.2); border: 1.5px solid #4985b8; border-radius: 12px; padding: 22px 24px; box-shadow: 0 8px 24px rgba(73, 133, 184, 0.3);">
+        <div class="card-eyebrow" style="font-size: 13.5px; font-weight: 800; letter-spacing: 1.2px; color: #ffffff; text-transform: uppercase; margin-bottom: 6px;">
+          USE BOTH
+        </div>
+        <div class="card-stat-number" style="font-size: 42px; font-weight: 800; color: #ffffff; line-height: 1.1; margin-bottom: 6px;">
+          Up to $37K
+        </div>
+        <div class="card-stat-desc" style="line-height: 1.45;">
+          <span class="desc-main" style="display: block; font-size: 16.5px; font-weight: 700; color: #ffffff;">plus ~1 month less carrying cost</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Pill Badge -->
+    <div style="display: flex; justify-content: center;">
+      <div style="display: inline-flex; align-items: center; gap: 8px; background: #0f172a; border: 1.5px solid #4985b8; border-radius: 30px; padding: 10px 24px; font-size: 14px; font-weight: 800; letter-spacing: 1.2px; color: #ffffff; text-transform: uppercase; box-shadow: 0 4px 14px rgba(0,0,0,0.3);">
+        <span style="color: #60a5fa;">✓</span> USE ONE OR BOTH
+      </div>
+    </div>
+
+    <!-- Asterisk Disclaimer Footnote -->
+    <div class="hero-disclaimer-footnote" style="margin-top: 28px; max-width: 920px; margin-left: auto; margin-right: auto; font-size: 13.5px; line-height: 1.55; color: rgba(255, 255, 255, 0.75); text-align: center;">
+      * Estimated savings are illustrative, based on a $1.5M sale example (2.5–3% vs. 1% listing commission; typical seller-side escrow of ~$5 per $1,000 vs. flat $500; carrying costs of ~$8–10K/month). The $40K+ figure combines estimated fee savings with roughly one month of reduced carrying cost under this example. The ~1-month estimate reflects marketing that begins before construction is complete — an expectation, not a guarantee. Actual amounts vary by transaction and are disclosed in writing. This pre-negotiated program is entirely optional and à la carte — using one service never requires the other. You are always free to choose your own broker, escrow company, and other providers.
+    </div>
+
+  </div>
+</section>
+
 
 <!-- BENEFITS -->
 <section class="soft" id="benefits">
@@ -3164,7 +3564,7 @@ ul.bullets li { margin-bottom: 8px; }
         </div>
         <label class="consent">
           <input type="checkbox" name="consent" id="consent" required>
-          <span>I agree that Center Street Lending and its affiliates may contact me about the CSL Resale Advantage program by phone, email, or text at the information provided. Consent is not a condition of any loan.</span>
+          <span>I agree that Center Street Lending and its affiliates (Innovate Realty &amp; Honest Escrow) may contact me about the CSL Resale Advantage program by phone, email, or text at the information provided. Consent is not a condition of any loan. See our <a href="legal.html#afba" target="_blank" style="color:var(--accent);text-decoration:underline;">AfBA Disclosure</a>, <a href="legal.html#terms" target="_blank" style="color:var(--accent);text-decoration:underline;">Program Terms</a> &amp; <a href="legal.html#privacy" target="_blank" style="color:var(--accent);text-decoration:underline;">Privacy Policy</a>.</span>
         </label>
         <div class="step-nav step-nav-final" style="display: flex; gap: 14px; align-items: center; width: 100%; margin-top: 24px;">
           <button type="button" class="step-back" style="flex: 1; justify-content: center; text-align: center;">&larr; Back</button>
@@ -3187,9 +3587,12 @@ ul.bullets li { margin-bottom: 8px; }
 
 <!-- DISCLOSURE — LOCKED COPY from readiness doc. Do not edit ad hoc. -->
 <section class="disclosure" style="padding: 48px 0; background: #1b252e; border-top: 1px solid rgba(255,255,255,0.08);">
-  <div class="wrap" style="max-width: 960px; margin: 0 auto; text-align: center;">
-    <h2 style="font-size: 20px; font-weight: 800; color: #ffffff; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">Important disclosure</h2>
-    <p style="font-size: 13.5px; line-height: 1.6; color: rgba(255,255,255,0.7); margin: 0;">CSL, Innovate Realty, Honest Escrow, and/or related ownership parties may have affiliated business relationships. If you request an introduction, additional disclosures, fee information, and service details may be provided. Use of any affiliated or introduced provider is optional. You are free to choose your own real estate broker, escrow company, title company, lender, and other service providers. Any escrow fees or program pricing are subject to eligibility, transaction details, party agreement, written disclosure, and escrow instructions. Use of any introduced provider is not required as a condition of obtaining, maintaining, or paying off a CSL loan.</p>
+  <div class="wrap" style="max-width: 1120px; margin: 0 auto; text-align: center;">
+    <div style="max-width: 960px; margin: 0 auto;">
+      <h2 style="font-size: 20px; font-weight: 800; color: #ffffff; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">Important disclosure</h2>
+      <p style="font-size: 13.5px; line-height: 1.6; color: rgba(255,255,255,0.7); margin: 0;">CSL, Innovate Realty, Honest Escrow, and/or related ownership parties may have affiliated business relationships. If you request an introduction, additional disclosures, fee information, and service details may be provided. Use of any affiliated or introduced provider is optional. You are free to choose your own real estate broker, escrow company, title company, lender, and other service providers. Any escrow fees or program pricing are subject to eligibility, transaction details, party agreement, written disclosure, and escrow instructions. Use of any introduced provider is not required as a condition of obtaining, maintaining, or paying off a CSL loan.</p>
+      <p style="margin-top: 16px; font-size: 13.5px;"><a href="legal.html" style="color: #60a5fa; text-decoration: underline; font-weight: 600;">Read complete Affiliated Business Arrangement (AfBA) Disclosure, Program Terms, and Privacy Policy &rarr;</a></p>
+    </div>
   </div>
 </section>
 
@@ -3200,6 +3603,17 @@ ul.bullets li { margin-bottom: 8px; }
         <img src="logo1.svg" alt="Center Street Lending" style="height: 36px; width: auto; filter: brightness(0) invert(1); opacity: 0.95;" />
       </a>
       <p style="margin-top: 6px; font-size: 13px; color: rgba(255,255,255,0.6);">&copy; 2026 Center Street Lending. All rights reserved.</p>
+      <div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 12px; font-size: 12.5px;">
+        <a href="legal.html#afba" style="color: rgba(255,255,255,0.7); text-decoration: none;">Affiliated Business (AfBA)</a>
+        <span style="color: rgba(255,255,255,0.3);">&bull;</span>
+        <a href="legal.html#terms" style="color: rgba(255,255,255,0.7); text-decoration: none;">Program Terms</a>
+        <span style="color: rgba(255,255,255,0.3);">&bull;</span>
+        <a href="legal.html#privacy" style="color: rgba(255,255,255,0.7); text-decoration: none;">Privacy Policy</a>
+        <span style="color: rgba(255,255,255,0.3);">&bull;</span>
+        <a href="legal.html#terms-of-use" style="color: rgba(255,255,255,0.7); text-decoration: none;">Terms of Use</a>
+        <span style="color: rgba(255,255,255,0.3);">&bull;</span>
+        <a href="legal.html#licensing" style="color: rgba(255,255,255,0.7); text-decoration: none;">Licensing</a>
+      </div>
     </div>
     <div class="licenses">
       CFL License No. 60DBO-57755 &middot; NMLS 905781<br>
@@ -3563,6 +3977,51 @@ ul.bullets li { margin-bottom: 8px; }
       closeModal();
     }
   });
+})();
+
+// Apple-Style Card Swipe Carousel Sync for "Choose Your Path"
+(function() {
+  var grid = document.querySelector('.path-cards-grid');
+  var dots = document.querySelectorAll('#path-dots .dot-pill');
+  if (!grid || !dots.length) return;
+
+  dots.forEach(function(dot, idx) {
+    dot.addEventListener('click', function(e) {
+      e.preventDefault();
+      var cards = grid.querySelectorAll('.path-card');
+      if (cards[idx]) {
+        cards[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    });
+  });
+
+  var scrollTimer;
+  grid.addEventListener('scroll', function() {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(function() {
+      var cards = grid.querySelectorAll('.path-card');
+      var gridCenter = grid.getBoundingClientRect().left + grid.offsetWidth / 2;
+      var closestIdx = 0;
+      var minDistance = Infinity;
+
+      cards.forEach(function(card, idx) {
+        var cardCenter = card.getBoundingClientRect().left + card.offsetWidth / 2;
+        var dist = Math.abs(gridCenter - cardCenter);
+        if (dist < minDistance) {
+          minDistance = dist;
+          closestIdx = idx;
+        }
+      });
+
+      dots.forEach(function(d, idx) {
+        if (idx === closestIdx) {
+          d.classList.add('active');
+        } else {
+          d.classList.remove('active');
+        }
+      });
+    }, 40);
+  }, { passive: true });
 })();
 </script>
 </body>
