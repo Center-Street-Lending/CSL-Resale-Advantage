@@ -4024,5 +4024,30 @@ ul.bullets li { margin-bottom: 8px; }
   }, { passive: true });
 })();
 </script>
+
+<!-- Webflow Parent Iframe Auto-Resizer -->
+<script>
+(function() {
+  function sendHeight() {
+    if (window.parent && window.parent !== window) {
+      var height = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight
+      );
+      window.parent.postMessage({ frameHeight: height }, '*');
+    }
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  if (window.MutationObserver) {
+    var observer = new MutationObserver(sendHeight);
+    observer.observe(document.body, { attributes: true, childList: true, subtree: true });
+  }
+  setInterval(sendHeight, 1500);
+})();
+</script>
+
 </body>
 </html>
