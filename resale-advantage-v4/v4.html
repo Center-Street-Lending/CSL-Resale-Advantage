@@ -1752,56 +1752,55 @@ ul.bullets li { margin-bottom: 8px; }
       font-weight: 700 !important;
     }
 
-    /* Callout line - Apple-style clean pill badge */
+    /* Callout line - Clean unboxed text line (no button appearance) */
     .hero-callout-line {
-      font-size: 16px !important;
+      font-size: 18px !important;
       font-weight: 600 !important;
       color: #ffffff !important;
-      line-height: 1.45 !important;
-      text-align: center !important;
-      max-width: fit-content !important;
-      margin: 0 auto 30px auto !important;
-      padding: 10px 24px !important;
-      background: rgba(255, 255, 255, 0.1) !important;
-      border: 1px solid rgba(255, 255, 255, 0.25) !important;
-      border-radius: 980px !important;
-      backdrop-filter: blur(12px) !important;
-      -webkit-backdrop-filter: blur(12px) !important;
-      display: inline-block !important;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+      line-height: 1.5 !important;
+      text-align: left !important;
+      max-width: 100% !important;
+      margin: 0 0 24px 0 !important;
+      padding: 0 !important;
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      display: block !important;
+      box-shadow: none !important;
     }
     .hero-callout-line span {
-      color: #60a5fa !important;
+      color: #4985b8 !important;
       font-weight: 800 !important;
     }
 
-    /* Action Buttons - Apple-style sleek pill buttons */
+    /* Action Buttons */
     .hero-actions-row {
       display: flex !important;
       flex-direction: column !important;
-      align-items: center !important;
-      justify-content: center !important;
+      align-items: stretch !important;
+      justify-content: flex-start !important;
       width: 100% !important;
       gap: 12px !important;
-      margin: 0 auto 0 auto !important;
+      margin-top: 0 !important;
     }
     .btn-primary-blue {
       width: 100% !important;
-      max-width: 320px !important;
-      min-height: 52px !important;
+      max-width: 100% !important;
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-      padding: 15px 30px !important;
-      border-radius: 980px !important;
-      background: #3B82F6 !important;
+      padding: 16px 24px !important;
+      border-radius: 8px !important;
+      background: #4985b8 !important;
       color: #ffffff !important;
       font-size: 16px !important;
       font-weight: 700 !important;
       letter-spacing: 0.04em !important;
       text-decoration: none !important;
-      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.45) !important;
-      transition: all 0.2s ease !important;
+      box-shadow: 0 4px 16px rgba(73, 133, 184, 0.35) !important;
+      box-sizing: border-box !important;
     }
 
     /* 2. Section 2 Path Cards - Apple-Style Side-by-Side Swipe Carousel */
@@ -2139,43 +2138,142 @@ ul.bullets li { margin-bottom: 8px; }
     }
 
     /* 8. InnoLaunch & Honest Escrow Mobile */
+    /* 8. InnoLaunch & Honest Escrow Mobile - Clean Left-Aligned Professional Flow */
     #innolaunch {
       padding: 48px 0 !important;
       width: 100% !important;
     }
     #innolaunch .wrap {
+      display: flex !important;
+      flex-direction: column !important;
       padding: 0 20px !important;
-      gap: 36px !important;
+      gap: 32px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
     #innolaunch .wrap > div {
       min-width: 0 !important;
       width: 100% !important;
       max-width: 100% !important;
+      box-sizing: border-box !important;
     }
     .inno-brand-right {
-      text-align: center !important;
-      align-items: center !important;
+      text-align: left !important;
+      align-items: flex-start !important;
       display: flex !important;
       flex-direction: column !important;
       max-width: 100% !important;
       width: 100% !important;
+      box-sizing: border-box !important;
     }
-    .inno-eyebrow, .inno-brand-right h2, .inno-brand-right p, .inno-brand-right ul {
-      text-align: center !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
+    .inno-eyebrow {
+      text-align: left !important;
+      margin: 0 0 8px 0 !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      letter-spacing: 2px !important;
+      color: #4683B3 !important;
+      text-transform: uppercase !important;
     }
-    .inno-brand-right img {
-      margin-left: auto !important;
-      margin-right: auto !important;
+    .inno-brand-right h2 {
+      text-align: left !important;
+      margin: 0 0 12px 0 !important;
+      font-size: 28px !important;
+      font-weight: 800 !important;
+      line-height: 1.22 !important;
+      color: #2C3842 !important;
+      letter-spacing: -0.01em !important;
+    }
+    .inno-brand-right > img[src*="Innovate"] {
+      display: block !important;
+      height: 36px !important;
+      width: auto !important;
+      margin: 0 0 20px 0 !important;
+      text-align: left !important;
+    }
+    .inno-brand-right p {
+      text-align: left !important;
+      margin: 0 0 16px 0 !important;
+      font-size: 16px !important;
+      line-height: 1.6 !important;
+      color: #5D6871 !important;
+      width: 100% !important;
+    }
+    .inno-points {
+      text-align: left !important;
+      margin: 6px 0 24px 0 !important;
+      padding: 0 !important;
+      list-style: none !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 12px !important;
+      width: 100% !important;
+    }
+    .inno-points li {
+      position: relative !important;
+      padding-left: 28px !important;
+      text-align: left !important;
+      font-size: 15.5px !important;
+      line-height: 1.45 !important;
+      color: #5D6871 !important;
+      margin: 0 !important;
+    }
+    .inno-points li::before {
+      content: "✓" !important;
+      position: absolute !important;
+      left: 0 !important;
+      top: 1px !important;
+      width: 20px !important;
+      height: 20px !important;
+      border-radius: 50% !important;
+      background: #EFF6FE !important;
+      color: #4683B3 !important;
+      font-size: 12px !important;
+      font-weight: 800 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border: 1px solid rgba(70, 131, 179, 0.3) !important;
+    }
+    .inno-brand-right > div[style*="background: #EFF6FE"] {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      padding: 16px 20px !important;
+      margin: 6px 0 24px 0 !important;
+      gap: 16px !important;
+    }
+    .inno-brand-right h3 {
+      text-align: left !important;
+      margin: 12px 0 10px 0 !important;
+      font-size: 22px !important;
+      font-weight: 700 !important;
+      line-height: 1.3 !important;
+      color: #2C3842 !important;
+    }
+    .match-flow {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      margin: 16px 0 24px 0 !important;
+    }
+    .mf-node {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      padding: 12px 16px !important;
+      font-size: 14.5px !important;
+      text-align: left !important;
     }
     .inno-brand-right .csl-btn {
       width: 100% !important;
-      max-width: 320px !important;
-      justify-content: center !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
       text-align: center !important;
-      margin: 0 auto !important;
+      justify-content: center !important;
+      padding: 16px 24px !important;
+      font-size: 15px !important;
+      border-radius: 8px !important;
+      margin-top: 6px !important;
     }
+
     .honest {
       padding: 48px 0 !important;
       width: 100% !important;
@@ -2185,24 +2283,66 @@ ul.bullets li { margin-bottom: 8px; }
     }
     .honest-brand-inner {
       flex-direction: column-reverse !important;
-      text-align: center !important;
+      text-align: left !important;
       width: 100% !important;
+      gap: 32px !important;
     }
     .honest-brand-left {
-      text-align: center !important;
-      align-items: center !important;
+      text-align: left !important;
+      align-items: flex-start !important;
       display: flex !important;
       flex-direction: column !important;
       width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .honest-brand-left .section-eyebrow {
+      text-align: left !important;
+      margin: 0 0 8px 0 !important;
+    }
+    .he-brand-heading {
+      text-align: left !important;
+      margin: 0 0 12px 0 !important;
+      font-size: 28px !important;
+    }
+    .he-brand-logo {
+      margin: 0 0 20px 0 !important;
+      height: 36px !important;
+      display: block !important;
+    }
+    .he-brand-text {
+      text-align: left !important;
+      margin: 0 0 20px 0 !important;
+      font-size: 16px !important;
+      line-height: 1.6 !important;
+      color: #5D6871 !important;
     }
     .he-brand-cta-group {
-      justify-content: center !important;
       width: 100% !important;
+      margin-bottom: 12px !important;
     }
     .he-brand-btn {
       width: 100% !important;
+      max-width: 100% !important;
       justify-content: center !important;
       text-align: center !important;
+      padding: 16px 24px !important;
+      box-sizing: border-box !important;
+      border-radius: 8px !important;
+    }
+    .he-fineprint {
+      text-align: left !important;
+      font-size: 13px !important;
+      color: #8C9BA5 !important;
+      margin-top: 8px !important;
+    }
+    .he-badges-list {
+      text-align: left !important;
+      width: 100% !important;
+      margin-top: 16px !important;
+    }
+    .he-badge-item {
+      text-align: left !important;
+      align-items: flex-start !important;
     }
 
     /* 9. Section Comparison Mobile Cards Redesign */
