@@ -1733,6 +1733,259 @@
 }
 </style>
 
+<style>
+/* EXACT REPLICA OF ORIGINAL CENTER STREET LENDING HEADER */
+.csl-exact-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+.csl-exact-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1440px;
+  height: 64px;
+  margin: 0 auto;
+  padding: 0 36px;
+  box-sizing: border-box;
+}
+
+.csl-exact-left {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.csl-exact-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.csl-exact-logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.csl-exact-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.csl-exact-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.csl-exact-dropdown-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 8px 0;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2C3842;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+}
+
+.csl-exact-dropdown-btn:hover {
+  color: #4683B3;
+}
+
+.csl-chevron-left,
+.csl-chevron-right {
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.csl-exact-dropdown:hover .csl-chevron-left,
+.csl-exact-dropdown:hover .csl-chevron-right,
+.csl-exact-dropdown.is-open .csl-chevron-left,
+.csl-exact-dropdown.is-open .csl-chevron-right {
+  transform: rotate(180deg);
+}
+
+.csl-exact-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 24px 28px;
+  display: none;
+  z-index: 1010;
+  margin-top: 6px;
+  animation: cslFadeIn 0.18s ease forwards;
+}
+
+@keyframes cslFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.csl-exact-dropdown:hover .csl-exact-dropdown-menu,
+.csl-exact-dropdown.is-open .csl-exact-dropdown-menu {
+  display: block;
+}
+
+.csl-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(170px, 1fr));
+  gap: 36px;
+}
+
+.csl-menu-heading {
+  font-size: 11px;
+  font-weight: 800;
+  color: #84ACCC;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.csl-menu-col a {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #2C3842;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+}
+
+.csl-menu-col a:hover {
+  color: #4683B3;
+}
+
+.csl-single-col {
+  min-width: 220px;
+}
+
+.csl-exact-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: auto;
+}
+
+.csl-exact-phone {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2C3842;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+
+.csl-exact-phone:hover {
+  color: #4683B3;
+}
+
+.csl-exact-apply-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4683B3;
+  color: #ffffff;
+  font-size: 14.5px;
+  font-weight: 600;
+  padding: 9px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.csl-exact-apply-btn:hover {
+  background-color: #386f99;
+  color: #ffffff;
+}
+
+.csl-exact-hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+}
+
+.csl-exact-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #2C3842;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+/* Responsive Mobile Navigation */
+@media screen and (max-width: 1040px) {
+  .csl-exact-nav-container {
+    padding: 0 20px;
+    height: 60px;
+  }
+  .csl-exact-left {
+    gap: 20px;
+  }
+  .csl-exact-right {
+    gap: 16px;
+  }
+  .csl-exact-nav {
+    display: none;
+  }
+  .csl-exact-right .csl-exact-dropdown,
+  .csl-exact-right .csl-exact-phone {
+    display: none;
+  }
+  .csl-exact-hamburger {
+    display: flex;
+  }
+  .csl-exact-nav.is-mobile-open {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    padding: 24px;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    border-top: 1px solid #E5E7EB;
+    gap: 16px;
+  }
+  .csl-exact-nav.is-mobile-open .csl-exact-dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    padding: 8px 0 8px 14px;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -1741,166 +1994,134 @@
 <!-- SPREAD-OUT MODERN STICKY HEADER -->
 
 <!-- OFFICIAL CENTER STREET LENDING GLOBAL NAVIGATION -->
-<header class="global-header">
-  <div class="navbar">
-    <div class="navbar-container">
-      
-      <!-- Brand Logo -->
-      <a href="https://www.centerstreetlending.com/" class="brand-logo-wrapper" title="Center Street Lending Home">
-        <div class="logo-switch-wrapper">
-          <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/687e86cdcb9f7ef9e1818c1d_center-street-lending-logo.svg" alt="Center Street Lending Logo" class="logo-dark">
-        </div>
+<!-- EXACT ORIGINAL CENTER STREET LENDING SITE HEADER -->
+<header id="header-menu" class="csl-exact-header">
+  <div class="csl-exact-nav-container">
+    
+    <!-- Left Group: Brand Logo & Navigation Links -->
+    <div class="csl-exact-left">
+      <a href="https://www.centerstreetlending.com/" class="csl-exact-logo" title="Center Street Lending">
+        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/687e86cdcb9f7ef9e1818c1d_center-street-lending-logo.svg" alt="Center Street Lending®" class="csl-exact-logo-img">
       </a>
 
-      <!-- Navigation Dropdowns & Links -->
-      <div class="navbar-items" id="csl-nav-items">
-        <nav role="navigation" class="navbar-navigation">
-          
-          <!-- Dropdown 1: Loan Programs -->
-          <div class="navbar-dropdown">
-            <div class="navbar-dropdown-toggle">
-              <span class="navbar-link-text">Loan Programs</span>
-              <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/687f9d1c858e8a536e0517dd_chevron_down_dark.svg" alt="" class="navbar-icon">
-            </div>
-            <div class="navbar-dropdown-navigation">
-              <div class="nav-grid-cols">
-                <div class="navbar-dropdown-group">
-                  <div class="navbar-dropdown-group--label">Explore Programs</div>
-                  <a href="https://www.centerstreetlending.com/loan-overview" class="navbar-dropdown-group--link">Loan Overview</a>
-                  <a href="https://www.centerstreetlending.com/loans/fix-and-flip" class="navbar-dropdown-group--link">Fix and Flip</a>
-                  <a href="https://www.centerstreetlending.com/loans/new-construction" class="navbar-dropdown-group--link">New Construction</a>
-                  <a href="https://www.centerstreetlending.com/loans/bridge" class="navbar-dropdown-group--link">Bridge</a>
-                </div>
-                <div class="navbar-dropdown-group">
-                  <div class="navbar-dropdown-group--label">Related Info</div>
-                  <a href="https://www.centerstreetlending.com/where-we-lend" class="navbar-dropdown-group--link">Where We Lend</a>
-                  <a href="https://www.centerstreetlending.com/recently-funded" class="navbar-dropdown-group--link">Recently Funded</a>
-                  <a href="https://www.centerstreetlending.com/contact" class="navbar-dropdown-group--link">Contact Us</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dropdown 2: Borrower Perks (Highlighted Dedicated Program Item) -->
-          <div class="navbar-dropdown csl-perks-menu">
-            <div class="navbar-dropdown-toggle" style="background: rgba(70, 131, 179, 0.08); border-radius: 20px; padding: 6px 14px; border: 1px solid rgba(70, 131, 179, 0.28);">
-              <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#16a34a;"></span>
-              <span class="navbar-link-text" style="color: #4683B3; font-weight: 800;">Borrower Perks</span>
-              <span style="font-size: 10px; background: #4683B3; color: #ffffff; padding: 2px 7px; border-radius: 10px; font-weight: 800; letter-spacing: 0.5px;">NEW</span>
-              <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/687f9d1c858e8a536e0517dd_chevron_down_dark.svg" alt="" class="navbar-icon">
-            </div>
-            <div class="navbar-dropdown-navigation" style="min-width: 280px;">
-              <div class="nav-grid-cols cc-1col">
-                <div class="navbar-dropdown-group">
-                  <div class="navbar-dropdown-group--label">Exclusive Benefits</div>
-                  <a href="#hero" class="navbar-dropdown-group--link active-perk">
-                    <strong>Resale Advantage Program</strong>
-                    <div style="font-size: 12px; color: #64748B; margin-top: 2px;">1% Exit Listing + $500 Flat Escrow</div>
-                  </a>
-                  <a href="https://onesiteapp.com/login" target="_blank" class="navbar-dropdown-group--link">Draw Management &amp; Schedules</a>
-                  <a href="https://www.centerstreetlending.com/request-a-payoff" class="navbar-dropdown-group--link">Request a Loan Payoff</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dropdown 3: About -->
-          <div class="navbar-dropdown">
-            <div class="navbar-dropdown-toggle">
-              <span class="navbar-link-text">About</span>
-              <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/687f9d1c858e8a536e0517dd_chevron_down_dark.svg" alt="" class="navbar-icon">
-            </div>
-            <div class="navbar-dropdown-navigation">
-              <div class="nav-grid-cols">
-                <div class="navbar-dropdown-group">
-                  <div class="navbar-dropdown-group--label">Explore Center Street</div>
-                  <a href="https://www.centerstreetlending.com/about-us" class="navbar-dropdown-group--link">About Center Street</a>
-                  <a href="https://www.centerstreetlending.com/faq" class="navbar-dropdown-group--link">FAQs</a>
-                </div>
-                <div class="navbar-dropdown-group">
-                  <div class="navbar-dropdown-group--label">Related Info</div>
-                  <a href="https://www.centerstreetlending.com/blog" class="navbar-dropdown-group--link">Blog</a>
-                  <a href="https://www.centerstreetlending.com/careers" class="navbar-dropdown-group--link">Careers</a>
-                  <a href="https://www.centerstreetlending.com/events" class="navbar-dropdown-group--link">Events</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dropdown 4: Who We Serve -->
-          <div class="navbar-dropdown">
-            <div class="navbar-dropdown-toggle">
-              <span class="navbar-link-text">Who We Serve</span>
-              <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/687f9d1c858e8a536e0517dd_chevron_down_dark.svg" alt="" class="navbar-icon">
-            </div>
-            <div class="navbar-dropdown-navigation">
-              <div class="nav-grid-cols cc-1col">
-                <div class="navbar-dropdown-group">
-                  <div class="navbar-dropdown-group--label">Work with Us</div>
-                  <a href="https://www.centerstreetlending.com/borrowers-overview" class="navbar-dropdown-group--link">Borrowers, Builders, &amp; Developers</a>
-                  <a href="https://www.centerstreetlending.com/brokers" class="navbar-dropdown-group--link">Brokers</a>
-                  <a href="https://www.centerstreetlending.com/agents" class="navbar-dropdown-group--link">Real Estate Agents</a>
-                  <a href="https://www.centerstreetlending.com/general-contractors" class="navbar-dropdown-group--link">General Contractors</a>
-                  <a href="https://www.centerstreetcompanies.com" target="_blank" class="navbar-dropdown-group--link">Capital Investors</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dropdown 5: Manage My Loans -->
-          <div class="navbar-dropdown">
-            <div class="navbar-dropdown-toggle">
-              <span class="navbar-link-text">Manage My Loans</span>
-              <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/687f9d1c858e8a536e0517dd_chevron_down_dark.svg" alt="" class="navbar-icon">
-            </div>
-            <div class="navbar-dropdown-navigation">
-              <div class="nav-grid-cols cc-1col">
-                <div class="navbar-dropdown-group">
-                  <div class="navbar-dropdown-group--label">Choose a Login Option</div>
-                  <a href="https://onesiteapp.com/login" target="_blank" class="navbar-dropdown-group--link">Manage Draws</a>
-                  <a href="https://www.centerstreetlending.com/request-a-payoff" class="navbar-dropdown-group--link">Request Payoff</a>
-                  <a href="https://cslapp.net/login" target="_blank" class="navbar-dropdown-group--link">Make A Payment</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </nav>
-
-        <!-- Right: Direct Phone & Modal Trigger -->
-        <div class="navbar-left">
-          <a href="tel:949-244-1090" class="navbar-link">Call 949-244-1090</a>
-          <button type="button" class="nav-btn open-modal-btn" data-intent="both" style="background: #2C3842; color: #ffffff; font-size: 14px; font-weight: 800; padding: 11px 24px; border-radius: 30px; border: none; cursor: pointer; transition: all 0.2s; white-space: nowrap; box-shadow: 0 4px 14px rgba(44,56,66,0.22); letter-spacing: 0.2px;">
-            Claim Resale Perks &rarr;
+      <nav class="csl-exact-nav" id="csl-desktop-nav">
+        
+        <!-- Loan Programs (Chevron on LEFT as in original site) -->
+        <div class="csl-exact-dropdown">
+          <button type="button" class="csl-exact-dropdown-btn">
+            <svg class="csl-chevron-left" width="10" height="6" viewBox="0 0 10 6" fill="none">
+              <path d="M1 1L5 5L9 1" stroke="#2C3842" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="csl-exact-link-text">Loan Programs</span>
           </button>
+          <div class="csl-exact-dropdown-menu csl-menu-programs">
+            <div class="csl-menu-grid">
+              <div class="csl-menu-col">
+                <div class="csl-menu-heading">Explore Programs</div>
+                <a href="https://www.centerstreetlending.com/loan-overview">Loan Overview</a>
+                <a href="https://www.centerstreetlending.com/loans/fix-and-flip">Fix and Flip</a>
+                <a href="https://www.centerstreetlending.com/loans/new-construction">New Construction</a>
+                <a href="https://www.centerstreetlending.com/loans/bridge">Bridge</a>
+              </div>
+              <div class="csl-menu-col">
+                <div class="csl-menu-heading">Related Info</div>
+                <a href="https://www.centerstreetlending.com/where-we-lend">Where We Lend</a>
+                <a href="https://www.centerstreetlending.com/recently-funded">Recently Funded</a>
+                <a href="https://www.centerstreetlending.com/contact">Contact Us</a>
+              </div>
+            </div>
+          </div>
         </div>
 
+        <!-- About (Chevron on RIGHT) -->
+        <div class="csl-exact-dropdown">
+          <button type="button" class="csl-exact-dropdown-btn">
+            <span class="csl-exact-link-text">About</span>
+            <svg class="csl-chevron-right" width="10" height="6" viewBox="0 0 10 6" fill="none">
+              <path d="M1 1L5 5L9 1" stroke="#2C3842" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="csl-exact-dropdown-menu csl-menu-about">
+            <div class="csl-menu-grid">
+              <div class="csl-menu-col">
+                <div class="csl-menu-heading">Explore Center Street Lending</div>
+                <a href="https://www.centerstreetlending.com/about-us">About Center Street</a>
+                <a href="https://www.centerstreetlending.com/faq">FAQs</a>
+              </div>
+              <div class="csl-menu-col">
+                <div class="csl-menu-heading">Related Info</div>
+                <a href="https://www.centerstreetlending.com/blog">Blog</a>
+                <a href="https://www.centerstreetlending.com/careers">Careers</a>
+                <a href="https://www.centerstreetlending.com/events">Events</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Who We Serve (Chevron on RIGHT) -->
+        <div class="csl-exact-dropdown">
+          <button type="button" class="csl-exact-dropdown-btn">
+            <span class="csl-exact-link-text">Who We Serve</span>
+            <svg class="csl-chevron-right" width="10" height="6" viewBox="0 0 10 6" fill="none">
+              <path d="M1 1L5 5L9 1" stroke="#2C3842" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="csl-exact-dropdown-menu csl-menu-serve">
+            <div class="csl-menu-col csl-single-col">
+              <div class="csl-menu-heading">Work with Us</div>
+              <a href="https://www.centerstreetlending.com/borrowers-overview">Borrowers, Builders, &amp; Developers</a>
+              <a href="https://www.centerstreetlending.com/brokers">Brokers</a>
+              <a href="https://www.centerstreetlending.com/agents">Real Estate Agents</a>
+              <a href="https://www.centerstreetlending.com/general-contractors">General Contractors</a>
+              <a href="https://www.centerstreetcompanies.com" target="_blank" rel="noopener">Capital Investors</a>
+            </div>
+          </div>
+        </div>
+
+      </nav>
+    </div>
+
+    <!-- Right Group: Manage My Loans, Call Phone, Apply Now Button -->
+    <div class="csl-exact-right">
+      
+      <!-- Manage My Loans (Chevron on RIGHT) -->
+      <div class="csl-exact-dropdown">
+        <button type="button" class="csl-exact-dropdown-btn">
+          <span class="csl-exact-link-text">Manage My Loans</span>
+          <svg class="csl-chevron-right" width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1L5 5L9 1" stroke="#2C3842" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="csl-exact-dropdown-menu csl-menu-login" style="right: 0; left: auto;">
+          <div class="csl-menu-col csl-single-col">
+            <div class="csl-menu-heading">Choose a login option</div>
+            <a href="https://onesiteapp.com/login" target="_blank" rel="noopener">Manage Draws</a>
+            <a href="https://www.centerstreetlending.com/request-a-payoff">Request Payoff</a>
+            <a href="https://cslapp.net/login" target="_blank" rel="noopener">Make A Payment</a>
+          </div>
+        </div>
       </div>
+
+      <!-- Phone Number Link -->
+      <a href="tel:949-244-1090" class="csl-exact-phone">Call 949-244-1090</a>
+
+      <!-- Original Solid Blue Apply Now Button -->
+      <a href="https://www.centerstreetlending.com/apply-now" class="csl-exact-apply-btn">Apply Now</a>
 
       <!-- Mobile Hamburger Menu Button -->
-      <div class="menu-button" id="csl-hamburger-btn" aria-label="Toggle Menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2C3842" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-      </div>
+      <button type="button" class="csl-exact-hamburger" id="csl-exact-hamburger-btn" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
     </div>
+
   </div>
 </header>
 
-<!-- CSL SUBNAV BREADCRUMB STRIP -->
-<div class="csl-breadcrumb-strip">
-  <div style="max-width: 1440px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
-    <div>
-      <a href="https://www.centerstreetlending.com/">Home</a>
-      <span class="separator">/</span>
-      <a href="https://www.centerstreetlending.com/borrowers-overview">Borrower Perks</a>
-      <span class="separator">/</span>
-      <span class="current">Resale Advantage Program</span>
-    </div>
-    <div style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: #166534; background: #DCFCE7; border: 1px solid #BBF7D0; border-radius: 20px; padding: 3px 12px;">
-      <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#16a34a;"></span>
-      Active California Borrower Benefit
-    </div>
-  </div>
+
+
 </div>
 
 
@@ -2897,6 +3118,19 @@
     observer.observe(document.body, { attributes: true, childList: true, subtree: true });
   }
   setInterval(sendHeight, 1500);
+})();
+</script>
+
+
+<script>
+(function() {
+  var btn = document.getElementById('csl-exact-hamburger-btn');
+  var nav = document.getElementById('csl-desktop-nav');
+  if (btn && nav) {
+    btn.addEventListener('click', function() {
+      nav.classList.toggle('is-mobile-open');
+    });
+  }
 })();
 </script>
 
