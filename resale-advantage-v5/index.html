@@ -1231,12 +1231,9 @@
     .nav-left .wordmark img {
       height: 24px !important;
     }
-    .nav-divider, .nav-pill {
-      display: none !important;
-    }
-    .nav-btn {
-      padding: 7px 14px !important;
-      font-size: 12px !important;
+    .nav-subtagline {
+      font-size: 10px !important;
+      letter-spacing: 0.5px !important;
     }
     .wrap {
       padding: 0 18px;
@@ -1282,22 +1279,14 @@
 
 
 
-<!-- STICKY HEADER WITH CLEAN BRANDING & CTA -->
+<!-- STICKY HEADER: CENTERED LOGO + PRE-NEGOTIATED PERKS SUBTAGLINE -->
 <header id="sticky-header">
-  <div class="wrap nav-row" style="display: flex; align-items: center; justify-content: space-between;">
-    <div class="nav-left" style="display: flex; align-items: center; gap: 16px;">
-      <a class="wordmark" href="https://www.centerstreetlending.com/">
-        <img src="logo1.svg" alt="Center Street Resale Advantage" style="height: 32px; max-width: 100%; width: auto; display: block;">
-      </a>
-      <div class="nav-divider" style="height: 22px; width: 1.5px; background: #DCE5EC;"></div>
-      <span class="nav-pill" style="background: rgba(70, 131, 179, 0.1); color: #2C5F8A; padding: 4px 12px; border-radius: 20px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.5px; border: 1px solid rgba(70, 131, 179, 0.25); white-space: nowrap;">
-        Exclusive Borrower Program
-      </span>
-    </div>
-    <div class="nav-right">
-      <button type="button" class="nav-btn open-modal-btn" data-intent="both" style="background: #4683B3; color: #ffffff; font-size: 13.5px; font-weight: 800; padding: 9px 20px; border-radius: 8px; border: none; cursor: pointer; transition: background 0.2s, transform 0.1s; white-space: nowrap; box-shadow: 0 2px 8px rgba(70, 131, 179, 0.25);">
-        Check Property Eligibility &rarr;
-      </button>
+  <div class="wrap" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+    <a class="wordmark" href="https://www.centerstreetlending.com/" style="display: inline-block;">
+      <img src="logo1.svg" alt="Center Street Resale Advantage" style="height: 30px; max-width: 100%; width: auto; display: block; margin: 0 auto;">
+    </a>
+    <div class="nav-subtagline" style="margin-top: 6px; font-size: 11.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; line-height: 1.3;">
+      <span style="color: #64748B;">PRE-NEGOTIATED FOR CSL BORROWERS &middot;</span> <span style="color: #4683B3; font-weight: 800;">1% LISTING + $500 ESCROW ON EXITS</span>
     </div>
   </div>
 </header>
