@@ -26,14 +26,10 @@
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 
 <style>
-  @font-face {
-    font-family: 'Arteria Std Compress';
-    src: local('Arteria Std Compress');
-    font-display: swap;
-  }
+  
 
   :root {
     --navy: #2C3842;
@@ -187,11 +183,11 @@
     box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.35);
   }
   .hero-title {
-    font-family: 'Arteria Std Compress', 'Bebas Neue', 'Roboto', sans-serif;
-    font-size: 58px;
-    line-height: 1.05;
-    font-weight: 800;
-    letter-spacing: 0.5px;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    font-size: 46px;
+    line-height: 1.15;
+    font-weight: 900;
+    letter-spacing: -0.02em;
     color: #ffffff;
     margin-bottom: 18px;
     text-transform: uppercase;
@@ -310,65 +306,7 @@
     color: var(--muted);
   }
 
-  /* Intent Pill Selector */
-  .intent-selector-label {
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 8px;
-    display: block;
-  }
-  .intent-pills-group {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 8px;
-    margin-bottom: 16px;
-  }
-  .intent-pill {
-    position: relative;
-    cursor: pointer;
-  }
-  .intent-pill input {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-  }
-  .pill-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 6px;
-    background: #F8FAFC;
-    border: 1.5px solid var(--line);
-    border-radius: 8px;
-    text-align: center;
-    transition: all 0.2s ease;
-    height: 100%;
-    box-sizing: border-box;
-  }
-  .pill-title {
-    font-size: 12.5px;
-    font-weight: 800;
-    color: var(--navy);
-    line-height: 1.2;
-  }
-  .pill-sub {
-    font-size: 10.5px;
-    color: var(--accent);
-    font-weight: 700;
-    margin-top: 2px;
-  }
-  .intent-pill input:checked + .pill-box {
-    background: #EFF6FE;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 2px rgba(70, 131, 179, 0.2);
-  }
-  .intent-pill input:checked + .pill-box .pill-title {
-    color: var(--accent-hover);
-  }
+  
 
   /* Form Fields */
   .form-row-2 {
@@ -1284,8 +1222,15 @@
       gap: 36px;
     }
     .hero-title {
-      font-size: 46px;
-    }
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    font-size: 46px;
+    line-height: 1.15;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
     .path-cards-grid {
       grid-template-columns: 1fr;
     }
@@ -1315,8 +1260,15 @@
       padding: 36px 0 44px 0;
     }
     .hero-title {
-      font-size: 38px;
-    }
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    font-size: 46px;
+    line-height: 1.15;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
     .hero-subhead {
       font-size: 15px;
     }
@@ -1339,10 +1291,7 @@
     .bottom-cta-title {
       font-size: 28px;
     }
-    .intent-pills-group {
-      grid-template-columns: 1fr;
-      gap: 6px;
-    }
+    
   }
 </style>
 </head>
@@ -1439,30 +1388,7 @@
         </div>
 
         <form class="lead-capture-form" id="hero-lead-form">
-          <label class="intent-selector-label">What would you like assistance with?</label>
-          <div class="intent-pills-group">
-            <label class="intent-pill">
-              <input type="radio" name="intent" value="both" checked>
-              <div class="pill-box">
-                <span class="pill-title">Both Deals</span>
-                <span class="pill-sub">Save $40K+</span>
-              </div>
-            </label>
-            <label class="intent-pill">
-              <input type="radio" name="intent" value="listing">
-              <div class="pill-box">
-                <span class="pill-title">1% Listing</span>
-                <span class="pill-sub">Innovate</span>
-              </div>
-            </label>
-            <label class="intent-pill">
-              <input type="radio" name="intent" value="escrow">
-              <div class="pill-box">
-                <span class="pill-title">$500 Escrow</span>
-                <span class="pill-sub">Honest</span>
-              </div>
-            </label>
-          </div>
+          <input type="hidden" name="intent" value="both">
 
           <div class="form-row-2">
             <div class="form-field-group">
@@ -1489,11 +1415,11 @@
           <div class="form-row-2">
             <div class="form-field-group">
               <label>Property Address <span class="opt">(Optional)</span></label>
-              <input type="text" name="property_address" class="form-input" placeholder="Property address">
+              <input type="text" name="property_address" class="form-input" placeholder="Property Address (Optional)">
             </div>
             <div class="form-field-group">
               <label>CSL Loan # <span class="opt">(Optional)</span></label>
-              <input type="text" name="loan_number" class="form-input" placeholder="CSL loan #">
+              <input type="text" name="loan_number" class="form-input" placeholder="CSL Loan # (Optional)">
             </div>
           </div>
 
@@ -1913,100 +1839,77 @@
     </div>
 
     <form class="lead-capture-form" id="modal-lead-form">
-      <label class="intent-selector-label">What would you like assistance with?</label>
-      <div class="intent-pills-group">
-        <label class="intent-pill">
-          <input type="radio" name="intent" value="both" checked>
-          <div class="pill-box">
-            <span class="pill-title">Both Deals</span>
-            <span class="pill-sub">Save $40K+</span>
+          <input type="hidden" name="intent" value="both">
+
+          <div class="form-row-2">
+            <div class="form-field-group">
+              <label>First Name</label>
+              <input type="text" name="first_name" class="form-input" placeholder="First Name" required autocomplete="given-name">
+            </div>
+            <div class="form-field-group">
+              <label>Last Name</label>
+              <input type="text" name="last_name" class="form-input" placeholder="Last Name" required autocomplete="family-name">
+            </div>
           </div>
-        </label>
-        <label class="intent-pill">
-          <input type="radio" name="intent" value="listing">
-          <div class="pill-box">
-            <span class="pill-title">1% Listing</span>
-            <span class="pill-sub">Innovate</span>
+
+          <div class="form-row-2">
+            <div class="form-field-group">
+              <label>Email</label>
+              <input type="email" name="email" class="form-input" placeholder="Email Address" required autocomplete="email">
+            </div>
+            <div class="form-field-group">
+              <label>Phone</label>
+              <input type="tel" name="phone" class="form-input" placeholder="Phone Number" required autocomplete="tel">
+            </div>
           </div>
-        </label>
-        <label class="intent-pill">
-          <input type="radio" name="intent" value="escrow">
-          <div class="pill-box">
-            <span class="pill-title">$500 Escrow</span>
-            <span class="pill-sub">Honest</span>
+
+          <div class="form-row-2">
+            <div class="form-field-group">
+              <label>Property Address <span class="opt">(Optional)</span></label>
+              <input type="text" name="property_address" class="form-input" placeholder="Property Address (Optional)">
+            </div>
+            <div class="form-field-group">
+              <label>CSL Loan # <span class="opt">(Optional)</span></label>
+              <input type="text" name="loan_number" class="form-input" placeholder="CSL Loan # (Optional)">
+            </div>
           </div>
-        </label>
-      </div>
 
-      <div class="form-row-2">
-        <div class="form-field-group">
-          <label>First Name</label>
-          <input type="text" name="first_name" class="form-input" placeholder="First Name" required autocomplete="given-name">
-        </div>
-        <div class="form-field-group">
-          <label>Last Name</label>
-          <input type="text" name="last_name" class="form-input" placeholder="Last Name" required autocomplete="family-name">
-        </div>
-      </div>
+          <div class="form-field-group">
+            <label>When do you plan to sell?</label>
+            <select name="timeline" class="form-select">
+              <option value="Ready now">Ready now</option>
+              <option value="1–3 months" selected>1–3 months</option>
+              <option value="3–6 months">3–6 months</option>
+              <option value="6+ months">6+ months</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
 
-      <div class="form-row-2">
-        <div class="form-field-group">
-          <label>Email</label>
-          <input type="email" name="email" class="form-input" placeholder="Email Address" required autocomplete="email">
-        </div>
-        <div class="form-field-group">
-          <label>Phone</label>
-          <input type="tel" name="phone" class="form-input" placeholder="Phone Number" required autocomplete="tel">
-        </div>
-      </div>
+          <div class="consent-box">
+            <label class="consent-label">
+              <input type="checkbox" name="consent" checked required>
+              <span class="consent-text">
+                I agree that CSL and its affiliates (Innovate Realty &amp; Honest Escrow) may contact me regarding the Resale Advantage program. Consent is not a condition of any loan. See <a href="legal.html" target="_blank">legal terms</a>.
+              </span>
+            </label>
+          </div>
 
-      <div class="form-row-2">
-        <div class="form-field-group">
-          <label>Property Address <span class="opt">(Optional)</span></label>
-          <input type="text" name="property_address" class="form-input" placeholder="Property address">
-        </div>
-        <div class="form-field-group">
-          <label>CSL Loan # <span class="opt">(Optional)</span></label>
-          <input type="text" name="loan_number" class="form-input" placeholder="CSL loan #">
-        </div>
-      </div>
+          <!-- Honeypot -->
+          <input type="text" name="company_website" style="display:none;" tabindex="-1" autocomplete="off">
 
-      <div class="form-field-group">
-        <label>When do you plan to sell?</label>
-        <select name="timeline" class="form-select">
-          <option value="Ready now">Ready now</option>
-          <option value="1–3 months" selected>1–3 months</option>
-          <option value="3–6 months">3–6 months</option>
-          <option value="6+ months">6+ months</option>
-          <option value="Not sure yet">Not sure yet</option>
-        </select>
-      </div>
+          <button type="submit" class="btn-submit-lead">
+            CLAIM MY RESALE PERKS &rarr;
+          </button>
 
-      <div class="consent-box">
-        <label class="consent-label">
-          <input type="checkbox" name="consent" checked required>
-          <span class="consent-text">
-            I agree that CSL and affiliates (Innovate Realty &amp; Honest Escrow) may contact me regarding this program. See <a href="legal.html" target="_blank">terms</a>.
-          </span>
-        </label>
-      </div>
+          <div class="form-trust-line">
+            🔒 Free &bull; 100% Confidential &bull; Choose your own providers
+          </div>
 
-      <!-- Honeypot -->
-      <input type="text" name="company_website" style="display:none;" tabindex="-1" autocomplete="off">
-
-      <button type="submit" class="btn-submit-lead">
-        SUBMIT REQUEST &rarr;
-      </button>
-
-      <div class="form-trust-line">
-        🔒 Free &bull; 100% Confidential &bull; Choose your own providers
-      </div>
-
-      <div class="form-success-alert">
-        <div class="success-icon-badge">✓</div>
-        <div class="success-alert-title">Thank You — Request Received!</div>
-        <p class="success-alert-desc">A team member will reach out within 24 hours with your pre-negotiated perk details. You are always free to choose your own providers.</p>
-      </div>
+          <div class="form-success-alert">
+            <div class="success-icon-badge">✓</div>
+            <div class="success-alert-title">Thank You — Request Received!</div>
+            <p class="success-alert-desc">A team member will reach out within 24 hours with your pre-negotiated perk details. You are always free to choose your own providers.</p>
+          </div>
     </form>
   </div>
 </div>
@@ -2054,7 +1957,7 @@
       return; // honeypot caught
     }
 
-    var intentVal = form.querySelector('input[name="intent"]:checked') ? form.querySelector('input[name="intent"]:checked').value : 'both';
+    var intentInput = form.querySelector('input[name="intent"]'); var intentVal = intentInput ? intentInput.value : 'both';
     var intentMap = {
       'both': 'Both — maximum savings 1% listing + $500 escrow in one coordinated close',
       'listing': 'Just the 1% listing fee Innovate Realty — I need an agent to sell my property',
@@ -2154,8 +2057,8 @@
   function openModal(intent) {
     if (!modal) return;
     if (intent && modalForm) {
-      var radio = modalForm.querySelector('input[name="intent"][value="' + intent + '"]');
-      if (radio) radio.checked = true;
+      var hiddenIntent = modalForm.querySelector('input[name="intent"]');
+      if (hiddenIntent) hiddenIntent.value = intent;
     }
     modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');
