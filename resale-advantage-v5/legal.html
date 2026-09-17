@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Notices, Disclosures & Terms | CSL Resale Advantage</title>
+  <meta name="description" content="Official legal notices, Affiliated Business Arrangement (AfBA) disclosures, program terms, privacy policy, and licensing for the CSL Resale Advantage program.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #2C3842;
+      --navy-deep: #1b252e;
+      --accent: #4683B3;
+      --accent-hover: #3D6A8D;
+      --ink: #2C3842;
+      --muted: #5D6871;
+      --bg: #FFFFFF;
+      --bg-soft: #F8FAFC;
+      --line: #E2E8F0;
+      --alert-bg: #EFF6FE;
+      --alert-border: #3B82F6;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      color: #334155;
+      background: #F8FAFC;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      background: var(--navy-deep);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-wrap {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .header-logos {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .header-logos img {
+      height: 32px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+    .header-tag {
+      color: #94A3B8;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      border-left: 1px solid rgba(255,255,255,0.2);
+      padding-left: 16px;
+    }
+    .back-btn {
+      color: #FFFFFF;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 8px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .back-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .hero-banner {
+      background: linear-gradient(135deg, #1b252e 0%, #2C3842 100%);
+      color: #FFFFFF;
+      padding: 56px 0;
+      text-align: center;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .hero-banner h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      color: #FFFFFF;
+    }
+    .hero-banner p {
+      font-size: 1.05rem;
+      color: #94A3B8;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .main-layout {
+      max-width: 1140px;
+      margin: 40px auto 80px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .sidebar {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 24px;
+      position: sticky;
+      top: 100px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .sidebar-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .sidebar-menu {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .sidebar-menu a {
+      color: #475569;
+      text-decoration: none;
+      font-size: 14.5px;
+      font-weight: 500;
+      display: block;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: all 0.15s ease;
+    }
+    .sidebar-menu a:hover {
+      background: #EFF6FE;
+      color: var(--accent);
+    }
+    .content-area {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 48px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    .legal-section {
+      margin-bottom: 60px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .legal-section:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .legal-section h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 20px;
+      letter-spacing: -0.3px;
+    }
+    .legal-section h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1E293B;
+      margin: 28px 0 12px 0;
+    }
+    .legal-section h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #334155;
+      margin: 20px 0 8px 0;
+    }
+    .legal-section p {
+      margin-bottom: 16px;
+      font-size: 15px;
+      color: #475569;
+    }
+    .legal-section ul, .legal-section ol {
+      margin: 14px 0 20px 24px;
+      color: #475569;
+      font-size: 15px;
+    }
+    .legal-section li {
+      margin-bottom: 8px;
+    }
+    .callout-box {
+      background: #EFF6FE;
+      border-left: 4px solid #2563EB;
+      padding: 18px 22px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+    }
+    .callout-box h4 {
+      color: #1E40AF;
+      margin: 0 0 6px 0;
+      font-size: 15px;
+    }
+    .callout-box p {
+      color: #1E3A8A;
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .fee-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 14px;
+    }
+    .fee-table th, .fee-table td {
+      border: 1px solid #CBD5E1;
+      padding: 12px 16px;
+      text-align: left;
+    }
+    .fee-table th {
+      background: #F1F5F9;
+      font-weight: 700;
+      color: #1E293B;
+    }
+    .fee-table tr:nth-child(even) {
+      background: #F8FAFC;
+    }
+    footer {
+      background: var(--navy-deep);
+      color: #94A3B8;
+      padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 13.5px;
+    }
+    .footer-wrap {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    @media (max-width: 860px) {
+      .main-layout { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+      .content-area { padding: 28px 20px; }
+      .header-wrap { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-wrap">
+      <div class="header-logos">
+        <a href="index.html"><img src="Company Logo.svg" alt="Center Street Lending"></a>
+        <div class="header-tag">Legal Notices &amp; Regulatory Disclosures</div>
+      </div>
+      <a href="index.html" class="back-btn">&larr; Return to Resale Advantage</a>
+    </div>
+  </header>
+
+  <section class="hero-banner">
+    <div class="wrap" style="max-width: 900px; margin: 0 auto; padding: 0 24px;">
+      <h1>Legal Notices, Disclosures &amp; Terms</h1>
+      <p>Comprehensive regulatory disclosures, Affiliated Business Arrangement (AfBA) notices, program terms, and privacy protections for Center Street Lending, Innovate Realty, and Honest Escrow.</p>
+    </div>
+  </section>
+
+  <div class="main-layout">
+    <aside class="sidebar">
+      <div class="sidebar-title">Navigation Menu</div>
+      <ul class="sidebar-menu">
+        <li><a href="#afba">1. Affiliated Business (AfBA)</a></li>
+        <li><a href="#terms">2. Program Terms &amp; Conditions</a></li>
+        <li><a href="#privacy">3. Privacy Policy (CCPA/CPRA)</a></li>
+        <li><a href="#terms-of-use">4. Website Terms of Use</a></li>
+        <li><a href="#tcpa">5. TCPA Marketing Consent</a></li>
+        <li><a href="#licensing">6. Regulatory Licensing &amp; Fair Housing</a></li>
+      </ul>
+    </aside>
+
+    <main class="content-area">
+
+      <!-- SECTION 1: AfBA -->
+      <section id="afba" class="legal-section">
+        <h2>1. Affiliated Business Arrangement (AfBA) Disclosure &amp; Common Ownership Notice</h2>
+        <div class="callout-box">
+          <h4>MANDATORY REGULATORY DISCLOSURE &bull; RESPA &amp; CALIFORNIA DRE COMPLIANCE</h4>
+          <p>This Notice is provided pursuant to Section 8 of the Real Estate Settlement Procedures Act (RESPA, 12 U.S.C. § 2607, 12 C.F.R. § 1024.15) and California Business &amp; Professions Code § 10177.4. Center Street Lending Corp., Innovate Realty Inc., and Honest Escrow Inc. are affiliated business entities operating under common ownership and control.</p>
+        </div>
+
+        <h3>1.1 Nature of the Affiliation &amp; "Common Umbrella"</h3>
+        <p>You are hereby notified that <strong>Center Street Lending Corp.</strong> ("CSL"), <strong>Innovate Realty Inc.</strong> ("Innovate"), and <strong>Honest Escrow Inc.</strong> ("Honest") share common corporate parentage, common management, and/or overlapping beneficial ownership (the "Common Umbrella").</p>
+        <p>Because of this affiliated relationship, referrals of settlement, brokerage, or lending business among these entities may provide a financial or other commercial benefit to the common ownership group, the respective corporate entities, and their officers or directors. Specifically:</p>
+        <ul>
+          <li>Center Street Lending Corp. may introduce or refer its borrowers to Innovate Realty Inc. for real estate listing, marketing, and brokerage services.</li>
+          <li>Center Street Lending Corp. and/or Innovate Realty Inc. may introduce or refer buyers or sellers to Honest Escrow Inc. for escrow, settlement, and closing coordination.</li>
+          <li>Honest Escrow Inc. maintains synchronized closing workflows with Center Street Lending Corp. to expedite payoff statements and satisfaction documentation.</li>
+        </ul>
+
+        <h3>1.2 Complete Freedom of Choice (No Required Use)</h3>
+        <p><strong>YOU ARE NOT REQUIRED TO USE INNOVATE REALTY INC. OR HONEST ESCROW INC. AS A CONDITION OF OBTAINING, MAINTAINING, EXTENDING, MODIFYING, OR PAYING OFF A LOAN WITH CENTER STREET LENDING CORP.</strong></p>
+        <p>THERE ARE FREQUENTLY OTHER SETTLEMENT SERVICE PROVIDERS AVAILABLE WITH SIMILAR SERVICES. YOU ARE FREE TO SHOP AROUND TO DETERMINE THAT YOU ARE RECEIVING THE BEST SERVICES AND THE BEST RATE FOR THESE SERVICES.</p>
+        <p>Participation in the CSL Resale Advantage program is 100% voluntary, optional, and structured strictly à la carte:</p>
+        <ul>
+          <li><strong>Listing Only:</strong> You may list your property with Innovate Realty at the 1% listing commission while using any licensed escrow or title company of your choice.</li>
+          <li><strong>Escrow Only:</strong> You may utilize Honest Escrow for the $500 flat seller-side escrow fee while listing your property with any independent broker of your choice, or while selling the property as a For-Sale-By-Owner (FSBO).</li>
+          <li><strong>Both Services:</strong> You may combine Innovate Realty and Honest Escrow to achieve maximum workflow alignment and fee savings.</li>
+          <li><strong>Neither Service:</strong> You may choose to use entirely separate brokers and escrow companies with zero penalty or adverse impact on your current or future lending relationships with Center Street Lending Corp.</li>
+        </ul>
+
+        <h3>1.3 Estimated Range of Charges</h3>
+        <p>Below is the estimated range of charges for settlement services offered through this program:</p>
+        <table class="fee-table">
+          <thead>
+            <tr>
+              <th>Entity</th>
+              <th>Service</th>
+              <th>Program Fee</th>
+              <th>Standard Non-Program Fee</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Innovate Realty Inc.</strong></td>
+              <td>Real Estate Brokerage Listing Representation</td>
+              <td><strong>1.0%</strong> of gross sales price (Listing Side Only)*</td>
+              <td>2.5% – 3.0% of gross sales price</td>
+            </tr>
+            <tr>
+              <td><strong>Honest Escrow Inc.</strong></td>
+              <td>Base Seller-Side Escrow Settlement Fee</td>
+              <td><strong>$500.00 Flat Fee</strong>**</td>
+              <td>$2.50–$3.50 per $1,000 + $350–$500 base</td>
+            </tr>
+            <tr>
+              <td><strong>Center Street Lending</strong></td>
+              <td>Payoff Processing &amp; Direct Coordination</td>
+              <td><strong>$0.00</strong> direct affiliate fee</td>
+              <td>Standard payoff statement fees per note</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size: 13.5px; color: #64748B;"><em>*Cooperating/buyer broker commissions (if any) are not included and are negotiated independently by seller. **Buyer-side escrow fees remain standard. Government recording fees, transfer taxes, title insurance premiums, HOA transfer fees, and third-party vendor charges are billed at actual cost.</em></p>
+      </section>
+
+      <!-- SECTION 2: Program Terms -->
+      <section id="terms" class="legal-section">
+        <h2>2. CSL Resale Advantage Program Terms &amp; Conditions</h2>
+        
+        <h3>2.1 Purpose &amp; Program Scope</h3>
+        <p>The CSL Resale Advantage Program is a preferred client resource designed exclusively for real estate investors and borrowers financing California investment, commercial spec-construction, bridge, or fix-and-flip properties through Center Street Lending Corp.</p>
+
+        <h3>2.2 Eligibility Requirements</h3>
+        <p>To qualify for the discounted commission rates and escrow fee caps under the Program:</p>
+        <ol>
+          <li>The participant must be an active Center Street Lending borrower in good standing, or an approved alumna/alumnus borrower with a verified history of satisfactory payoff.</li>
+          <li>The real property must be located within the State of California and held strictly for commercial, business, or investment purposes. Consumer, owner-occupied residential properties are strictly ineligible.</li>
+          <li>The participant must sign a standard Exclusive Right to Sell Listing Agreement with Innovate Realty Inc. and/or formal Escrow Instructions with Honest Escrow Inc.</li>
+        </ol>
+
+        <h3>2.3 1% Listing Commission Terms (Innovate Realty Inc.)</h3>
+        <ul>
+          <li><strong>Listing Agent Representation:</strong> The 1% commission compensates Innovate Realty Inc. for marketing and managing the listing side of the transaction.</li>
+          <li><strong>Buyer's Broker Commission Discretion:</strong> The seller retains complete discretion over whether to offer, and what amount to offer, to a cooperating buyer's broker. Buyer broker compensation is not included in the 1% fee.</li>
+          <li><strong>InnoLaunch Suite:</strong> Access to complimentary pre-completion marketing, digital campaigns, photography, and syndication is contingent upon executing an active exclusive listing agreement with an Innovate Realty agent.</li>
+        </ul>
+
+        <h3>2.4 $500 Flat Seller-Side Escrow Terms (Honest Escrow Inc.)</h3>
+        <ul>
+          <li><strong>Covered Fees:</strong> The $500 cap applies strictly to Honest Escrow's base seller closing fee for 1–4 unit residential investment properties.</li>
+          <li><strong>Excluded Third-Party Costs:</strong> The flat fee does not cover title insurance premiums (CLTA/ALTA), documentary transfer taxes, county recording fees, wire fees, courier fees, HOA certification fees, or lender payoff statement charges.</li>
+          <li><strong>Neutral Third-Party Fiduciary:</strong> Honest Escrow acts solely as a neutral escrow depository pursuant to California Financial Code § 17000 et seq., and does not act as an attorney, financial advisor, or real estate broker for either party.</li>
+        </ul>
+
+        <h3>2.5 Right to Modify or Terminate</h3>
+        <p>Center Street Lending, Innovate Realty, and Honest Escrow reserve the right to amend, suspend, or terminate this program at any time. Any changes will not affect transactions with fully executed listing agreements or opened escrow instructions prior to the date of modification.</p>
+      </section>
+
+      <!-- SECTION 3: Privacy Policy -->
+      <section id="privacy" class="legal-section">
+        <h2>3. Comprehensive Privacy Policy (CCPA / CPRA &amp; GLBA)</h2>
+        <p><strong>Last Updated: March 2026</strong></p>
+        <p>This Privacy Policy explains how Center Street Lending Corp., Innovate Realty Inc., and Honest Escrow Inc. (collectively "we", "us", or "our") collect, use, share, and protect your information.</p>
+
+        <h3>3.1 Information We Collect</h3>
+        <ul>
+          <li><strong>Direct Identifiers:</strong> Name, phone number, email address, property addresses, loan identification numbers, corporate entity names (LLC, Corp).</li>
+          <li><strong>Transaction &amp; Property Information:</strong> Construction timelines, exit strategies, estimated listing prices, payoff balances, and escrow details.</li>
+          <li><strong>Digital &amp; Analytics Data:</strong> IP address, device specifications, browser type, referral representative UTM parameters, and form submission data.</li>
+        </ul>
+
+        <h3>3.2 Cross-Entity Sharing Under Common Ownership</h3>
+        <p>Because Center Street Lending, Innovate Realty, and Honest Escrow operate under a unified corporate umbrella, <strong>information submitted through this website or directly to company representatives is shared among these affiliated entities</strong> to coordinate your loan payoff, evaluate eligibility for the 1% listing commission, prepare escrow instructions, and provide customer support.</p>
+        <p>We do not sell personal information to unaffiliated third parties for monetary consideration.</p>
+
+        <h3>3.3 California Consumer Privacy Rights (CCPA / CPRA)</h3>
+        <p>California residents possess the following statutory rights:</p>
+        <ul>
+          <li><strong>Right to Know / Access:</strong> Request disclosure of the categories and specific pieces of personal information collected, sources, and third parties with whom it is shared.</li>
+          <li><strong>Right to Delete:</strong> Request deletion of personal data, subject to mandatory record retention laws under California DRE, DFPI, and financial regulatory statutes.</li>
+          <li><strong>Right to Correct:</strong> Request correction of inaccurate personal records.</li>
+          <li><strong>Right to Opt-Out:</strong> Direct us not to share your data for cross-context behavioral advertising.</li>
+          <li><strong>Non-Discrimination:</strong> We will not deny services, charge different prices, or provide a different quality of service for exercising your privacy rights.</li>
+        </ul>
+        <p>To exercise these rights, submit a verifiable request to: <a href="mailto:privacy@centerstreetlending.com" style="color: var(--accent); font-weight: 600;">privacy@centerstreetlending.com</a> or call (800) 555-5555.</p>
+
+        <h3>3.4 Gramm-Leach-Bliley Act (GLBA) Notice</h3>
+        <p>Non-public personal financial information gathered in connection with commercial lending by Center Street Lending Corp. or escrow transactions by Honest Escrow Inc. is safeguarded with administrative, technical, and physical safeguards in accordance with federal and California Financial Information Privacy Act requirements.</p>
+      </section>
+
+      <!-- SECTION 4: Terms of Use -->
+      <section id="terms-of-use" class="legal-section">
+        <h2>4. Website Terms of Use &amp; Financial Disclaimers</h2>
+        
+        <h3>4.1 Informational Use &amp; Calculators</h3>
+        <p>All content, tools, commission calculators, and savings comparison matrices on this website are provided strictly for illustrative, informational purposes. They do not constitute a formal loan quote, Good Faith Estimate, Loan Estimate, binding commission commitment, or escrow settlement statement. Actual savings and costs will vary depending upon property location, contract sales price, buyer agent commission agreements, title insurance rates, and escrow contingencies.</p>
+
+        <h3>4.2 No Professional Advice</h3>
+        <p>Nothing on this site constitutes legal, accounting, tax, real estate appraisal, or financial investment advice. Real estate investment involves substantial financial risk. You must consult your own certified legal counsel and CPA before executing binding agreements.</p>
+
+        <h3>4.3 Binding Arbitration &amp; Class Action Waiver</h3>
+        <p>Any dispute, claim, or controversy arising from your use of this website shall be resolved exclusively through final and binding arbitration administered by JAMS in Orange County, California, under its Comprehensive Arbitration Rules. You waive any right to bring or participate in any class action, collective arbitration, or representative proceeding against the affiliated entities.</p>
+      </section>
+
+      <!-- SECTION 5: TCPA -->
+      <section id="tcpa" class="legal-section">
+        <h2>5. TCPA Marketing Communications &amp; Electronic Consent Notice</h2>
+        <p>By submitting your contact information on this website and checking the consent box, you provide your express written consent under the Telephone Consumer Protection Act (47 U.S.C. § 227) to receive automated phone calls, artificial/prerecorded voice messages, and SMS/MMS text messages regarding the CSL Resale Advantage program from <strong>Center Street Lending Corp.</strong>, <strong>Innovate Realty Inc.</strong>, and <strong>Honest Escrow Inc.</strong></p>
+        <ul>
+          <li><strong>Consent is Optional:</strong> Consent to receive marketing calls or text messages is not a condition of obtaining, maintaining, or paying off any loan with Center Street Lending, nor is it a condition of purchasing any service from Innovate Realty or Honest Escrow.</li>
+          <li><strong>Message &amp; Data Rates:</strong> Standard message and data rates may apply depending on your mobile carrier plan.</li>
+          <li><strong>Opt-Out Instructions:</strong> To cancel text messages, reply <strong>STOP</strong> at any time. For help, reply <strong>HELP</strong>. To revoke consent for telephone calls, email <a href="mailto:compliance@centerstreetlending.com" style="color: var(--accent); font-weight: 600;">compliance@centerstreetlending.com</a>.</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 6: Licensing -->
+      <section id="licensing" class="legal-section">
+        <h2>6. Regulatory Licensing &amp; Equal Opportunity Disclosures</h2>
+        
+        <h3>6.1 Equal Housing Opportunity</h3>
+        <p>Center Street Lending Corp., Innovate Realty Inc., and Honest Escrow Inc. are pledged to the letter and spirit of U.S. policy for the achievement of equal housing opportunity. We conduct business in full compliance with the Federal Fair Housing Act, the Equal Credit Opportunity Act (ECOA), and California fair lending and housing statutes.</p>
+
+        <h3>6.2 Corporate Licensing Directory</h3>
+        <div style="background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 8px; padding: 20px; font-size: 14px; line-height: 1.8;">
+          <p><strong>Center Street Lending Corp.</strong><br>
+          18565 Jamboree Rd., Suite 400, Irvine, CA 92612<br>
+          NMLS Unique Identifier #905781 (<a href="https://www.nmlsconsumeraccess.org" target="_blank" rel="noopener" style="color: var(--accent);">www.nmlsconsumeraccess.org</a>)<br>
+          California DFPI Financing Law License No. 60DBO-57755<br>
+          California DRE Real Estate Broker License #01883377<br>
+          Arizona Mortgage Banker License #0930263 &bull; Oregon Mortgage Lending License #ML-5838 &bull; Florida Mortgage Lender Servicer #MLD1180<br>
+          <em>Loans made or arranged pursuant to a California Financing Law License. Commercial and business-purpose loans only.</em></p>
+          
+          <hr style="border: none; border-top: 1px solid #E2E8F0; margin: 16px 0;">
+
+          <p><strong>Innovate Realty Inc.</strong><br>
+          Licensed California Real Estate Brokerage &bull; California Department of Real Estate (DRE) License<br>
+          Real estate transactions arranged through licensed California agents.</p>
+
+          <hr style="border: none; border-top: 1px solid #E2E8F0; margin: 16px 0;">
+
+          <p><strong>Honest Escrow Inc.</strong><br>
+          Licensed by the California Department of Financial Protection and Innovation (DFPI) under the California Escrow Law &bull; Independent Escrow Holder.</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-wrap">
+      <div>
+        <p>&copy; 2026 Center Street Lending Corp., Innovate Realty Inc. &amp; Honest Escrow Inc. All rights reserved.</p>
+        <p style="margin-top: 4px; font-size: 12px; color: #64748B;">Equal Housing Lender &bull; NMLS #905781 &bull; CFL #60DBO-57755 &bull; CA DRE #01883377</p>
+      </div>
+      <div>
+        <a href="index.html" style="color: #94A3B8; text-decoration: none; margin-right: 16px;">Program Overview</a>
+        <a href="#afba" style="color: #94A3B8; text-decoration: none; margin-right: 16px;">AfBA Disclosure</a>
+        <a href="#privacy" style="color: #94A3B8; text-decoration: none;">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
