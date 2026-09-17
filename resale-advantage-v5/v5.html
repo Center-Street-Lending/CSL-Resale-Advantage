@@ -62,6 +62,12 @@
     padding: 0 24px;
     box-sizing: border-box;
   }
+  .wrap-wide {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 28px;
+    box-sizing: border-box;
+  }
 
   /* TOP OFFER BAR */
   .offer-bar {
@@ -1201,6 +1207,35 @@
     margin-top: 10px;
   }
 
+  .hero-2col-grid {
+    display: grid;
+    grid-template-columns: 1.14fr 0.86fr;
+    gap: 52px;
+    align-items: center;
+  }
+  @media (max-width: 1040px) {
+    .hero-2col-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .hero-left-col {
+      text-align: center !important;
+    }
+    .hero-subhead {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .hero-cta-group {
+      justify-content: center !important;
+    }
+    .hero-proof-bar {
+      justify-content: center !important;
+    }
+    .header-benefit-pill {
+      display: none !important;
+    }
+  }
+
   /* RESPONSIVE */
   @media (max-width: 960px) {
     .hero-title {
@@ -1279,90 +1314,194 @@
 
 
 
-<!-- STICKY HEADER: CENTERED LOGO + 2-LINE PRE-NEGOTIATED PERKS SUBTAGLINE -->
+<!-- SPREAD-OUT MODERN STICKY HEADER -->
 <header id="sticky-header">
-  <div class="wrap" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 4px 0;">
-    <a class="wordmark" href="https://www.centerstreetlending.com/" style="display: inline-block;">
-      <img src="logo1.svg" alt="Center Street Resale Advantage" style="height: 28px; max-width: 100%; width: auto; display: block; margin: 0 auto;">
+  <div class="wrap-wide nav-row" style="display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+    
+    <!-- Left: Brand Logo -->
+    <a class="wordmark" href="https://www.centerstreetlending.com/" style="display: flex; align-items: center;">
+      <img src="logo1.svg" alt="Center Street Resale Advantage" style="height: 32px; width: auto; display: block;">
     </a>
-    <div class="nav-subtagline" style="margin-top: 5px; display: flex; flex-direction: column; align-items: center; gap: 2px;">
-      <span style="font-size: 11px; font-weight: 700; color: #64748B; letter-spacing: 1.2px; text-transform: uppercase; line-height: 1.2;">
-        PRE-NEGOTIATED FOR CSL BORROWERS
-      </span>
-      <span style="font-size: 12.5px; font-weight: 800; color: #4683B3; letter-spacing: 0.8px; text-transform: uppercase; line-height: 1.2;">
-        1% LISTING + $500 ESCROW ON EXITS
-      </span>
+
+    <!-- Center: Pre-negotiated Benefit Pill -->
+    <div class="header-benefit-pill" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(70, 131, 179, 0.08); border: 1px solid rgba(70, 131, 179, 0.22); border-radius: 30px; padding: 7px 18px;">
+      <span style="font-size: 11px; font-weight: 700; color: #64748B; letter-spacing: 1px; text-transform: uppercase;">PRE-NEGOTIATED FOR CSL BORROWERS &middot;</span>
+      <span style="font-size: 12px; font-weight: 800; color: #4683B3; letter-spacing: 0.6px; text-transform: uppercase;">1% LISTING + $500 ESCROW ON EXITS</span>
     </div>
-  </div>
-</header>
 
-<!-- HERO SECTION: CENTERED APPLE-STYLE WITH 1-CLICK POP-OUT MODAL -->
-<section class="hero">
-  <div class="wrap hero-content-center">
-    
-    <!-- Eyebrow Badge -->
-    
-
-    <!-- Centered Headline -->
-    <h1 class="hero-title">
-      WE MADE IT <span class="hl-blue">EASIER &amp; CHEAPER</span><br>
-      TO EXIT YOUR INVESTMENT.
-    </h1>
-
-    <!-- Centered Subheading -->
-    <p class="hero-subhead">
-      We’ve pre-negotiated two exclusive deals for CSL’s California borrowers: a <strong>1% listing commission</strong> with <strong>Innovate Realty</strong>, and a <strong>flat $500 seller-side escrow fee</strong> with <strong>Honest Escrow</strong>. Separate deals — <strong>use one, or use both.</strong>
-    </p>
-
-    <!-- Centered Action Button (Triggers Pop-Out Modal) -->
-    <div class="hero-btn-container">
-      <button type="button" class="btn-hero-primary open-modal-btn" data-intent="both">
-        CLAIM MY RESALE PERKS &rarr;
+    <!-- Right: Clean Pill Action Button -->
+    <div class="nav-right" style="display: flex; align-items: center;">
+      <button type="button" class="nav-btn open-modal-btn" data-intent="both" style="background: #111827; color: #ffffff; font-size: 13.5px; font-weight: 800; padding: 10px 22px; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.15); cursor: pointer; transition: all 0.2s; white-space: nowrap; box-shadow: 0 2px 10px rgba(0,0,0,0.12);">
+        Claim Resale Perks &rarr;
       </button>
     </div>
 
-        <!-- Centered Proof Stats with Logos -->
-    <div class="hero-proof-bar" style="display: flex; align-items: center; justify-content: center; gap: 32px; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, 0.15); width: 100%; max-width: 860px; flex-wrap: wrap; margin-top: 10px;">
+  </div>
+</header>
+
+<!-- HERO SECTION: MODERN 2-COLUMN FINTECH LAYOUT -->
+<section class="hero" style="background: linear-gradient(180deg, #131B22 0%, #1A252E 60%, #202D38 100%), url('Frame 129.png') no-repeat center center; background-size: cover; padding: 64px 0 84px 0; color: #ffffff;">
+  <div class="wrap-wide hero-2col-grid">
+    
+    <!-- LEFT COLUMN: COPY & PROOF STATS -->
+    <div class="hero-left-col" style="text-align: left;">
       
-      <!-- Fact 1: CSL -->
-      <div class="hero-proof-stat" style="display: flex; align-items: center; gap: 10px;">
-        <img src="Company Logo.svg" alt="Center Street Lending" style="height: 28px; width: auto; display: block; opacity: 0.95;">
-        <div style="text-align: left;">
-          <div style="font-size: 18px; font-weight: 900; color: #ffffff; line-height: 1.1;">$7.8B+</div>
-          <div style="font-size: 12px; color: rgba(255, 255, 255, 0.75);">Funded by CSL</div>
-        </div>
+      <!-- Eyebrow Pill Badge -->
+      <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(96, 165, 250, 0.12); border: 1px solid rgba(96, 165, 250, 0.3); border-radius: 30px; padding: 6px 16px; font-size: 12px; font-weight: 800; color: #60a5fa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 22px;">
+        <span style="font-size: 13px;">⚡</span>
+        <span>Exclusive California Borrower Benefit</span>
       </div>
 
-      <span class="proof-divider" style="color: rgba(255,255,255,0.25); font-size: 18px;">&bull;</span>
+      <!-- Main Headline -->
+      <h1 class="hero-title" style="font-size: 50px; line-height: 1.12; font-weight: 900; letter-spacing: -0.025em; color: #ffffff; margin-bottom: 20px; text-transform: uppercase;">
+        We Made It <span class="hl-blue" style="color: #60a5fa; text-decoration: underline; text-decoration-color: #4683B3; text-decoration-thickness: 4px; text-underline-offset: 8px;">Easier &amp; Cheaper</span><br>
+        to Exit Your Investment.
+      </h1>
 
-      <!-- Fact 2: Innovate -->
-      <div class="hero-proof-stat" style="display: flex; align-items: center; gap: 10px;">
-        <img src="Innovate.svg" alt="Innovate Realty" style="height: 24px; width: auto; display: block; filter: brightness(0) invert(1); opacity: 0.95;">
-        <div style="text-align: left;">
-          <div style="font-size: 18px; font-weight: 900; color: #ffffff; line-height: 1.1;">8,950+</div>
-          <div style="font-size: 12px; color: rgba(255, 255, 255, 0.75);">Homes Sold</div>
-        </div>
+      <!-- Subhead -->
+      <p class="hero-subhead" style="font-size: 17.5px; line-height: 1.65; color: rgba(255, 255, 255, 0.85); max-width: 620px; margin-bottom: 32px;">
+        We’ve pre-negotiated two exclusive deals for CSL’s California borrowers: a <strong>1% listing commission</strong> with <strong>Innovate Realty</strong>, and a <strong>flat $500 seller-side escrow fee</strong> with <strong>Honest Escrow</strong>. Separate deals — <strong>use one, or use both.</strong>
+      </p>
+
+      <!-- Dual Action Buttons -->
+      <div class="hero-cta-group" style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 44px;">
+        <button type="button" class="btn-hero-primary open-modal-btn" data-intent="both" style="background: #4683B3; color: #ffffff; font-size: 16px; font-weight: 800; padding: 16px 32px; border-radius: 12px; border: none; cursor: pointer; box-shadow: 0 6px 22px rgba(70, 131, 179, 0.45); display: inline-flex; align-items: center; gap: 10px; transition: transform 0.15s, background 0.2s;">
+          <span>CLAIM MY RESALE PERKS</span>
+          <span style="font-size: 18px;">&rarr;</span>
+        </button>
+
+        <a href="#savings" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #ffffff; font-size: 15px; font-weight: 700; padding: 15px 24px; border-radius: 12px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s;">
+          <span>See Savings Math</span>
+          <span style="color: #60a5fa;">&darr;</span>
+        </a>
       </div>
 
-      <span class="proof-divider" style="color: rgba(255,255,255,0.25); font-size: 18px;">&bull;</span>
-
-      <!-- Fact 3: Honest Escrow -->
-      <div class="hero-proof-stat" style="display: flex; align-items: center; gap: 10px;">
-        <img src="HonestEscrow.svg" alt="Honest Escrow" style="height: 22px; width: auto; display: block; opacity: 0.95;">
-        <div style="text-align: left;">
-          <div style="font-size: 18px; font-weight: 900; color: #ffffff; line-height: 1.1;">$1.1B+</div>
-          <div style="font-size: 12px; color: rgba(255, 255, 255, 0.75);">Closed in Escrow</div>
+      <!-- Proof Stats Row with Logos -->
+      <div class="hero-proof-bar" style="display: flex; align-items: center; gap: 28px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.12); flex-wrap: wrap;">
+        
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <img src="Company Logo.svg" alt="Center Street Lending" style="height: 26px; width: auto; opacity: 0.95;">
+          <div>
+            <div style="font-size: 20px; font-weight: 900; color: #ffffff; line-height: 1;">$7.8B+</div>
+            <div style="font-size: 11.5px; color: rgba(255, 255, 255, 0.7); margin-top: 3px;">Funded by CSL</div>
+          </div>
         </div>
+
+        <span style="color: rgba(255,255,255,0.2); font-size: 16px;">&bull;</span>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <img src="Innovate.svg" alt="Innovate Realty" style="height: 22px; width: auto; filter: brightness(0) invert(1); opacity: 0.95;">
+          <div>
+            <div style="font-size: 20px; font-weight: 900; color: #ffffff; line-height: 1;">8,950+</div>
+            <div style="font-size: 11.5px; color: rgba(255, 255, 255, 0.7); margin-top: 3px;">Homes Sold</div>
+          </div>
+        </div>
+
+        <span style="color: rgba(255,255,255,0.2); font-size: 16px;">&bull;</span>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <img src="HonestEscrow.svg" alt="Honest Escrow" style="height: 20px; width: auto; opacity: 0.95;">
+          <div>
+            <div style="font-size: 20px; font-weight: 900; color: #ffffff; line-height: 1;">$1.1B+</div>
+            <div style="font-size: 11.5px; color: rgba(255, 255, 255, 0.7); margin-top: 3px;">Closed in Escrow</div>
+          </div>
+        </div>
+
       </div>
 
     </div>
-  </div>
+
+    <!-- RIGHT COLUMN: VISUAL DASHBOARD DEVICE CARD -->
+    <div class="hero-right-col" style="display: flex; justify-content: center;">
+      <div class="hero-dashboard-frame" style="width: 100%; max-width: 480px; background: linear-gradient(145deg, #18232C 0%, #0E151B 100%); border: 1.5px solid rgba(255, 255, 255, 0.15); border-radius: 24px; padding: 26px 24px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 40px rgba(70, 131, 179, 0.18); color: #ffffff; text-align: left; box-sizing: border-box;">
+        
+        <!-- Top Bar with Live Pre-Approval Badge -->
+        <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 14px; margin-bottom: 18px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="width: 9px; height: 9px; border-radius: 50%; background: #34D399; box-shadow: 0 0 8px #34D399;"></span>
+            <span style="font-size: 11.5px; font-weight: 800; color: #ffffff; letter-spacing: 0.5px; text-transform: uppercase;">BORROWER EXIT ADVANTAGE</span>
+          </div>
+          <span style="font-size: 11px; background: rgba(52, 211, 153, 0.15); color: #34D399; padding: 3px 10px; border-radius: 12px; font-weight: 700; border: 1px solid rgba(52, 211, 153, 0.3);">Pre-Approved</span>
+        </div>
+
+        <!-- Central Net Retained Hero Number -->
+        <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 18px 20px; margin-bottom: 16px;">
+          <div style="font-size: 11px; font-weight: 800; color: #60a5fa; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 4px;">
+            ESTIMATED PROFIT KEPT ($1.5M EXIT)
+          </div>
+          <div style="display: flex; align-items: baseline; gap: 10px;">
+            <span style="font-size: 38px; font-weight: 900; color: #ffffff; line-height: 1;">$37,500 – $40K+</span>
+          </div>
+          <div style="font-size: 12px; color: rgba(255, 255, 255, 0.65); margin-top: 6px;">
+            Direct commission discount, flat escrow &amp; carrying savings
+          </div>
+        </div>
+
+        <!-- 3 Breakdown Line Items -->
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
+          
+          <!-- Line 1: Innovate -->
+          <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; padding: 11px 14px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 28px; height: 28px; border-radius: 6px; background: rgba(96, 165, 250, 0.15); display: flex; align-items: center; justify-content: center; font-size: 14px;">🏷️</div>
+              <div>
+                <div style="font-size: 13px; font-weight: 800; color: #ffffff;">Innovate Realty</div>
+                <div style="font-size: 11px; color: rgba(255, 255, 255, 0.6);">1% listing fee vs. 2.5–3%</div>
+              </div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 13.5px; font-weight: 800; color: #34D399;">Save $22.5–30K</div>
+            </div>
+          </div>
+
+          <!-- Line 2: Honest Escrow -->
+          <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; padding: 11px 14px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 28px; height: 28px; border-radius: 6px; background: rgba(96, 165, 250, 0.15); display: flex; align-items: center; justify-content: center; font-size: 14px;">📑</div>
+              <div>
+                <div style="font-size: 13px; font-weight: 800; color: #ffffff;">Honest Escrow</div>
+                <div style="font-size: 11px; color: rgba(255, 255, 255, 0.6);">Flat $500 fee vs. typical ~$7.5K</div>
+              </div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 13.5px; font-weight: 800; color: #34D399;">Save ~$7,000</div>
+            </div>
+          </div>
+
+          <!-- Line 3: InnoLaunch -->
+          <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; padding: 11px 14px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 28px; height: 28px; border-radius: 6px; background: rgba(52, 211, 153, 0.15); display: flex; align-items: center; justify-content: center; font-size: 14px;">⏱️</div>
+              <div>
+                <div style="font-size: 13px; font-weight: 800; color: #ffffff;">InnoLaunch™ Debut</div>
+                <div style="font-size: 11px; color: rgba(255, 255, 255, 0.6);">~30 days less loan carry</div>
+              </div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 13.5px; font-weight: 800; color: #34D399;">Save ~$8–10K</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Direct Trigger Button Inside Card -->
+        <button type="button" class="open-modal-btn" data-intent="both" style="width: 100%; background: #4683B3; color: #ffffff; padding: 14px 18px; font-size: 14.5px; font-weight: 800; border-radius: 10px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 16px rgba(70, 131, 179, 0.45); transition: background 0.2s;">
+          <span>LOCK IN MY RESALE PERKS</span>
+          <span>&rarr;</span>
+        </button>
+
+        <div style="text-align: center; margin-top: 10px; font-size: 11.5px; color: rgba(255, 255, 255, 0.55);">
+          No obligation &bull; Separate à la carte deals &bull; Pre-negotiated for CSL
+        </div>
+
+      </div>
+    </div>
 
   </div>
 </section>
 
 <!-- SECTION 1: ESTIMATED SAVINGS (UPGRADED 3-PILLAR BREAKDOWN) -->
-<section class="savings-section">
+<section class="savings-section" id="savings">
   <div class="wrap" style="max-width: 1080px;">
     
     <div class="section-eyebrow-blue">ESTIMATED SAVINGS ON A $1.5M SALE*</div>
