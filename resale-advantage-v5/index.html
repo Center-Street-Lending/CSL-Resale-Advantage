@@ -1231,6 +1231,13 @@
     .nav-left .wordmark img {
       height: 24px !important;
     }
+    .nav-divider, .nav-pill {
+      display: none !important;
+    }
+    .nav-btn {
+      padding: 7px 14px !important;
+      font-size: 12px !important;
+    }
     .wrap {
       padding: 0 18px;
     }
@@ -1275,22 +1282,22 @@
 
 
 
-<!-- STICKY HEADER WITH BENEFIT CALLOUT -->
+<!-- STICKY HEADER WITH CLEAN BRANDING & CTA -->
 <header id="sticky-header">
-  <div class="wrap nav-row">
-    <div class="nav-left" style="display: flex; align-items: center; gap: 18px; flex-wrap: wrap;">
+  <div class="wrap nav-row" style="display: flex; align-items: center; justify-content: space-between;">
+    <div class="nav-left" style="display: flex; align-items: center; gap: 16px;">
       <a class="wordmark" href="https://www.centerstreetlending.com/">
         <img src="logo1.svg" alt="Center Street Resale Advantage" style="height: 32px; max-width: 100%; width: auto; display: block;">
       </a>
-      <div class="nav-divider" style="height: 28px; width: 1.5px; background: #DCE5EC;"></div>
-      <div class="nav-benefit-tagline" style="display: flex; flex-direction: column; text-align: left;">
-        <span style="font-size: 11px; font-weight: 800; color: #4683B3; letter-spacing: 1.2px; text-transform: uppercase; line-height: 1.2;">
-          EXCLUSIVE BORROWER BENEFIT
-        </span>
-        <span style="font-size: 12.5px; font-weight: 600; color: #2C3842; letter-spacing: 0.2px; line-height: 1.25; margin-top: 2px;">
-          PRE-NEGOTIATED FOR CSL BORROWERS &middot; 1% LISTING + $500 ESCROW
-        </span>
-      </div>
+      <div class="nav-divider" style="height: 22px; width: 1.5px; background: #DCE5EC;"></div>
+      <span class="nav-pill" style="background: rgba(70, 131, 179, 0.1); color: #2C5F8A; padding: 4px 12px; border-radius: 20px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.5px; border: 1px solid rgba(70, 131, 179, 0.25); white-space: nowrap;">
+        Exclusive Borrower Program
+      </span>
+    </div>
+    <div class="nav-right">
+      <button type="button" class="nav-btn open-modal-btn" data-intent="both" style="background: #4683B3; color: #ffffff; font-size: 13.5px; font-weight: 800; padding: 9px 20px; border-radius: 8px; border: none; cursor: pointer; transition: background 0.2s, transform 0.1s; white-space: nowrap; box-shadow: 0 2px 8px rgba(70, 131, 179, 0.25);">
+        Check Property Eligibility &rarr;
+      </button>
     </div>
   </div>
 </header>
