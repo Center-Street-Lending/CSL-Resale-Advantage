@@ -1319,7 +1319,7 @@
   <div class="wrap-wide nav-row" style="display: flex; align-items: center; justify-content: space-between; gap: 20px;">
     
     <!-- Left: Brand Logo -->
-    <a class="wordmark" href="https://www.centerstreetlending.com/" style="display: flex; align-items: center;">
+    <a class="wordmark" href="https://www.centerstreetlending.com/" style="display: flex; align-items: center;" target="_top">
       <img src="logo1.svg" alt="Center Street Resale Advantage" style="height: 32px; width: auto; display: block;">
     </a>
 
@@ -2172,6 +2172,21 @@
     observer.observe(document.body, { attributes: true, childList: true, subtree: true });
   }
   setInterval(sendHeight, 1500);
+})();
+</script>
+
+<!-- Iframe Navigation Breakout -->
+<script>
+(function() {
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a');
+    if (a && a.href) {
+      if (a.href.startsWith('#') || a.href.startsWith('javascript:')) return;
+      if (a.hostname.indexOf('centerstreetlending.com') !== -1) {
+        a.target = '_top';
+      }
+    }
+  }, true);
 })();
 </script>
 

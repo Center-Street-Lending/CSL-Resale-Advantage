@@ -1999,7 +1999,7 @@
     
     <!-- Left Group: Brand Logo & Navigation Links -->
     <div class="csl-exact-left">
-      <a href="https://www.centerstreetlending.com/" class="csl-exact-logo" title="Center Street Lending">
+      <a href="https://www.centerstreetlending.com/" class="csl-exact-logo" title="Center Street Lending" target="_top">
         <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/687e86cdcb9f7ef9e1818c1d_center-street-lending-logo.svg" alt="Center Street Lending®" class="csl-exact-logo-img">
       </a>
 
@@ -2624,7 +2624,7 @@
       <!-- Top Row: Logo & Socials -->
       <div class="footer-header">
         <div class="grid-cell">
-          <a href="https://www.centerstreetlending.com/" class="image-wrapper cc-footer-logo" title="Center Street Lending">
+          <a href="https://www.centerstreetlending.com/" class="image-wrapper cc-footer-logo" title="Center Street Lending" target="_top">
             <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/68adcacbc8b6e29b0b7820a8_b6968fe41bf949a8789fbc9d17a53946_center-street-lending-logo-dark-bg.svg" alt="Center Street Lending Logo">
           </a>
         </div>
@@ -3134,6 +3134,21 @@
       nav.classList.toggle('is-mobile-open');
     });
   }
+})();
+</script>
+
+<!-- Iframe Navigation Breakout -->
+<script>
+(function() {
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a');
+    if (a && a.href) {
+      if (a.href.startsWith('#') || a.href.startsWith('javascript:')) return;
+      if (a.hostname.indexOf('centerstreetlending.com') !== -1) {
+        a.target = '_top';
+      }
+    }
+  }, true);
 })();
 </script>
 
