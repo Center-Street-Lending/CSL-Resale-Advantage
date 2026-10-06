@@ -2531,6 +2531,20 @@ ul.bullets li { margin-bottom: 8px; }
 
 </head>
 <body>
+<script>
+(function() {
+  var s = window.location.search;
+  if (s && (s.indexOf('rep=') !== -1 || s.indexOf('ref=') !== -1 || s.indexOf('source=') !== -1 || s.indexOf('utm_') !== -1)) {
+    try {
+      sessionStorage.setItem('csl_attr_query', s);
+      localStorage.setItem('csl_attr_query', s);
+    } catch(e) {}
+  }
+  window._cslInitialSearch = s || (function() {
+    try { return sessionStorage.getItem('csl_attr_query') || localStorage.getItem('csl_attr_query') || ''; } catch(e) { return ''; }
+  })();
+})();
+</script>
 
 
 <div class="offer-bar">
@@ -4003,7 +4017,7 @@ ul.bullets li { margin-bottom: 8px; }
 
       // Comprehensive URL Parameter & Attribution Tracking (Rep, Source, and UTMs)
       // Use preserved initial query string if available, or fallback to current search
-      var searchStr = window._cslInitialSearch || window.location.search;
+      var searchStr = window._cslInitialSearch || window.location.search || (function(){ try { return sessionStorage.getItem('csl_attr_query') || localStorage.getItem('csl_attr_query') || ''; }catch(e){return '';} })();
       var urlParams = new URLSearchParams(searchStr);
       var repCode = (urlParams.get('rep') || urlParams.get('ref') || urlParams.get('referrer') || urlParams.get('source') || urlParams.get('utm_source') || '').toLowerCase();
       var repName = "";

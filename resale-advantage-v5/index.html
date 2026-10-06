@@ -1311,7 +1311,20 @@
 </style>
 </head>
 <body>
-<script>window._cslInitialSearch = window.location.search;</script>
+<script>
+(function() {
+  var s = window.location.search;
+  if (s && (s.indexOf('rep=') !== -1 || s.indexOf('ref=') !== -1 || s.indexOf('source=') !== -1 || s.indexOf('utm_') !== -1)) {
+    try {
+      sessionStorage.setItem('csl_attr_query', s);
+      localStorage.setItem('csl_attr_query', s);
+    } catch(e) {}
+  }
+  window._cslInitialSearch = s || (function() {
+    try { return sessionStorage.getItem('csl_attr_query') || localStorage.getItem('csl_attr_query') || ''; } catch(e) { return ''; }
+  })();
+})();
+</script>
 
 
 
@@ -1943,7 +1956,7 @@
   var GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfhmb86XIYUTqYeA531lC3j4WxLtnye4eh3dgd1JKC9rWcIXg/formResponse';
 
   function getRepAttribution() {
-    var searchStr = window._cslInitialSearch || window.location.search;
+    var searchStr = window._cslInitialSearch || window.location.search || (function(){ try { return sessionStorage.getItem('csl_attr_query') || localStorage.getItem('csl_attr_query') || ''; }catch(e){return '';} })();
     var urlParams = new URLSearchParams(searchStr);
     var repCode = (urlParams.get('rep') || urlParams.get('ref') || urlParams.get('referrer') || urlParams.get('source') || urlParams.get('utm_source') || '').toLowerCase();
     var repName = "";
