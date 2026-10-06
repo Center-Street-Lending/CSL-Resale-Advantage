@@ -2892,7 +2892,7 @@
 
   function getRepAttribution() {
     var urlParams = new URLSearchParams(window.location.search);
-    var repCode = (urlParams.get('rep') || urlParams.get('source') || urlParams.get('utm_source') || '').toLowerCase();
+    var repCode = (urlParams.get('rep') || urlParams.get('ref') || urlParams.get('referrer') || urlParams.get('source') || urlParams.get('utm_source') || '').toLowerCase();
     var repName = "";
     if (repCode === 'gmontoya') {
       repName = 'Greg Montoya';
