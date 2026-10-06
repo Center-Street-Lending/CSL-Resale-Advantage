@@ -4022,9 +4022,50 @@ ul.bullets li { margin-bottom: 8px; }
       var repCode = (urlParams.get('rep') || urlParams.get('ref') || urlParams.get('referrer') || urlParams.get('source') || urlParams.get('utm_source') || '').toLowerCase();
       var repName = "";
       
-      // Known rep names mapping
-      if (repCode === 'gmontoya') {
-        repName = 'Greg Montoya';
+      var CSL_REP_ROSTER = {
+        'aralph': 'Alec Ralph',
+        'amichaelson': 'Allyssa Michaelson',
+        'anaranjo': 'Angelica Naranjo',
+        'cflores': 'Christine Flores',
+        'dayache': 'Daniel Ayache',
+        'dsmith': 'Diana Smith',
+        'jmullins': 'Jeremy Mullins',
+        'kmartinez': 'Kevin Martinez',
+        'lmontero': 'Luis Montero',
+        'mlacourse': 'Marlena DiMauro Lacourse',
+        'rvu': 'Richard Vu',
+        'rguerrero': 'Ryan Guerrero',
+        'shashem': 'Sherif Hashem',
+        'ebrown': 'Erik Brown',
+        'jwiedman': 'Jeremiah Wiedman',
+        'jwollm': 'Justin Wollmershauser',
+        'rstjohn': 'Ryan St John',
+        'tpodres': 'Tanner Podres',
+        'aallen': 'Angie Allen',
+        'asteedman': 'Austin Steedman',
+        'karmstrong': 'Kara Armstrong',
+        'mwoodyard': 'Max Woodyard',
+        'mprice': 'Michael Price',
+        'rnewcomer': 'Robert Newcomer',
+        'sburbidge': 'Sean Burbidge',
+        'dwaldvogel': 'Dallin Waldvogel',
+        'ffairon': 'Ford Fairon',
+        'gclauss': 'Guy Clauss',
+        'jguenther': 'Jack Guenther',
+        'rclayton': 'Ryan Clayton',
+        'sklement': 'Sean Klement',
+        'bherbert': 'Brandon Herbert',
+        'cmora': 'Crystal Mora',
+        'jwoodyard': 'Jacob Woodyard',
+        'llipinski': 'Lauren Lipinski',
+        'rkim': 'Richard Kim',
+        'tburbidge': 'Trevor Burbidge',
+        'jcho': 'Jacob Cho',
+        'gmontoya': 'Greg Montoya'
+      };
+
+      if (repCode && CSL_REP_ROSTER[repCode]) {
+        repName = CSL_REP_ROSTER[repCode];
       } else if (repCode) {
         repName = repCode;
       }
