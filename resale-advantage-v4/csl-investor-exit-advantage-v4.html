@@ -4002,7 +4002,9 @@ ul.bullets li { margin-bottom: 8px; }
       if (form.consent && form.consent.checked) formData.append("entry.2092099687", consentText);
 
       // Comprehensive URL Parameter & Attribution Tracking (Rep, Source, and UTMs)
-      var urlParams = new URLSearchParams(window.location.search);
+      // Use preserved initial query string if available, or fallback to current search
+      var searchStr = window._cslInitialSearch || window.location.search;
+      var urlParams = new URLSearchParams(searchStr);
       var repCode = (urlParams.get('rep') || urlParams.get('ref') || urlParams.get('referrer') || urlParams.get('source') || urlParams.get('utm_source') || '').toLowerCase();
       var repName = "";
       
@@ -4252,7 +4254,7 @@ ul.bullets li { margin-bottom: 8px; }
           e.preventDefault();
           scrollToTarget(targetEl);
           if (history.pushState) {
-            history.pushState(null, null, hash);
+            history.pushState(null, null, window.location.search + hash);
           }
           return;
         }

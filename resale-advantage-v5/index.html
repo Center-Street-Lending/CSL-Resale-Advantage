@@ -1311,6 +1311,7 @@
 </style>
 </head>
 <body>
+<script>window._cslInitialSearch = window.location.search;</script>
 
 
 
@@ -1942,7 +1943,8 @@
   var GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfhmb86XIYUTqYeA531lC3j4WxLtnye4eh3dgd1JKC9rWcIXg/formResponse';
 
   function getRepAttribution() {
-    var urlParams = new URLSearchParams(window.location.search);
+    var searchStr = window._cslInitialSearch || window.location.search;
+    var urlParams = new URLSearchParams(searchStr);
     var repCode = (urlParams.get('rep') || urlParams.get('ref') || urlParams.get('referrer') || urlParams.get('source') || urlParams.get('utm_source') || '').toLowerCase();
     var repName = "";
     if (repCode === 'gmontoya') {
@@ -2231,7 +2233,7 @@ var formData = new URLSearchParams();
           e.preventDefault();
           scrollToTarget(targetEl);
           if (history.pushState) {
-            history.pushState(null, null, hash);
+            history.pushState(null, null, window.location.search + hash);
           }
           return;
         }
