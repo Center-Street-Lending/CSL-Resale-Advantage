@@ -2195,18 +2195,52 @@
 })();
 </script>
 
-<!-- Iframe Navigation Breakout -->
+<!-- Iframe Navigation Breakout & Smooth Scroll postMessage -->
 <script>
 (function() {
+  function scrollToTarget(target) {
+    if (!target) return;
+    var targetOffset = target.getBoundingClientRect().top + window.pageYOffset;
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({ scrollToOffset: targetOffset }, '*');
+    }
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   document.addEventListener('click', function(e) {
     var a = e.target.closest('a');
-    if (a && a.href) {
-      if (a.href.startsWith('#') || a.href.startsWith('javascript:')) return;
-      if (a.hostname.indexOf('centerstreetlending.com') !== -1) {
-        a.target = '_top';
+    if (!a || !a.href) return;
+
+    var hashIndex = a.href.indexOf('#');
+    if (hashIndex !== -1) {
+      var hash = a.href.substring(hashIndex);
+      if (hash.length > 1) {
+        var targetEl = document.querySelector(hash);
+        if (targetEl) {
+          e.preventDefault();
+          scrollToTarget(targetEl);
+          if (history.pushState) {
+            history.pushState(null, null, hash);
+          }
+          return;
+        }
       }
     }
+
+    if (a.href.startsWith('#') || a.href.startsWith('javascript:')) return;
+    if (a.hostname.indexOf('centerstreetlending.com') !== -1) {
+      a.target = '_top';
+    }
   }, true);
+
+  if (window.location.hash) {
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var el = document.querySelector(window.location.hash);
+        if (el) scrollToTarget(el);
+      }, 300);
+    });
+  }
 })();
 </script>
 
