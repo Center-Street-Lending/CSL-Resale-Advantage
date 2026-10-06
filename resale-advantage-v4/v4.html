@@ -3981,20 +3981,38 @@ ul.bullets li { margin-bottom: 8px; }
       formData.append("entry.1894957803", intentText);
       if (form.consent && form.consent.checked) formData.append("entry.2092099687", consentText);
 
-      // Check for team member URL parameter (e.g. ?rep=gmontoya or ?source=gmontoya)
+      // Comprehensive URL Parameter & Attribution Tracking (Rep, Source, and UTMs)
       var urlParams = new URLSearchParams(window.location.search);
-      var repCode = (urlParams.get('rep') || urlParams.get('source') || '').toLowerCase();
+      var repCode = (urlParams.get('rep') || urlParams.get('source') || urlParams.get('utm_source') || '').toLowerCase();
       var repName = "";
       
+      // Known rep names mapping
       if (repCode === 'gmontoya') {
         repName = 'Greg Montoya';
       } else if (repCode) {
         repName = repCode;
       }
-      
-      // We are hijacking the original "utm_source" field in your Google Form (entry.524098454) to store the Rep Name!
-      if (repName) {
-        formData.append("entry.524098454", repName);
+
+      // Collect all UTM parameters if present
+      var utmParts = [];
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function(param) {
+        var val = urlParams.get(param);
+        if (val) utmParts.push(param + '=' + val);
+      });
+
+      var finalAttribution = repName;
+      if (utmParts.length > 0) {
+        // If we already have a repName, append the UTM details; otherwise use the UTM string
+        if (finalAttribution && finalAttribution !== urlParams.get('utm_source')) {
+          finalAttribution += ' [' + utmParts.join(', ') + ']';
+        } else if (!finalAttribution) {
+          finalAttribution = utmParts.join(', ');
+        }
+      }
+
+      // Append attribution to Google Form referrer field (entry.524098454)
+      if (finalAttribution) {
+        formData.append("entry.524098454", finalAttribution);
       }
 
       var GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfhmb86XIYUTqYeA531lC3j4WxLtnye4eh3dgd1JKC9rWcIXg/formResponse';

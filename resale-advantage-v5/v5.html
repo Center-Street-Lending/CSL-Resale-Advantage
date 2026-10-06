@@ -1943,9 +1943,29 @@
 
   function getRepAttribution() {
     var urlParams = new URLSearchParams(window.location.search);
-    var repCode = (urlParams.get('rep') || urlParams.get('source') || '').toLowerCase();
-    if (repCode === 'gmontoya') return 'Greg Montoya';
-    return repCode;
+    var repCode = (urlParams.get('rep') || urlParams.get('source') || urlParams.get('utm_source') || '').toLowerCase();
+    var repName = "";
+    if (repCode === 'gmontoya') {
+      repName = 'Greg Montoya';
+    } else if (repCode) {
+      repName = repCode;
+    }
+
+    var utmParts = [];
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function(param) {
+      var val = urlParams.get(param);
+      if (val) utmParts.push(param + '=' + val);
+    });
+
+    var finalAttribution = repName;
+    if (utmParts.length > 0) {
+      if (finalAttribution && finalAttribution !== urlParams.get('utm_source')) {
+        finalAttribution += ' [' + utmParts.join(', ') + ']';
+      } else if (!finalAttribution) {
+        finalAttribution = utmParts.join(', ');
+      }
+    }
+    return finalAttribution;
   }
 
   function handleFormSubmit(form, e) {
