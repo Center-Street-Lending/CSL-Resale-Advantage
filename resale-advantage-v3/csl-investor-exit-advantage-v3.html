@@ -3962,13 +3962,33 @@ ul.bullets li { margin-bottom: 8px; }
         return; // honeypot
       }
 
+      // Map timeline to Google Form exact accepted choices:
+      // ['I'm ready to list now', 'In 1-3 months', 'In 3-6 months', '6+ months out', 'Not sure yet']
       var timelineRadio = form.querySelector('input[name="timeline"]:checked');
-      var timelineText = timelineRadio ? timelineRadio.nextElementSibling.innerText.trim() : "";
-      
+      var timelineVal = timelineRadio ? timelineRadio.value : "";
+      var timelineMap = {
+        'now': "I'm ready to list now",
+        '1-3mo': 'In 1-3 months',
+        '3-6mo': 'In 3-6 months',
+        '6mo+': '6+ months out',
+        'unsure': 'Not sure yet'
+      };
+      var timelineText = timelineMap[timelineVal] || "I'm ready to list now";
+
+      // Map intent to Google Form exact accepted choices:
+      // ['Yes — send me details about the program', 'I already have an agent, but I'd like escrow information', 'I'm not ready yet — follow up with me later']
       var intentRadio = form.querySelector('input[name="intent"]:checked');
-      var intentText = intentRadio ? intentRadio.nextElementSibling.innerText.replace(/\s+/g, ' ').trim() : "";
-      
-      var consentText = "I agree that Center Street Lending and its affiliates may contact me about the CSL Resale Advantage program by phone, email, or text at the information provided. Consent is not a condition of any loan.";
+      var intentVal = intentRadio ? intentRadio.value : "";
+      var intentMap = {
+        'listing': 'Yes — send me details about the program',
+        'escrow': "I already have an agent, but I'd like escrow information",
+        'both': 'Yes — send me details about the program',
+        'later': "I'm not ready yet — follow up with me later"
+      };
+      var intentText = intentMap[intentVal] || 'Yes — send me details about the program';
+
+      // Exact accepted consent string required by Google Form validation
+      var consentText = 'I agree that Center Street Lending and its affiliates may contact me about the Investor Exit Advantage program by phone, email, or text at the information provided. Consent is not a condition of any loan. (Pending legal review.)';
       
       var formData = new URLSearchParams();
       if (form.first_name) formData.append("entry.1281752874", form.first_name.value);

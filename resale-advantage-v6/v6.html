@@ -2927,21 +2927,32 @@
       return; // honeypot
     }
 
-    var intentInput = form.querySelector('input[name="intent"]');
+        var intentInput = form.querySelector('input[name="intent"]');
     var intentVal = intentInput ? intentInput.value : 'both';
     var intentMap = {
-      'both': 'Both — maximum savings 1% listing + $500 escrow in one coordinated close',
-      'listing': 'Just the 1% listing fee Innovate Realty — I need an agent to sell my property',
-      'escrow': 'Just the $500 flat escrow fee Honest Escrow — I already have an agent (or I\'m selling it myself)'
+      'listing': 'Yes — send me details about the program',
+      'escrow': "I already have an agent, but I'd like escrow information",
+      'both': 'Yes — send me details about the program',
+      'later': "I'm not ready yet — follow up with me later"
     };
-    var intentText = intentMap[intentVal] || intentVal;
+    var intentText = intentMap[intentVal] || 'Yes — send me details about the program';
 
     var timelineSelect = form.querySelector('select[name="timeline"]');
-    var timelineText = timelineSelect ? timelineSelect.value : '1–3 months';
+    var rawTimeline = timelineSelect ? timelineSelect.value : '';
+    var timelineMap = {
+      'Ready now': "I'm ready to list now",
+      '1–3 months': 'In 1-3 months',
+      '1-3 months': 'In 1-3 months',
+      '3–6 months': 'In 3-6 months',
+      '3-6 months': 'In 3-6 months',
+      '6+ months': '6+ months out',
+      'Not sure yet': 'Not sure yet'
+    };
+    var timelineText = timelineMap[rawTimeline] || 'In 1-3 months';
 
-    var consentText = "I agree that Center Street Lending and its affiliates may contact me about the CSL Resale Advantage program by phone, email, or text at the information provided. Consent is not a condition of any loan.";
+    var consentText = 'I agree that Center Street Lending and its affiliates may contact me about the Investor Exit Advantage program by phone, email, or text at the information provided. Consent is not a condition of any loan. (Pending legal review.)';
 
-    var formData = new URLSearchParams();
+var formData = new URLSearchParams();
     if (form.first_name) formData.append("entry.1281752874", form.first_name.value);
     if (form.last_name) formData.append("entry.511625773", form.last_name.value);
     if (form.email) formData.append("entry.1714112113", form.email.value);
